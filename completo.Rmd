@@ -1,10 +1,13 @@
 ---
-title: "Introducción al Lenguaje R"
+title: "Introducción al Lenguaje R. Modelos Lineales y Fundamentos de Programación"  
+author: "Santiago Benitez-Vieyra"
+lang: spanish
 output: 
   pdf_document:
     toc: true
     toc_depth: 1
 ---
+
 \pagebreak
 
 #Introducción  
