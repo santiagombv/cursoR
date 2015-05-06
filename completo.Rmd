@@ -414,7 +414,7 @@ rm(list = ls(all = TRUE))
 #Práctico 2. Modelos Lineales Simples
 
 ##Caso 1. 
-Se examina la pérdida de peso de 9 lotes de 25 escarabajos luego de 6 días de ayuno, a 9 grados de humedad diferentes. Los datos se encuentran en el archivo escarabajos.txt.   
+Se examina la relación entre la altura y la capacidad pulmonar. Los datos se encuentran en el archivo fumadores.txt.   
 ```{r, eval=FALSE} 
 fum <- read.table("C:/RD/fumadores.txt", header = TRUE)
 #  fum <- read.table(file=file.choose(), header = TRUE)
@@ -492,6 +492,7 @@ tuk
 
 ##Caso 1. 
 Se estudió el efecto del número de parejas sexuales sobre la longevidad de moscas de la fruta macho. Los tratamientos fueron: A = control (sin hembras), B = control (una hembra no receptiva al día), C = control (8 hembras no receptivas al día), D = una hembra virgen al día, E = 8 hembras vírgenes al día. Ya que la longevidad puede estar relacionada con el tamaño del insecto se tomó el diámetro del tórax como covariable. Los datos se encuentran en el archivo moscas.txt.  
+
 ```{r, eval=FALSE}
 dat <- read.table("C:/RD/moscas.txt", header = TRUE)
 #  dat <- read.table(file = file.choose(), header = TRUE)
@@ -519,6 +520,10 @@ fit2 <- lm(vida ~ trat + torax, data = dat)
 Anova(fit2, type = "II")
 fit3 <- lm(vida ~ trat, data =dat)
 Anova(fit3, type = "II")
+
+layout(matrix(1:4, 2, 2))
+plot(fit3)
+layout(1)
 ```
 
 ##Ejercicios
@@ -545,7 +550,7 @@ plot(dat$labio.sup); plot(dat$labio.inf)
 layout(1)
 
 which.max(dat$azucar)
-dat$azucar[101]<-NA
+dat <- dat[-101, ]
 
 # exploración bivariada de los datos
 pairs(dat)
@@ -572,8 +577,6 @@ CORR
 
 fit <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
            caliz.inf + labio.sup + labio.inf, data = dat)
-summary(fit)
-anova (fit)
 vif(fit)	
 
 #Decisión: usar el criterio de r < 0.7 y parcialmente los vif,
@@ -611,7 +614,7 @@ stepAIC(fit2, direction="both", k=log(n))#ajustar el modelo final
 library(arm)
 library(MuMIn)
 
-global <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat)
+global <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat, na.action = na.fail)
 
 std.model <- standardize(global, standardize.y = FALSE)
 
@@ -633,7 +636,7 @@ summary(AVG)
 
 \pagebreak
 
-#Práctico 5. Manejo de gráficos y representación gráfica de modelos lineales. Paquete *graphics*. 
+#Práctico 5. Manejo de gráficos y representación gráfica de modelos lineales. 
 
 ##Comandos gráficos básicos
 * Comandos gráficos de alto nivel: abren una ventana gráfica y crean un gráfico nuevo completo. Modificando sus opciones es posible cambiar colores, tamaños, tipo de fuente y otras características. 
@@ -848,12 +851,10 @@ datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
 
 fit <- lm(formula = pol.exp ~ flores * nectario + I(flores^2) + I(nectario^2), data = datos)
 
-min.nec <- min(datos$nectario, na.rm = TRUE)
-max.nec <- max(datos$nectario, na.rm = TRUE)
-NEC <- seq(min.nec, max.nec, length.out = 100)
-min.flo <- min(datos$flores, na.rm=T)
-max.flo <- max(datos$flores, na.rm=T)
-FLO <- seq(min.flo, max.flo, length.out = 100)
+r.nec <- range(datos$nectario, na.rm = TRUE)
+NEC <- seq(r.nec[1], r.nec[2], length.out = 100)
+r.flo <- range(datos$flores, na.rm=T)
+FLO <- seq(r.flo[1], r.flo[2], length.out = 100)
 
 #Construcción de una grilla
 grilla <- expand.grid(flores=FLO, nectario=NEC)
@@ -906,16 +907,16 @@ points(pru, col = "royalblue4", pch = 20)
 1. Usar los datos de  s_poly.txt para hacer gráficos bivariados, utilizar comandos gráficos de bajo nivel para darle colores y cambiar los símbolos y agregar una recta de regresión.
 Guarde el gráfico obtenido como pdf.
 
-2. Represente gráficamente el resultado del ejercicio 2 del práctico 3:
-Se intenta determinar el efecto de la estación (IP= invierno/primavera vs. VO= verano/otoño) y la densidad de adultos (A=8, B=15, C=30, D=45 en 225 cm2) sobre la producción de huevos de bivalvos. Los datos para el ejercicio se encuentran en el archivo bivalvos.txt.
+2. Represente gráficamente el resultado del ejercicio 2 del práctico 2:Determinar si existen diferencias en el peso de pecaríes según el mes de su captura: febrero, mayo, agosto y noviembre, con los datos del archivo pecaries.txt.
 
 \pagebreak
 
-#Práctico 6. Otros paquetes gráficos: lattice, visreg y ggplot2.
+#Práctico 6. Otros paquetes gráficos: *lattice* y *ggplot2*.
 
-##Gráficos del paquete lattice.
+##Gráficos del paquete *lattice*.
 
 El paquete lattice ofrece flexibilidades especiales para representar interacciones y particularmente datos multivariados. Sus funciones son independientes de las funciones gráficas principales y se caracterizan por tener una gramática ligeramente distinta.
+
 ```{r, eval=FALSE}
 library (lattice)
 
@@ -948,56 +949,11 @@ histogram(~ ca.pulm, data = fum)
 densityplot(~ ca.pulm | fuma, data = fum)
 ```
 
-##Uso del paquete visreg para graficar modelos lineales.
-Así como el paquete sciplot simplifica la visualización de modelos con variables categóricas, el paquete visreg ahorra tiempo al momento de construir gráficos para modelos de regresión construidos con modelos lineales (también puede utilizarse para otros modelos).
-```{r, eval=FALSE}
-library(visreg)
 
-#Caso 1
-fum <- read.table("C:/RD/fumadores.txt", header=T)
-#  fum <- read.table(file = file.choose(), header = TRUE)
-fum<- fum[fum$edad>8, ]
+##Gráficos del paquete *ggplot2*
+Este paquete ofrece gráficos elegantes e intuitivos. Sin embargo, su escritura posee una gramática propia (una especie de "dialecto" dentro de R), por lo que requiere cierto tiempo hasta lograr su aprendizaje. La ayuda básica para *ggplot2* pude hallarse en la página http://docs.ggplot2.org/current/  
+Un gráfico de *ggplot2* debe contar de al menos estos tres elementos: 
 
-
-#modelo
-fit <- lm(ca.pulm ~ edad + alt + fuma + sexo , data=fum)
-summary(fit)
-
-# gráficos condicionales para una variable
-visreg(fit, xvar = "alt")  
- 
-# para todas las variables, manipulando algunos parámetros gráficos
-layout(matrix(1:4,2,2))
-visreg(fit, line = list(col = "red", lwd = 3), 
-       points = list(col = "cyan4", pch=1), 
-       fill = list(col = "grey40"))   
-layout(1)
-
-#utilizando opciones by
-visreg(fit, xvar="alt", by = "fuma")
-visreg(fit, xvar="alt", by = "edad", breaks = 4)
-
-#caso 2
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file = file.choose(), header = TRUE)
-
-#contruimos un modelo sin interacción
-fit2 <- lm(formula = pol.exp ~ flores * nectario + I(flores^2) + I(nectario^2), data = datos)
-
-#gráficos condicionales
-visreg(fit2, xvar="flores") #para una variable
-
-#superficies
-visreg2d(fit2, xvar="flores", yvar="nectario", plot.type = "image")
-visreg2d(fit2, xvar="flores", yvar="nectario", plot.type = "persp", theta=-45)
-
-#superficie móvil 
-library(rgl)
-visreg2d(fit2, xvar="flores", yvar="nectario", plot.type = "rgl", color = "cyan")
-```
-
-##Gráficos del paquete ggplot2
-Este paquete ofrece gráficos elegantes e intuitivos. Sin embargo, su escritura posee una gramática propia (una especie de "dialecto" dentro de R), por lo que requiere cierto tiempo hasta lograr su aprendizaje. Un gráfico debe contar de al menos estos tres elementos:   
 * ggplot: función principal donde se especifica el set de datos y se crea el gráfico.   
 * aes: Especifica las variables y además  colores, forma, transparencia, tipo de línea, etiquetas de los ejes, etc.
 * geoms: objetos geométricos como puntos, barras, líneas, etc. En la práctica indica el tipo de gráfico a realizar.
@@ -1074,7 +1030,7 @@ g2
 
 ##Ejercicios
 
-1. Utilizar los datos de Turnera.txt para  hacer una regresión con dummy para el polen.tot en función del morfo y del área del pétalo. Representar los resultados utilizando lattice, visreg y ggplot2.
+1. Utilizar los datos de turnera.txt para  hacer una regresión con dummy para el polen.tot en función del morfo y del área del pétalo. Representar los resultados utilizando lattice, visreg y ggplot2.
 
 2. Utilizando los mismos datos realice gráficos de densidad para la altura del estambre (alt.estambre) según el morfo, utilizando lattice y ggplot2.
 
@@ -1084,25 +1040,19 @@ g2
 
 #Práctico 7. Construyendo rutinas. 
 
-El objetivo de este trabajo es practicar la escritura de una rutina, la cual debe incluir el ingreso de datos, la carga de paquetes (en caso de ser necesario), la modificación de variables (en caso de ser necesario), exploración gráfica de los datos, planteo de diferentes modelos, comprobación de supuestos y el modelo final elegido. A diferencia de los ejercicios anteriores aquí utilizaremos una GUI (interfaz gráfica de usuario) para escribir la rutina.   
-En el caso de R Commander, cada vez que se realice alguna operación en los menús del programa, los comandos correspondientes aparecerán en la ventana de instrucciones, ayudando en la construcción de la rutina.
-Si se utiliza R Studio, el usuario debe escribir la rutina en forma muy similar a la consola de R común. Sin embargo, existe una ventana separada para la escritura de la rutina (cuyos comandos no se ejecutan automáticamente) y los diferentes colores ayudan al momento de revisar la "ortografía".  
+El objetivo de este trabajo es practicar la escritura de una rutina, la cual debe incluir el ingreso de datos, la carga de paquetes (en caso de ser necesario), la modificación de variables (en caso de ser necesario), exploración gráfica de los datos, planteo de diferentes modelos, comprobación de supuestos y el modelo final elegido. Utilizaremos R Studio para construir la rutina, la cual guardaremos con la extensión .R.     
+Luego utilizaremos el mismo programa para construir un documento R Markdown, el cual combina la naturaleza de una rutina de R con la habilidad de generar un documento que presente los resultados del análisis (el manual de este curso está construido de esta forma). Para esto, en R Studio seleccione New file - R Markdown. En output format, elija HTML (para pdf es necesario instalar algunos programas extra en la computadora). Se abrirá un documento auto-explicado, solo es necesario reemplazar su contenido por el contenido deseado. Al finalizar, haga click en el ícono de "Knit HTML". La ayuda general de R Markdown puede encontrarse en http://rmarkdown.rstudio.com/.         
 
-###Ejercicio 1. circadiano.txt
-Determinar el efecto del tratamiento de luz sobre el ritmo circadiano. Las variables incluidas son:
-Treatment: 4 horas de luz en los ojos, rodillas o control (sin luz)
-Shift: cambio en la secreción de melatonina
-
-###Ejercicio 2. Nereis.txt
+###Ejercicio 1. Nereis.txt
 Identificar el efecto de la densidad de especies y del tipo de nutriente que estas reciben sobre la concentración de sólidos solubles en el bentos marino. Las variables incluidas son:
 concentration:  concentración de sólidos solubles.
 biomass: densidad del poliqueto Nereis diversicolor.
 nutrient: tipo de nutriente (1= NH4-N, 2=PO3-P, 3= NO3-N).
 
-###Ejercicio 3. Sparrows2.txt
+###Ejercicio 2. Sparrows2.txt
 Modelar el número de gorriones de las marismas en función de varias variables que describen la cobertura de distintas especies de plantas. La variable respuesta es banded (número de gorriones), las variables de cobertura son Avgmaxht, Avgdens, ht.thatch, S.patens, Distichlis, S.alternifloraShort, S.alternifloraTall, Juncus, Bare, Other, Phragmites, Shrub, Tallsedge, Water.
 
-###Ejercicio 4. Sparrows3.txt 
+###Ejercicio 3. Sparrows3.txt 
 Probar si la relación entre la longitud del ala y el peso en ejemplares de gorrión varía de acuerdo al mes de muestreo y al sexo. 
 Las variables de importancia son:
 wingcrd: longitud del ala
