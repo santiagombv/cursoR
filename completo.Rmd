@@ -17,24 +17,29 @@ R es un lenguaje utilizado principalmente para realizar análisis estadísticos,
 
 1. Es actualmente el software que ofrece mayor número de funciones estadísticas y aplicaciones para la creación de gráficos. Colaboradores de todo el mundo producen paquetes destinados a resolver problemas particulares o desarrollan determinadas técnicas estadísticas. Cada usuario puede, además, crear sus propias funciones y rutinas combinando las funciones existentes.   
 2. Existe una amplia comunidad de usuarios y por lo tanto, una gran oferta de ayudas para aquellos que se inician en el uso del programa, incluyendo foros de discusión en internet y una creciente bibliografía.   
-3. R es una lingua franca para el intercambio de ideas en el ámbito científico. De la misma manera en que se escribe un artículo para comunicar ideas, pueden escribirse rutinas para comunicar un análisis. Actualmente un número creciente de trabajos citan este software o presentan rutinas escritas en este lenguaje publicadas.   
+3. R es una *lingua franca* para el intercambio de ideas en el ámbito científico. De la misma manera en que se escribe un artículo para comunicar ideas, pueden escribirse rutinas para comunicar un análisis. Un número creciente de trabajos citan este software o presentan rutinas escritas en este lenguaje publicadas.   
+
+##¿Qué es una rutina, qué es un código?   
+Las rutinas utilizadas por los científicos pueden ser separadas en dos grandes categorías (Mislan *et al.* 2016, doi 10.1016/j.tree.2015.11.006).   
+
+1. Las rutinas de análisis (analysis code) se utilizan para corregir errores en los datos, simular el resultado de modelos, realizar análisis estadísticos y crear figuras. Poner a disposición de otros investigadores las rutinas de análisis es necesario para que los resultados de un estudio puedan ser reproducidos.   
+2. El software científico (como puede ser un paquete de R o Python) es diseñado para poder ser utilizado en muchos proyectos diferentes. Puede ser  el producto mismo de una investigación.   
 
 ##Sobre las rutinas de este manual.
-R se diferencia radicalmente de otros programas por ser un lenguaje y no una plataforma con menús y ventanas para realizar análisis estadísticos. Esto puede parecer una desventaja para quien comienza a trabajar con el programa, pero es una de sus principales fortalezas, ya que es posible escribir rutinas para una serie de análisis y gráficos específicos y luego repetirla cuantas veces se necesite o realizar modificaciones en sectores puntuales con rapidez (por ejemplo, adaptar la rutina a nuevos datos).   
 En este manual las rutinas aparecen incrustadas en el pdf y pueden reconocerse por su distinta tipografía y por estar en recuadros. Sin embargo, por comodidad es recomendable utilizar block de notas, gedit, R scripts, RStudio o TinnR para realizarlas (evitar los procesadores de texto como Word o Writer). A partir de 2015 todo el material de este curso también está disponibles como documentos de R Markdown en el repo https://github.com/santiagombv/cursoR   
-El objetivo de este curso es capacitar al alumno para realizar una rutina de análisis por sí mismo, aplicando conocimientos de modelos lineales, manejos de gráficos y programación.
+El objetivo de este curso es capacitar al alumno para realizar una rutina de análisis por sí mismo, aplicando conocimientos de modelos lineales, manejos de gráficos y programación. 
 
 \pagebreak
 
 ##Instalación de R y de sus paquetes en Windows.
 ###Instalación de R.
 Entrar a http://cran.r-project.org/   
-En download R for Windows - base, seleccionar la última versión disponible de R (3.2.0 "Full of Ingredients" actualmente). Guardar el archivo R-3.2.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
+En download R for Windows - base, seleccionar la última versión disponible de R (3.3.0 "Supposedly Educational" actualmente). Guardar el archivo R-3.3.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
 
 ###Instalación de paquetes.
 Seleccionar Paquetes - Instalar Paquetes (la computadora debe estar conectada a internet).  
 Seleccionar el espejo CRAN desde donde se bajará el paquete (utilizar uno cercano).  
-Seleccionar un paquete de la lista despegable.  
+Seleccionar un paquete de la lista despegable. Opciones similares pueden encontrarse en RStudio. 
 Alternativamente utilizar:  
 ```{r, eval=FALSE}
 install.packages("nombre_del_paquete")
@@ -46,20 +51,32 @@ Para que un paquete esté disponible en una sesión de trabajo seleccionar Paque
 library(nombre_del_paquete)
 ```
 
+###Actualización de R. 
+En Windows se debe desinstalar y volver a instalar el programa en cada actualización. Alternativamente utilizar el paquete *installr*
+```{r, eval=FALSE}
+install.packages("installr")
+library(installr)
+updateR() #seguir las instrucciones que aparezcan
+```
+
+
 ##Instalación de R y de sus paquetes en Ubuntu.
 ###Instalación de R.
 Puede instalarse R desde el centro de software de Ubuntu, pero habitualmente es una versión antigua, ya que tarda en actualizarse. Para evitar esto usted debe realizar 3 pasos.  
 
-1. Añadir una línea a la lista de fuentes (sources.list). Para esto ejecutar en terminal: 
-sudo nautilus /etc/apt/
-Luego abrir el archivo sources.list y agregar al final una línea que contenga
-deb http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu trusty/
-En esta línea puede cambiar el espejo CRAN elegido (http://...), por alguno de los listados en  http://cran.r-project.org/ El que sugerimos para Argentina es el de la Universidad Nacional de la Plata. Puede cambiar también la distribución de Ubuntu empleada (trusty, saucy, quantal, etc.). Alternativamente, el archivo sources.list puede modificarse desde Configuración del sistema – Software y actualizaciones – Otro software – Añadir.
+1. Añadir una fuentes de software desde "Configuración del Sistema" - "Software y actualizaciones" - "Otro Software". Seleccionar "Añadir". En la ventana que solicita la línea de APT completa del repositorio colocar:   
+deb http://cran.rstudio.com/bin/linux/ubuntu xenial   
+En esta línea puede cambiar el espejo CRAN elegido (http://...), por alguno de los listados en  http://cran.r-project.org/ Por ejemplo http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu corresponde a la Universidad Nacional de la Plata. Puede cambiar también la distribución de Ubuntu empleada (xenial, trusty, saucy, quantal, etc. indicada en la última palabra). 
 
-2. Agregar una clave de seguridad al sistema. Para esto abrir una terminal y tipear las líneas de abajo. En caso de que "no funcione", ver otras opciones en http://cran.r-project.org/
+2. Agregar una clave de seguridad al sistema. Para esto abrir una terminal y tipear    
+
+```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+```
+En caso de que "no funcione", ver otras opciones en http://cran.r-project.org/
 
-3. Instalar R desde terminal.  
+
+3. Instalar R desde terminal.     
 
 ```
 sudo apt-get update
@@ -68,6 +85,7 @@ sudo apt-get install r-base
 
 ###Instalación de paquetes.
 La manera más práctica de hacerlo es instalar RStudio y utilizar su gestor de paquetes.  Alternativamente se puede hacer desde terminal.
+
 ```
 sudo R
 install.packages("nombre_del_paquete")
@@ -80,7 +98,7 @@ library(nombre_del_paquete)
 ```
 
 ###Actualización de R. 
-A diferencia de Windows, donde hay que desinstalar y volver a instalar el programa p, para mantener al día la última versión de R y de todos sus paquetes en Ubuntu basta con colocar en la terminal.
+Al agregar una fuente de software a la computadora, R se actualizará junto a todos los otros programas, automáticamente. Para mantener al día la última versión de R basta con colocar en la terminal.   
 ```
 sudo apt-get update
 sudo apt-get upgrade
