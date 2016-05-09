@@ -4,7 +4,8 @@ author: "Santiago Benitez-Vieyra"
 lang: spanish
 output: 
   pdf_document:
-    toc: true
+    latex_engine: xelatex
+    toc: yes
     toc_depth: 1
 ---
 
@@ -68,12 +69,12 @@ Puede instalarse R desde el centro de software de Ubuntu, pero habitualmente es 
 deb http://cran.rstudio.com/bin/linux/ubuntu xenial   
 En esta línea puede cambiar el espejo CRAN elegido (http://...), por alguno de los listados en  http://cran.r-project.org/ Por ejemplo http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu corresponde a la Universidad Nacional de la Plata. Puede cambiar también la distribución de Ubuntu empleada (xenial, trusty, saucy, quantal, etc. indicada en la última palabra). 
 
-2. Agregar una clave de seguridad al sistema. Para esto abrir una terminal y tipear    
+2. Agregar una clave de seguridad al sistema (en caso de que esta opción "no funcione", ver otras posibilidades en http://cran.r-project.org/). Tipear en la terminal:     
 
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 ```
-En caso de que "no funcione", ver otras opciones en http://cran.r-project.org/
+
 
 
 3. Instalar R desde terminal.     
@@ -410,19 +411,13 @@ cor.test(datos$largo.a, datos$largo.b, method = "pearson")
 # resumen de datos
 summary(datos)
 
-# una función útil para aplicar una función a un subconjunto de los datos # es aggregate, con una estructura ligeramente más complicada
+# una función útil para aplicar una función a un subconjunto de los datos 
+# es aggregate, con una estructura ligeramente más complicada
 
 MG<-aggregate(datos$largo.a, by=list(datos$grupo), FUN=mean, na.rm=TRUE)
 MG
 ```
 
-##Ayudas y explicación de una función tipo
-Las ayudas básicas de R son "poco amistosas", es SIEMPRE recomendable buscar en internet ejemplos de su uso.
-
-```{r, eval=FALSE}
-??"linear models"
-?lm
-```
 
 Otras funciones útiles y miscelánea    
 
@@ -441,6 +436,12 @@ ls()
 ```{r, eval=FALSE} 
 rm(list = ls(all = TRUE))
 ```
+
+--------------------------------------------------------------------------------------------------------------------
+   
+> **QUÉ SIGUE:** Manipular bases de datos es un campo en desarrollo. El paquete *dplyr* de Hadley Wickham es altamente recomendable (https://cran.r-project.org/web/packages/dplyr/). Para una excelente introducción a *dplyr* consultar http://www.dataschool.io/dplyr-tutorial-part-2/ .   
+   
+------------------------------------------------------------------------------------------------------------------
 
 \pagebreak
 
