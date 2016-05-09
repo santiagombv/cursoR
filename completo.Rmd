@@ -118,17 +118,17 @@ sudo apt-get upgrade
 #Práctico 1. Introducción al Lenguaje R
 
 ##Creación de objetos
-R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "nombrado" para que permanezca en la memoria utilizando una <-  y su nombre debe ser "invocado" para que aparezca en pantalla. A pesar de ser un lenguaje de programación, R es comparativamente simple e intuitivo.
+R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "nombrado" para que permanezca en la memoria utilizando una ```<-```  y su nombre debe ser "invocado" para que aparezca en pantalla. A pesar de ser un lenguaje de programación, R es comparativamente simple e intuitivo.
 
 ##Objetos comunes en R.
 --------------------- ------------------------------------------------------------------------------------
 **data.frame**        Objeto que contiene nuestros datos. Habitualmente se crea al importar datos 
-                      externos, aunque ocasionalmente pueden ser creados dentro del mismo R. 
+                      externos, aunque pueden ser creados dentro del mismo R. 
                       Consiste en una serie de variables (*vectors*) de igual longitud y que pueden 
                       ser del mismo tipo o no.  
 
 **vectors**           Colección de datos del mismo tipo (números, letras, etc.) que puede ser creado 
-                      dentro de R o importado como una columna de un data.frame. Existen muchos 
+                      dentro de R o importado como una columna de un *data.frame*. Existen muchos 
                       tipos de vectores, entre ellos:  
                       *numeric* consiste de números reales;  
                       *integer* consiste de números enteros;  
@@ -156,7 +156,7 @@ R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "
 n <- 15  
 n   #escribir el nombre de un objeto es "invocarlo"
 
-# al usar de nuevo el mismo nombre el objeto anterior se pierde
+# al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisar")
 n <- 46 + 12  				 
 n
 
@@ -231,7 +231,7 @@ matriz2 <- matrix(c(1:20), 4, 5)
 matriz2
 ```
 
-##Preparación e ingreso de datos: la función read.table
+##Preparación e ingreso de datos: las funciones ```read.table``` y ```read.csv```.
 Los datos pueden prepararse con cualquier software para planillas de datos como Excel o LibreOffice Calc. 
 Se recomienda:  
 
@@ -240,7 +240,9 @@ Se recomienda:
 > Utilizar nombres cortos.   
 > Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.    
 
-Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite muchos otros formatos). Pueden guardarse en cualquier carpeta del equipo. En el caso de que se escriba cada vez la ruta para encontrar ese archivo, es recomendable ubicar la carpeta cerca de la raíz del equipo (normalmente C:/ en Windows o /home en Ubuntu). En este manual se supondrá que los archivos de datos se han guardado en C:/RD. Puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Archivo - cambiar dir o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.
+Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. En el caso de que se escriba cada vez la ruta para encontrar ese archivo, es recomendable ubicar la carpeta cerca de la raíz del equipo (normalmente C:/ en Windows o /home en Ubuntu). En este manual se supondrá que los archivos de datos se han guardado en C:/RD. Puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Archivo - cambiar dir o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.
+   
+\pagebreak
 
 ```{r, eval=FALSE}
 # la función read.table
@@ -337,9 +339,11 @@ head(datos)
 
 # Usando factor para arreglos más complicados
 datos$pais <- factor(datos$pob, levels = c("pob2", "pob1"), 
-  labels = c("Bolivia", "Chile"))
+                     labels = c("Bolivia", "Chile"))
 head(datos)
 ```
+
+\pagebreak
 
 ##Subdivisión de conjuntos de datos
 ```{r, eval=FALSE}
@@ -357,6 +361,11 @@ dat1
 
 dat2 <- subset(datos, datos$grupo == "A" & datos$trat == 2)
 dat2
+
+# Crear una lista de bases de datos
+ldat <- split(datos, f = datos$grupo) 
+ldat
+ldat[["B"]] # indexacion especial
 ```
 
 ##Funciones para extraer información de una columna o de un vector
@@ -408,21 +417,27 @@ MG
 ```
 
 ##Ayudas y explicación de una función tipo
-En el menú Ayuda la opción "Buscar Ayuda…" se utiliza cuando buscamos una función de R para realizar un análisis particular. La opción "Funciones R (texto)…" se utiliza cuando conocemos el nombre de la función pero queremos saber cómo usarla. Ambos pedidos pueden realizarse también desde la consola. Estas ayudas básicas de R son "poco amistosas", en casos de funciones complicadas es muy recomendable buscar en internet ejemplos de su uso.
+Las ayudas básicas de R son "poco amistosas", es SIEMPRE recomendable buscar en internet ejemplos de su uso.
 
 ```{r, eval=FALSE}
 ??"linear models"
 ?lm
 ```
 
-Otras funciones útiles y miscelánea
-* Editar - Limpiar Consola (Ctrl+L): Borra la consola de R, pero no remueve los objetos de la memoria.
-* Detener el cálculo actual. STOP o presionar Esc. 
-* Misc - Listar Objetos: Muestra los objetos guardados en la memoria. 
+Otras funciones útiles y miscelánea    
+
+* Editar - Limpiar Consola (Ctrl+L): Borra la consola de R, pero no remueve los objetos de la memoria.    
+
+* Detener el cálculo actual. STOP o presionar Esc.     
+
+* Misc - Listar Objetos: Muestra los objetos guardados en la memoria.  
+
 ```{r, eval=FALSE}
 ls()
 ```
-* Misc - Remover todos los objetos: Elimina todos los objetos guardados en la memoria.
+
+* Misc - Remover todos los objetos: Elimina todos los objetos guardados en la memoria.    
+
 ```{r, eval=FALSE} 
 rm(list = ls(all = TRUE))
 ```
