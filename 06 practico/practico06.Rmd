@@ -93,7 +93,6 @@ g3 <- g2 + facet_grid(. ~ sexo)
 g3
 
 g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma))
-
 g2 <- g1 + geom_point(size = 3) + theme_bw()
 g3 <- g2 + facet_grid(fuma ~ .) + scale_color_manual(values = c("red", "blue"))
 g3
