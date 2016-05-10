@@ -1240,7 +1240,7 @@ med
 
 1. Construir una función que calcule el error estándar de la media y calcular el CV de todas las variables en el archivo s_poly.txt (guardándolos en un solo vector).   
 
-$$S.E. = \frac{s} {sqrt{n}}$$  
+$$S.E. = \frac{s} {\sqrt{n}}$$  
 
 
 2. Utilizando la siguiente tabla de presencia/ausencia de especies en dos sitios.
