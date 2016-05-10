@@ -1006,9 +1006,6 @@ g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm))
 g2 <- g1 + geom_point()
 g2    
 
-#utilizando qplot (forma interpretativa, más similar a plot)
-qplot(edad, ca.pulm, data=fum)
-
 #modificando algunos detalles comunes
 g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) 
 g2 <- g1 + geom_point(size=3, aes(shape=sexo)) 
@@ -1064,7 +1061,7 @@ g2
 
 ##Ejercicios
 
-1. Utilizar los datos de turnera.txt para  hacer una regresión con dummy para el polen.tot en función del morfo y del área del pétalo. Representar los resultados utilizando lattice, visreg y ggplot2.
+1. Utilizar los datos de turnera.txt para  hacer una regresión con dummy para el polen.tot en función del morfo y del área del pétalo. Representar los resultados utilizando lattice (sin líneas de regresión).
 
 2. Utilizando los mismos datos realice gráficos de densidad para la altura del estambre (alt.estambre) según el morfo, utilizando lattice y ggplot2.
 
@@ -1240,22 +1237,13 @@ med<-apply(X, 2, mean)
 med
 ```
 
-##Funciones de procesamiento de datos.
-*by* divide un marco de datos en una serie de marcos menores, de acuerdo a uno o más factores, y luego aplica una función en cada uno de ellos. *aggregate* realiza una acción similar, pero su salida es un nuevo marco de datos.   
-
-```{r, eval=FALSE}
-head(iris)
-M1 <- by(iris[, 1:4], iris$Species, colMeans)
-M1
-
-M2 <- aggregate(iris[, 1:4], by = list(iris$Species), mean)
-M2
-```
-
 
 ##Ejercicios
 
-1. Construir una función que calcule el coeficiente de variación, y calcular el CV de todas las variables en el archivo s_poly.txt (guardándolos en un solo vector).   
+1. Construir una función que calcule el error estándar de la media y calcular el CV de todas las variables en el archivo s_poly.txt (guardándolos en un solo vector).   
+
+$$S.E. = \frac{s} {sqrt{n}}$$  
+
 
 2. Utilizando la siguiente tabla de presencia/ausencia de especies en dos sitios.
 
@@ -1271,9 +1259,7 @@ $$Q_{s} = \frac{2C} {A + B}$$
 
 Donde A y B es el número de especies de los sitios 1 y 2, respectivamente, y C es el número de especies compartidas por los sitios 1 y 2. Probar la eficacia de la función con otro set de datos.
 
-3. Simule una población donde dos variables (X e Y) se encuentren relacionadas de forma que $X = 0,1 + 2,5 Y + 0,3 Y^2 + \epsilon$ donde $\epsilon$ es un error de distribución normal. Luego ajuste un modelo a estos datos y utilice 5-fold cross validation para determinar el modelo óptimo.
-
-4. Obtener una función que calcule la el valor medio de una matriz de correlación. Probar la eficacia de la función con los datos de s_poly.txt.
+3. Simule una población de 1000 observaciones donde dos variables (X e Y) se encuentren relacionadas de forma que $Y = 0,1 + 2,5 X + 0,3 X^2 + \epsilon$ donde $\epsilon$ es un error de distribución normal. Luego genere un gráfico, divida la población al azar en dos grupos (*training* y *test*), ajuste un modelo a los datos de *training* y use el modelo para predecir los valores de Y en los datos de *test*. Calcule la suma de cuadrados de los residuos de la predicción y compare con la suma de cuadrados de residuos del modelo (disponibles en la tabla ```anova``` del modelo construido en primera instancia).
 
 \pagebreak
 
@@ -1340,8 +1326,8 @@ Dobs<-mean(dist(esp))		#revisar la ayuda de la función dist
 Dobs
 
 #Realizamos una simulación de la distribución de los árboles según una #distribución uniforme
-X.azar <- runif(n = nrow(esp) , min = 0, max = 2)		
-Y.azar <- runif(n = 24, min = 0, max = 2)
+X.azar <- runif(n = nrow(esp), min = 0, max = 2)		
+Y.azar <- runif(n = nrow(esp), min = 0, max = 2)
 plot(X.azar, Y.azar)
 Dazar <- mean(dist(cbind(X.azar, Y.azar)))
 Dazar
@@ -1374,8 +1360,6 @@ P
 ```{r, eval=FALSE}
 # la mitad superior de la matriz X es 
 X[col(X) > row(X)]
-# o 
-upper.tri(X)
 ```
 
 Obtener la asociación observada robs entre las dos matrices de distancia de los archivos yanomamaGEN y yanomamaGEO, correspondientes a las matrices de distancia geográfica y genética entre 19 aldeas Yanomama en Brasil. Realizar una randomización para obtener pseudo-valores de $r$ y obtener su distribución. Probar si $r_{obs}$ es significativa.   
@@ -1384,7 +1368,7 @@ Nota 2: evite usar el test de Mantel en la vida real, hay alternativas más adec
 
 3. Hall et al. (Evolution (2008) 62-9: 2305–2315) proponen un test mediante permutaciones para conocer si existen diferencias significativas entre la oportunidad para la selección (I) masculina y femenina que actúan en una población.
 Hacer este test utilizando los datos de cyclopogon sabiendo que:
-   + La intensidad de la selección (I) se define como la varianza del éxito reproductivo.
+   + La oportunidad de la selección (I) se define como la varianza del éxito reproductivo.
    + Las medidas de éxito femenino y masculino son frutos y pol.exp.
    
 Para realizar este análisis la base de datos debe ser reordenada para agregar una variable de clasificación en masculino y femenino. Luego calcular la diferencia observada entre $I_{masc}$ e $I_{fem}$. Realizar una randomización para obtener 1000 pseudo-valores de esta diferencia y probar la significancia de la diferencia observada respecto a la distribución obtenida.
