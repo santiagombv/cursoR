@@ -75,8 +75,6 @@ En esta línea puede cambiar el espejo CRAN elegido (http://...), por alguno de 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 ```
 
-
-
 3. Instalar R desde terminal.     
 
 ```
