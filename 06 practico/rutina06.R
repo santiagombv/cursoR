@@ -1,9 +1,38 @@
+### Gráficos del paquete lattice
+
+library (lattice)
+
+fum <- read.table("C:/RD/fumadores.txt", header=T)
+#  fum <- read.table(file=file.choose(), header=TRUE)
+
+#gráficos bivariados
+# Notar que ingresar los datos como una fórmula es más eficiente
+xyplot(ca.pulm ~ alt, data = fum)
+xyplot(ca.pulm ~ alt | edad, data = fum)
+xyplot(ca.pulm ~ alt | fuma, data = fum)
+xyplot(ca.pulm ~ alt | fuma*sexo, data = fum)
+xyplot(ca.pulm ~ alt, groups = fuma, data = fum)
+
+#ayuda de la funcion básica xyplot
+?xyplot
+
+#manipular alguna de sus opciones...
+xyplot(ca.pulm ~ alt, groups = fuma, data = fum, xlab = "altura", 
+       ylab = "capacidad\npulmonar", col = c("red", "black"), pch = 19, 
+       lwd = 2, key = list(text = list(c("no fumadores", "fumadores")), 
+                           space = "bottom", 
+                           points = list(pch = 19, col = c("red", "black"))))
+
+#GRÁFICOS DE CAJAS
+bwplot(ca.pulm ~ fuma | sexo, data = fum)
+
+#HISTOGRAMAS Y DIAGRAMAS DE DENSIDAD
 histogram(~ ca.pulm, data = fum)
 densityplot(~ ca.pulm | fuma, data = fum)
 
 #############################################################
 
-##Gráficos del paquete *ggplot2*
+##Gráficos del paquete ggplot2
 
 fum <- read.table("C:/RD/fumadores.txt", header=T)
 #  fum <- read.table(file=file.choose(), header=TRUE)
