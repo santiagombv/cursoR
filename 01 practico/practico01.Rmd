@@ -5,8 +5,6 @@ output:
     highlight: zenburn
 ---
 
-#Práctico 1. Introducción al Lenguaje R
-
 ##Creación de objetos
 R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "nombrado" para que permanezca en la memoria utilizando una ```<-```  y su nombre debe ser "invocado" para que aparezca en pantalla. A pesar de ser un lenguaje de programación, R es comparativamente simple e intuitivo.
 
@@ -43,11 +41,11 @@ R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "
 # Es útil para poner aclaraciones en nuestras rutinas.
 
 # El comando más básico: Asignar crea objetos.
-n <- 15
+n <- 15  
 n   #escribir el nombre de un objeto es "invocarlo"
 
 # al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisar")
-n <- 46 + 12
+n <- 46 + 12  				 
 n
 
 # los caracteres categóricos necesitan ser ingresados con comillas
@@ -55,7 +53,7 @@ di <- "A"
 di
 
 # Obtener ayudas, el símbolo ?
-#si tenemos dudas sobre el funcionamiento de una función
+# si tenemos dudas sobre el funcionamiento de una función
 ? mean
 ? lm
 
@@ -69,6 +67,7 @@ vector <- c(1:4)
 vector <- c("a", "b", "c", "d")
 vector <- c("1", "a", "2", "b") 
 ```
+
 
 ##Funciones básicas: creación de vectores, secuencias y matrices
 Las funciones de esta sección son las más sencillas de R. Como regla general las funciones siempre deben escribirse acompañadas de paréntesis, que contienen los elementos sobre los cuales la función actuará. Si no se colocan los paréntesis el programa mostrará el código mismo de la función.
@@ -112,7 +111,7 @@ za
 
 # construyendo una matriz: matrix()
 m <- c(1:20)
-matriz1 <- matrix(m, 4, 5) #(vector a usar, filas, columnas) 
+matriz1 <- matrix(m, 4, 5) # (vector a usar, filas, columnas) 
 matriz1
 
 # notar que es exactamente igual a 
@@ -122,14 +121,14 @@ matriz2
 
 ##Preparación e ingreso de datos: las funciones ```read.table``` y ```read.csv```.
 Los datos pueden prepararse con cualquier software para planillas de datos como Excel o LibreOffice Calc. 
-Se recomienda:   
+Se recomienda:  
 
-> Que los nombres de las columnas no tengan espacios ni comiencen con números.   
-> Evitar los símbolos extraños como %, &, ^, ~, ñ, etc.   
+> Que los nombres de las columnas no tengan espacios ni comiencen con números.    
+> Evitar los símbolos extraños como %, &, ^, ~, ñ, etc.  
 > Utilizar nombres cortos.   
-> Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.   
+> Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.    
 
-Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. En el caso de que se escriba cada vez la ruta para encontrar ese archivo, es recomendable ubicar la carpeta cerca de la raíz del equipo (normalmente C:/ en Windows o /home en Ubuntu). En este manual se supondrá que los archivos de datos se han guardado en C:/RD. Puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Archivo - cambiar dir o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.   
+Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. En el caso de que se escriba cada vez la ruta para encontrar ese archivo, es recomendable ubicar la carpeta cerca de la raíz del equipo (normalmente C:/ en Windows o /home en Ubuntu). En este manual se supondrá que los archivos de datos se han guardado en C:/RD. Puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Archivo - cambiar dir o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.
    
 \pagebreak
 
@@ -148,10 +147,13 @@ datos <- read.table("peces1.txt", header=TRUE)
 datos <- read.table(file.choose(), header=TRUE)
 
 # los datos ya están guardados, pero si queremos verlos...
-datos    #no siempre es buena idea, sobre todo si son muchos
+datos    # no siempre es buena idea, sobre todo si son muchos
 
 # una forma práctica de ver solo las primeras filas es con head 
 head(datos)
+
+# o echar un vistazo a la estructura de los datos
+str(datos)
 
 # Información básica del set de datos
 nrow(datos)     #Número de filas
@@ -172,17 +174,17 @@ datos$grupo
 # matriz o vector. La coma separa filas de columnas
 
 #columnas
-datos[, 1]
+datos[, 1]                           
 datos[, "grupo"]
 
 # grupos de columnas
-datos[, 1:3] 
+datos[, 1:3]                         
 datos[, c("grupo", "largo.a")]
 names <- c("grupo", "largo.b")
 datos[, names]
 
 # filas y datos individuales
-datos[2, ]
+datos[2, ]                           
 datos[2, 3]
 datos[-2, 2]
 
@@ -191,7 +193,7 @@ datos[datos$largo.a > 15, ]
 datos[datos$largo.a > 15 & datos$grupo == "A", ]
 
 # Indexación de vectores
-vec <- datos$largo.a 
+vec <- datos$largo.a                 
 vec[1]
 vec[-1]
 vec[vec > 15]
@@ -209,7 +211,7 @@ plot(datos$largo.a, datos$largo.b)      #modo por default: plot(x,y)
 plot(largo.b ~ largo.a, data = datos)   #modo fórmula: plot(y~x, data)
 ```
 
-##Modificación y creación de columnas.    
+##Modificación y creación de columnas.
 ```{r, eval=FALSE}
 # reemplazo (al usar el mismo nombre) una variable numérica por un factor
 datos$trat
@@ -270,8 +272,8 @@ which.min(datos$largo.a)
 ```
 
 
-##Funciones estadísticas básicas.
-Se detallan abajo algunas como la media, varianza, desvío estándar, etc. En general si cualquiera de ellas se aplica sobre datos que contienen NA el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función na.omit.   
+##Funciones estadísticas básicas
+Se detallan abajo algunas como la media, varianza, desvío estándar, etc. En general si cualquiera de ellas se aplica sobre datos que contienen NA el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función na.omit.
 ```{r, eval=FALSE}
 # media
 M <- mean(datos$largo.a, na.rm = TRUE)
@@ -306,19 +308,20 @@ MG<-aggregate(datos$largo.a, by=list(datos$grupo), FUN=mean, na.rm=TRUE)
 MG
 ```
 
-Otras funciones útiles y miscelánea   
 
-* Editar - Limpiar Consola (Ctrl+L): Borra la consola de R, pero no remueve los objetos de la memoria.   
+Otras funciones útiles y miscelánea    
 
-* Detener el cálculo actual. STOP o presionar Esc.   
+* Editar - Limpiar Consola (Ctrl+L): Borra la consola de R, pero no remueve los objetos de la memoria.    
 
-* Misc - Listar Objetos: Muestra los objetos guardados en la memoria.   
+* Detener el cálculo actual. STOP o presionar Esc.     
+
+* Misc - Listar Objetos: Muestra los objetos guardados en la memoria.  
 
 ```{r, eval=FALSE}
 ls()
 ```
 
-* Misc - Remover todos los objetos: Elimina todos los objetos guardados en la memoria.   
+* Misc - Remover todos los objetos: Elimina todos los objetos guardados en la memoria.    
 
 ```{r, eval=FALSE} 
 rm(list = ls(all = TRUE))
@@ -328,6 +331,4 @@ rm(list = ls(all = TRUE))
    
 > **QUÉ SIGUE:** Manipular bases de datos es un campo en desarrollo. El paquete *dplyr* de Hadley Wickham es altamente recomendable (https://cran.r-project.org/web/packages/dplyr/). Para una excelente introducción a *dplyr* consultar http://www.dataschool.io/dplyr-tutorial-part-2/ .   
    
-------------------------------------------------------------------------------------------------------------------
-
-
+---------------------------------------------------------------------------------------------------------------------
