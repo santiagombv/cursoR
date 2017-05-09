@@ -102,6 +102,9 @@ datos    #no siempre es buena idea, sobre todo si son muchos
 # una forma práctica de ver solo las primeras filas es con head 
 head(datos)
 
+# o echar un vistazo a la estructura de los datos
+str(datos)
+
 # Información básica del set de datos
 nrow(datos)     #Número de filas
 ncol(datos)     #Número de columnas
