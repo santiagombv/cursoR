@@ -22,16 +22,18 @@ Las rutinas utilizadas por los científicos pueden ser separadas en dos grandes 
 En este manual las rutinas aparecen incrustadas en el pdf y pueden reconocerse por su distinta tipografía y por estar en recuadros. Sin embargo, por comodidad es recomendable utilizar block de notas, gedit, R scripts, RStudio o TinnR para realizarlas (evitar los procesadores de texto como Word o Writer). A partir de 2015 todo el material de este curso también está disponibles como documentos de R Markdown en el repo https://github.com/santiagombv/cursoR   
 El objetivo de este curso es capacitar al alumno para realizar una rutina de análisis por sí mismo, aplicando conocimientos de modelos lineales, manejos de gráficos y programación. 
 
+\pagebreak
+
 ##Instalación de R y de sus paquetes en Windows.
 ###Instalación de R.
 Entrar a http://cran.r-project.org/   
-En download R for Windows - base, seleccionar la última versión disponible de R (3.3.0 "Supposedly Educational" actualmente). Guardar el archivo R-3.3.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
+En download R for Windows - base, seleccionar la última versión disponible de R (3.4.0 "You Stupid Darkness" actualmente). Guardar el archivo R-3.4.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
 
 ###Instalación de paquetes.
 Seleccionar Paquetes - Instalar Paquetes (la computadora debe estar conectada a internet).  
-Seleccionar el espejo CRAN desde donde se bajará el paquete (utilizar uno cercano).   
+Seleccionar el espejo CRAN desde donde se bajará el paquete (utilizar uno cercano).  
 Seleccionar un paquete de la lista despegable. Opciones similares pueden encontrarse en RStudio. 
-Alternativamente utilizar:   
+Alternativamente utilizar:  
 ```{r, eval=FALSE}
 install.packages("nombre_del_paquete")
 ```
@@ -50,34 +52,38 @@ library(installr)
 updateR() #seguir las instrucciones que aparezcan
 ```
 
+
 ##Instalación de R y de sus paquetes en Ubuntu.
 ###Instalación de R.
-Puede instalarse R desde el centro de software de Ubuntu, pero habitualmente es una versión antigua, ya que tarda en actualizarse. Para evitar esto usted debe realizar 3 pasos.   
+Puede instalarse R desde el centro de software de Ubuntu, pero habitualmente es una versión antigua, ya que tarda en actualizarse. Para evitar esto usted debe realizar 3 pasos.  
 
 1. Añadir una fuentes de software desde "Configuración del Sistema" - "Software y actualizaciones" - "Otro Software". Seleccionar "Añadir". En la ventana que solicita la línea de APT completa del repositorio colocar:   
-deb http://cran.rstudio.com/bin/linux/ubuntu xenial   
+deb http://cran.rstudio.com/bin/linux/ubuntu/ xenial/   
 En esta línea puede cambiar el espejo CRAN elegido (http://...), por alguno de los listados en  http://cran.r-project.org/ Por ejemplo http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu corresponde a la Universidad Nacional de la Plata. Puede cambiar también la distribución de Ubuntu empleada (xenial, trusty, saucy, quantal, etc. indicada en la última palabra). 
 
-2. Agregar una clave de seguridad al sistema (en caso de que esta opción "no funcione", ver otras posibilidades en http://cran.r-project.org/). Tipear en la terminal:   
+2. Agregar una clave de seguridad al sistema (en caso de que esta opción "no funcione", ver otras posibilidades en http://cran.r-project.org/). Tipear en la terminal:     
+
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
 ```
 
-3. Instalar R desde terminal.   
+3. Instalar R desde terminal.     
+
 ```
 sudo apt-get update
 sudo apt-get install r-base
 ```
 
 ###Instalación de paquetes.
-La manera más práctica de hacerlo es instalar RStudio y utilizar su gestor de paquetes.  Alternativamente se puede hacer desde terminal.   
+La manera más práctica de hacerlo es instalar RStudio y utilizar su gestor de paquetes.  Alternativamente se puede hacer desde terminal.
+
 ```
 sudo R
 install.packages("nombre_del_paquete")
 ```
 
 ###Carga de paquetes.
-Debe cargarse desde la consola principal de R o Rstudio.   
+Debe cargarse desde la consola principal de R o Rstudio.
 ```{r, eval=FALSE}
 library(nombre_del_paquete)
 ```
