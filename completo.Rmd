@@ -1,6 +1,7 @@
 ---
 title: "Introducción al Lenguaje R. Modelos Lineales y Fundamentos de Programación"  
-author: "Santiago Benitez-Vieyra"
+subtitle: "Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba"
+author: "Dr. Santiago Benitez-Vieyra, IMBIV (UNC-CONICET)"
 lang: spanish
 output: 
   pdf_document:
@@ -35,7 +36,7 @@ El objetivo de este curso es capacitar al alumno para realizar una rutina de an�
 ##Instalación de R y de sus paquetes en Windows.
 ###Instalación de R.
 Entrar a http://cran.r-project.org/   
-En download R for Windows - base, seleccionar la última versión disponible de R (3.3.0 "Supposedly Educational" actualmente). Guardar el archivo R-3.3.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
+En download R for Windows - base, seleccionar la última versión disponible de R (3.4.0 "You Stupid Darkness" actualmente). Guardar el archivo R-3.4.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
 
 ###Instalación de paquetes.
 Seleccionar Paquetes - Instalar Paquetes (la computadora debe estar conectada a internet).  
@@ -66,7 +67,7 @@ updateR() #seguir las instrucciones que aparezcan
 Puede instalarse R desde el centro de software de Ubuntu, pero habitualmente es una versión antigua, ya que tarda en actualizarse. Para evitar esto usted debe realizar 3 pasos.  
 
 1. Añadir una fuentes de software desde "Configuración del Sistema" - "Software y actualizaciones" - "Otro Software". Seleccionar "Añadir". En la ventana que solicita la línea de APT completa del repositorio colocar:   
-deb http://cran.rstudio.com/bin/linux/ubuntu xenial   
+deb http://cran.rstudio.com/bin/linux/ubuntu/ xenial/   
 En esta línea puede cambiar el espejo CRAN elegido (http://...), por alguno de los listados en  http://cran.r-project.org/ Por ejemplo http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu corresponde a la Universidad Nacional de la Plata. Puede cambiar también la distribución de Ubuntu empleada (xenial, trusty, saucy, quantal, etc. indicada en la última palabra). 
 
 2. Agregar una clave de seguridad al sistema (en caso de que esta opción "no funcione", ver otras posibilidades en http://cran.r-project.org/). Tipear en la terminal:     
@@ -164,7 +165,7 @@ di <- "A"
 di
 
 # Obtener ayudas, el símbolo ?
-#si tenemos dudas sobre el funcionamiento de una función
+# si tenemos dudas sobre el funcionamiento de una función
 ? mean
 ? lm
 
@@ -222,7 +223,7 @@ za
 
 # construyendo una matriz: matrix()
 m <- c(1:20)
-matriz1 <- matrix(m, 4, 5) #(vector a usar, filas, columnas) 
+matriz1 <- matrix(m, 4, 5) # (vector a usar, filas, columnas) 
 matriz1
 
 # notar que es exactamente igual a 
@@ -258,10 +259,13 @@ datos <- read.table("peces1.txt", header=TRUE)
 datos <- read.table(file.choose(), header=TRUE)
 
 # los datos ya están guardados, pero si queremos verlos...
-datos    #no siempre es buena idea, sobre todo si son muchos
+datos    # no siempre es buena idea, sobre todo si son muchos
 
 # una forma práctica de ver solo las primeras filas es con head 
 head(datos)
+
+# o echar un vistazo a la estructura de los datos
+str(datos)
 
 # Información básica del set de datos
 nrow(datos)     #Número de filas
@@ -452,33 +456,44 @@ fum <- read.table("C:/RD/fumadores.txt", header = TRUE)
 #  fum <- read.table(file=file.choose(), header = TRUE)
 fum 
 
-#inspección de datos 1: gráfico tipo Cleveland
+# inspección de datos 1: gráfico tipo Cleveland
 plot(fum$ca.pulm)
 plot(fum$alt)
 
-#inspección de datos 2: gráfico bivariado
+# inspección de datos 2: gráfico bivariado
 plot(fum$alt, fum$ca.pulm)
 
-#modelo lineal (regresión)
+# modelo lineal (regresión)
 fit<-lm(ca.pulm ~ alt, data=fum)
 
-##componentes del objeto fit (algunos)
+# componentes del objeto fit (algunos)
 fit
 fit$coefficients
 fit$residuals[1:20] # sólo los primeros 20
 fit$fitted[1:20] # sólo los primeros 20
 
-##resúmenes de información
+# resúmenes de información
 summary(fit)
 anova(fit)
 
-#diagnósticos gráficos. Layout dividirá la ventana gráfica en lo que #indique la matriz (4 en este caso, en 2 filas y 2 columnas). Para que la #ventana gráfica vuelva a la normalidad usaremos layout(1)
+# Diagnósticos gráficos. Layout dividirá la ventana gráfica en lo que    
+# indique la matriz (4 en este caso, en 2 filas y 2 columnas). Para que la   
+# ventana gráfica vuelva a la normalidad usaremos layout(1)
 layout(matrix(1:4,2,2))
 plot(fit)
 layout(1)
 
-#diagnósticos numéricos
+# Diagnósticos numéricos
 shapiro.test(fit$residuals)
+
+# Validación cruzada
+library(boot)
+git1 <- glm(ca.pulm ~ alt, data=fum) #modelo generalizado normal, equivale a lm
+git2 <- glm(ca.pulm ~ I(alt^2), data=fum) #modelo generalizado normal, equivale a lm
+cv.err1 <- cv.glm(fum, git1, K = 10)
+cv.err2 <- cv.glm(fum, git2, K = 10)
+cv.err1$delta
+cv.err2$delta
 ```
 
 ##Caso 2. 
@@ -489,32 +504,32 @@ head(InsectSprays)
 
 plot(sqrt(count) ~ spray, data = InsectSprays)
 
-#utilizando la function lm
+# utilizando la function lm
 fit.spray1 <- lm(sqrt(count) ~ spray, data = InsectSprays)
 anova(fit.spray1)
 summary(fit.spray1)
-#utilizando la function aov
+# utilizando la function aov
 fit.spray2 <- aov(sqrt(count)~spray, data = InsectSprays)
 summary(fit.spray2)
 
-#diagnósticos gráficos
+# diagnósticos gráficos
 layout(matrix(1:4,2,2))
 plot(fit.spray2)
 layout(1)
 
-#diagnósticos numéricos
+# diagnósticos numéricos
 shapiro.test(resid(fit.spray2))
 bartlett.test(resid(fit.spray2)~InsectSprays$spray)
 
-#Test de Tukey
-#notar que trabaja sobre un objeto aov, no sobre un objeto lm
+# Test de Tukey
+# notar que trabaja sobre un objeto aov, no sobre un objeto lm
 tuk<-TukeyHSD (fit.spray2)
 tuk
 ```
 
 ##Ejercicios
 
-1. Se intenta probar si el éxito reproductivo (medido como polinarios exportados) de la orquídea Cyclopogon elatus aumenta en flores con nectarios más profundos. El archivo cyclop.txt contiene las variables de interés nectario y pol.exp. Realizar gráficos exploratorios, ajustar un modelo de regresión lineal, extraer la tabla de parámetros y la tabla ANOVA y realizar gráficos de diagnóstico. ¿Qué opina de transformar los datos para satisfacer los requisitos del modelo lineal?    
+1. Se intenta probar si el éxito reproductivo (medido como polinarios exportados) de la orquídea *Cyclopogon elatus* aumenta en flores con nectarios más profundos. El archivo cyclop.txt contiene las variables de interés nectario y pol.exp. Realizar gráficos exploratorios, ajustar un modelo de regresión lineal, extraer la tabla de parámetros y la tabla ANOVA y realizar gráficos de diagnóstico. ¿Qué opina de transformar los datos para satisfacer los requisitos del modelo lineal?    
      
 2. Determinar si existen diferencias en el peso de pecaríes según el mes de su captura: febrero, mayo, agosto y noviembre, con los datos del archivo pecaries.txt. Explorar los datos gráficamente, realizar un análisis de la varianza, obtener la tabla de parámetros y la tabla ANOVA. Realizar diagnósticos gráficos y numéricos  (pruebas de Shapiro-Wilks y Bartlett), y realizar un test de Tukey.    
 
