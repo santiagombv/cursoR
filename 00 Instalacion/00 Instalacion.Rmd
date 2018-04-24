@@ -1,6 +1,5 @@
 ---
 title: "Instalación"
-author: "Santiago Benitez-Vieyra"
 output: html_document
 ---
 
@@ -12,13 +11,13 @@ R es un lenguaje utilizado principalmente para realizar análisis estadísticos,
 3. R es una *lingua franca* para el intercambio de ideas en el ámbito científico. De la misma manera en que se escribe un artículo para comunicar ideas, pueden escribirse rutinas para comunicar un análisis. Un número creciente de trabajos citan este software o presentan rutinas escritas en este lenguaje publicadas.   
 
 ##¿Qué es una rutina, qué es un código?   
-Las rutinas utilizadas por los científicos pueden ser separadas en dos grandes categorías (Mislan *et al.* 2016, doi 10.1016/j.tree.2015.11.006).   
+Las rutinas utilizadas por los científicos pueden ser separadas en dos grandes categorías ([Mislan *et al.* 2016](https://www.sciencedirect.com/science/article/pii/S0169534715002906)).   
 
-1. Las rutinas de análisis (analysis code) se utilizan para corregir errores en los datos, simular el resultado de modelos, realizar análisis estadísticos y crear figuras. Poner a disposición de otros investigadores las rutinas de análisis es necesario para que los resultados de un estudio puedan ser reproducidos.   
+1. Las rutinas de análisis (*analysis code*) se utilizan para ensamblar bases de datos y corregir errores, simular el resultado de modelos, realizar análisis estadísticos y crear figuras. Poner a disposición de otros investigadores las rutinas de análisis es necesario para que los resultados de un estudio puedan ser reproducidos.   
 2. El software científico (como puede ser un paquete de R o Python) es diseñado para poder ser utilizado en muchos proyectos diferentes. Puede ser  el producto mismo de una investigación.   
 
 ##Sobre las rutinas de este manual.
-En este manual las rutinas aparecen incrustadas en el pdf y pueden reconocerse por su distinta tipografía y por estar en recuadros. Sin embargo, por comodidad es recomendable utilizar block de notas, gedit, R scripts, RStudio o TinnR para realizarlas (evitar los procesadores de texto como Word o Writer). A partir de 2015 todo el material de este curso también está disponibles como documentos de R Markdown en el repo https://github.com/santiagombv/cursoR   
+En este manual las rutinas aparecen incrustadas en el pdf o en la página web y pueden reconocerse por su distinta tipografía y por estar en recuadros. Sin embargo, por comodidad es recomendable utilizar block de notas, gedit, R scripts, RStudio o TinnR para realizarlas (evitar los procesadores de texto como Word o Writer). A partir de 2015 todo el material de este curso también está disponibles como documentos de R Markdown en el repo https://github.com/santiagombv/cursoR y en la página http://santiagombv.github.io/CursoR/   
 El objetivo de este curso es capacitar al alumno para realizar una rutina de análisis por sí mismo, aplicando conocimientos de modelos lineales, manejos de gráficos y programación. 
 
 \pagebreak
@@ -26,7 +25,7 @@ El objetivo de este curso es capacitar al alumno para realizar una rutina de an�
 ##Instalación de R y de sus paquetes en Windows.
 ###Instalación de R.
 Entrar a http://cran.r-project.org/   
-En download R for Windows - base, seleccionar la última versión disponible de R (3.4.0 "You Stupid Darkness" actualmente). Guardar el archivo R-3.4.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
+En download R for Windows - base, seleccionar la última versión disponible de R (3.4.4 "Someone to lean on" actualmente). Guardar el archivo R-3.4.4-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
 
 ###Instalación de paquetes.
 Seleccionar Paquetes - Instalar Paquetes (la computadora debe estar conectada a internet).  
@@ -44,7 +43,7 @@ library(nombre_del_paquete)
 ```
 
 ###Actualización de R. 
-En Windows se debe desinstalar y volver a instalar el programa en cada actualización. Alternativamente utilizar el paquete *installr*
+En Windows se puede desinstalar y volver a instalar el programa en cada actualización. Alternativamente utilizar el paquete *installr*
 ```{r, eval=FALSE}
 install.packages("installr")
 library(installr)
@@ -99,6 +98,6 @@ sudo apt-get upgrade
 > **Nota 1**: en algunas versiones de Windows, el usuario no puede modificar las carpetas contenidas en "Archivos de programas". En ese caso, los paquetes no se guardarán correctamente y se borrarán cada vez que reinicie la computadora. Para evitarlo, localice la carpeta "R" dentro de los Archivos de programa, selecciónela con el botón derecho del mouse, abra la opción Propiedades - Seguridad, y asegúrese de permitir "control total" a todos los usuarios.  
 > **Nota 2**: para este curso, se requieren los siguientes paquetes extra: *ggplot2* (y todas sus dependencias), *lattice*, *rgl*, *sciplot*, *car*, *arm*, *MuMIn* y *devtools*.  
 > **Nota 3**. Se recomienda además utilizar la última versión de R por compatibilidad con algunas rutinas.  
-> **Nota 4**: Es recomendable para este curso instalar RStudio (desde http://www.rstudio.com/) y visualizar o ejecutar las rutinas desde allí.   
+> **Nota 4**: Para este curso utilizaremos RStudio (descargar desde http://www.rstudio.com/).   
 
 -----------------------------------------------------------------------------------------------------------------
