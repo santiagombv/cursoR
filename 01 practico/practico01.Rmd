@@ -10,7 +10,7 @@ R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "
 
 ##Objetos comunes en R.
 --------------------- ------------------------------------------------------------------------------------
-**data.frame**        Objeto que contiene nuestros datos. Habitualmente se crea al importar datos 
+**data.frame**        Objeto que contiene datos. Habitualmente se crea al importar datos 
                       externos, aunque pueden ser creados dentro del mismo R. 
                       Consiste en una serie de variables (*vectors*) de igual longitud y que pueden 
                       ser del mismo tipo o no.  
@@ -134,7 +134,7 @@ Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bie
 
 ```{r, eval=FALSE}
 # la función read.table
-# opción 1 con ruta completa
+# opción 1 con ruta completa (notar orientación de las barras /)
 datos <- read.table("C:/RD/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"
@@ -146,6 +146,9 @@ datos <- read.table("peces1.txt", header=TRUE)
 # desventaja: requiere que el humano piense!
 datos <- read.table(file.choose(), header=TRUE)
 
+# opción 4 la función read.csv
+datos <- read.csv("C:/RD/peces1.csv", header=TRUE)
+
 # los datos ya están guardados, pero si queremos verlos...
 datos    # no siempre es buena idea, sobre todo si son muchos
 
@@ -153,6 +156,7 @@ datos    # no siempre es buena idea, sobre todo si son muchos
 head(datos)
 
 # o echar un vistazo a la estructura de los datos
+# str informa sobre la estructura de cualquier objeto
 str(datos)
 
 # Información básica del set de datos
@@ -163,8 +167,7 @@ names(datos)    #Nombre de las columnas
 
 ##Indexación
 Estas operaciones se realizan para extraer de un objeto la parte que nos interesa, por ejemplo una columna con una variable de un marco de datos.   
-
-> **IMPORTANTE** No usar attach(). Esta función aumenta las probabilidades de confundirse e introducir errores.
+**No usar attach(),** esta función aumenta las probabilidades de confundirse e introducir errores.
 
 ```{r, eval=FALSE}
 # Para seleccionar una columna del marco de datos utilizamos $
@@ -261,7 +264,6 @@ ldat[["B"]] # indexacion especial
 
 ##Funciones para extraer información de una columna o de un vector
 ```{r, eval=FALSE}
-mode(seq1)
 class(xx)
 length(seq1)
 dim(matriz1)
