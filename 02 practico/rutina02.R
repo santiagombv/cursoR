@@ -33,6 +33,15 @@ layout(1)
 #diagnósticos numéricos
 shapiro.test(fit$residuals)
 
+# validación cruzada
+library(boot)
+git1 <- glm(ca.pulm ~ alt, data=fum) #modelo generalizado normal, equivale a lm
+git2 <- glm(ca.pulm ~ I(alt^2), data=fum) #modelo generalizado normal, equivale a lm
+cv.err1 <- cv.glm(fum, git1, K = 10)
+cv.err2 <- cv.glm(fum, git2, K = 10)
+cv.err1$delta
+cv.err2$delta
+
 ##Caso 2. 
 data(InsectSprays)
 head(InsectSprays)

@@ -148,13 +148,14 @@ $(document).ready(function () {
 <h2>Sobre las rutinas de este manual.</h2>
 <p>En este manual las rutinas aparecen incrustadas en el pdf y pueden reconocerse por su distinta tipografía y por estar en recuadros. Sin embargo, por comodidad es recomendable utilizar block de notas, gedit, R scripts, RStudio o TinnR para realizarlas (evitar los procesadores de texto como Word o Writer). A partir de 2015 todo el material de este curso también está disponibles como documentos de R Markdown en el repo <a href="https://github.com/santiagombv/cursoR" class="uri">https://github.com/santiagombv/cursoR</a><br />
 El objetivo de este curso es capacitar al alumno para realizar una rutina de análisis por sí mismo, aplicando conocimientos de modelos lineales, manejos de gráficos y programación.</p>
+
 </div>
 <div id="instalacion-de-r-y-de-sus-paquetes-en-windows." class="section level2">
 <h2>Instalación de R y de sus paquetes en Windows.</h2>
 <div id="instalacion-de-r." class="section level3">
 <h3>Instalación de R.</h3>
 <p>Entrar a <a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a><br />
-En download R for Windows - base, seleccionar la última versión disponible de R (3.3.0 “Supposedly Educational” actualmente). Guardar el archivo R-3.3.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación.</p>
+En download R for Windows - base, seleccionar la última versión disponible de R (3.4.0 “You Stupid Darkness” actualmente). Guardar el archivo R-3.4.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación.</p>
 </div>
 <div id="instalacion-de-paquetes." class="section level3">
 <h3>Instalación de paquetes.</h3>
@@ -183,14 +184,16 @@ updateR() #seguir las instrucciones que aparezcan</code></pre>
 <p>Puede instalarse R desde el centro de software de Ubuntu, pero habitualmente es una versión antigua, ya que tarda en actualizarse. Para evitar esto usted debe realizar 3 pasos.</p>
 <ol style="list-style-type: decimal">
 <li><p>Añadir una fuentes de software desde “Configuración del Sistema” - “Software y actualizaciones” - “Otro Software”. Seleccionar “Añadir”. En la ventana que solicita la línea de APT completa del repositorio colocar:<br />
-deb <a href="http://cran.rstudio.com/bin/linux/ubuntu" class="uri">http://cran.rstudio.com/bin/linux/ubuntu</a> xenial<br />
+deb <a href="http://cran.rstudio.com/bin/linux/ubuntu/" class="uri">http://cran.rstudio.com/bin/linux/ubuntu/</a> xenial/<br />
 En esta línea puede cambiar el espejo CRAN elegido (<a href="http://" class="uri">http://</a>…), por alguno de los listados en <a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a> Por ejemplo <a href="http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu" class="uri">http://mirror.fcaglp.unlp.edu.ar/CRAN/bin/linux/ubuntu</a> corresponde a la Universidad Nacional de la Plata. Puede cambiar también la distribución de Ubuntu empleada (xenial, trusty, saucy, quantal, etc. indicada en la última palabra).</p></li>
-<li><p>Agregar una clave de seguridad al sistema (en caso de que esta opción “no funcione”, ver otras posibilidades en <a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a>). Tipear en la terminal:</p>
-<pre><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9</code></pre></li>
-<li><p>Instalar R desde terminal.</p>
-<pre><code>sudo apt-get update
-sudo apt-get install r-base</code></pre></li>
+<li><p>Agregar una clave de seguridad al sistema (en caso de que esta opción “no funcione”, ver otras posibilidades en <a href="http://cran.r-project.org/" class="uri">http://cran.r-project.org/</a>). Tipear en la terminal:</p></li>
 </ol>
+<pre><code>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Instalar R desde terminal.</li>
+</ol>
+<pre><code>sudo apt-get update
+sudo apt-get install r-base</code></pre>
 </div>
 <div id="instalacion-de-paquetes.-1" class="section level3">
 <h3>Instalación de paquetes.</h3>
