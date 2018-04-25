@@ -1,9 +1,10 @@
 ---
 title: "Práctico 1. Introducción al Lenguaje R"
-output: 
+output:
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
+
 
 ##Creación de objetos
 R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "nombrado" para que permanezca en la memoria utilizando una ```<-```  y su nombre debe ser "invocado" para que aparezca en pantalla. A pesar de ser un lenguaje de programación, R es comparativamente simple e intuitivo.
