@@ -2,7 +2,7 @@
 title: "Práctico 2. Modelos Lineales Simples"
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 ##Caso 1. 

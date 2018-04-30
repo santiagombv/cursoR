@@ -1,6 +1,8 @@
 ---
 title: "Instalación"
-output: html_document
+output:
+  html_document:
+    highlight: tango
 ---
 
 ##R

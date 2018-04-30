@@ -120,14 +120,13 @@ matriz2 <- matrix(c(1:20), 4, 5)
 matriz2
 ```
 
-##Preparación e ingreso de datos: las funciones ```read.table``` y ```read.csv```.
+##Preparación e ingreso de datos: las funciones *read.table* y *read.csv*.
 Los datos pueden prepararse con cualquier software para planillas de datos como Excel o LibreOffice Calc. 
 Se recomienda:  
-
-> Que los nombres de las columnas no tengan espacios ni comiencen con números.    
-> Evitar los símbolos extraños como %, &, ^, ~, ñ, etc.  
-> Utilizar nombres cortos.   
-> Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.    
+- Que los nombres de las columnas no tengan espacios ni comiencen con números.    
+- Evitar los símbolos extraños como %, &, ^, ~, ñ, etc.  
+- Utilizar nombres cortos.   
+- Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.    
 
 Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. En el caso de que se escriba cada vez la ruta para encontrar ese archivo, es recomendable ubicar la carpeta cerca de la raíz del equipo (normalmente C:/ en Windows o /home en Ubuntu). En este manual se supondrá que los archivos de datos se han guardado en C:/RD. Puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Archivo - cambiar dir o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.
    
