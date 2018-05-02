@@ -2,15 +2,15 @@
 title: "Práctico 4. Modelos Lineales Múltiples II."
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 ##Caso 1.
 Se intenta realizar un modelo que prediga el contenido de azúcar en el néctar en flores de Salvia polystachia, a partir de 7 variables morfológicas medidas. Los datos se encuentran en el archivo  s_poly.txt.
 
 ```{r, eval=FALSE}
-dat <- read.table("C:/RD/s_poly.txt", header = TRUE)
-#  dat <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+dat <- read.table(".../s_poly.txt", header = TRUE)
 
 # exploración de los datos
 layout(matrix(1:8,2,4))
@@ -68,9 +68,6 @@ fit2<-lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup +
 fit3<-lm(azucar ~ largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data=dat) #sin largo.l.tot
 
 anova(fit3, fit2)
-
-##drop1 borra una variable del modelo a la vez y compara con el completo
-drop1(fit2, test="F")
 
 ## stepAIC (MASS) realiza una búsqueda automática del mejor modelo 
 library(MASS) 

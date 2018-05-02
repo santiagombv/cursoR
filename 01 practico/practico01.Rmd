@@ -135,6 +135,7 @@ Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bie
 ```{r, eval=FALSE}
 # la función read.table
 # opción 1 con ruta completa (notar orientación de las barras /)
+# en este caso asumimos que se encuentra en el directorio RD
 datos <- read.table("C:/RD/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"

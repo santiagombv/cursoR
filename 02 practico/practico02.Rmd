@@ -8,8 +8,8 @@ output:
 ##Caso 1. 
 Se examina la relación entre la altura y la capacidad pulmonar. Los datos se encuentran en el archivo fumadores.txt.   
 ```{r, eval=FALSE} 
-fum <- read.table("C:/RD/fumadores.txt", header = TRUE)
-#  fum <- read.table(file=file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+fum <- read.table(".../fumadores.txt", header = TRUE)
 fum 
 
 # inspección de datos 1: gráfico tipo Cleveland
