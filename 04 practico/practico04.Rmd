@@ -44,13 +44,14 @@ CORR
 
 # C) Factores de inflación de la varianza
 fit <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
-           caliz.inf + labio.sup + labio.inf, data = dat)
+          caliz.inf + labio.sup + labio.inf, data = dat)
 vif(fit)	
 
 # Decisión: usar el criterio de r < 0.7 y parcialmente los vif,
 # descartamos el cáliz inferior y construimos un nuevo modelo
 
-fit2 <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat)
+fit2 <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
+           labio.sup + labio.inf, data = dat)
 summary(fit2)
 anova (fit2)
 
@@ -64,8 +65,11 @@ vif(fit2)
 # Selección de modelos. Best subset selection.
 # Construyendo todos los modelos posibles
 # (pueden utilizarse forward o backward cambiando  el argumento method)
+
 library(leaps)
-BS.fit <- regsubsets(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat, method = "exhaustive")
+BS.fit <- regsubsets(azucar ~ largo.l.tot + largo.tubo + caliz.sup +
+                     caliz.med + labio.sup + labio.inf, data = dat, 
+                     method = "exhaustive")
 BS.summary <- summary(BS.fit)
 BS.summary
 
@@ -87,10 +91,12 @@ n<-nrow(dat)
 stepAIC(fit2, direction="both", k=log(n))#ajustar el modelo final
 
 # Model averaging. Uso básico de MuMIn
+
 library(arm)
 library(MuMIn)
 
-global <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat, na.action = na.fail)
+global <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
+             labio.sup + labio.inf, data = dat, na.action = na.fail)
 
 std.model <- standardize(global, standardize.y = FALSE)
 
@@ -107,7 +113,8 @@ summary(AVG)
 # Lasso
 
 library(glmnet)
-x <- model.matrix(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat)[,-1]
+x <- model.matrix(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
+                  labio.sup + labio.inf, data = dat)[,-1]
 y <- dat$azucar
 
 lasso.mod <- glmnet(x, y, alpha = 1)
