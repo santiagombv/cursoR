@@ -1,6 +1,6 @@
 ##Caso 1. 
-fum <- read.table("C:/RD/fumadores.txt", header = TRUE)
-#  fum <- read.table(file=file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+fum <- read.table(".../fumadores.txt", header = TRUE)
 fum 
 
 #inspección de datos 1: gráfico tipo Cleveland
