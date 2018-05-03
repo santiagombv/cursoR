@@ -98,7 +98,8 @@ jack.after.boot(boot.reg, index = 3)
 jack.after.boot(boot.reg, index = 4) 
 
 # la línea horizontal es una medida de la influencia de cada observación
-# la línea vertical presenta los percentiles 5, 10, 16, 50, 84, 90 y 95 de # la distribución del coeficiente
+# la línea vertical presenta los percentiles 5, 10, 16, 50, 84, 90 y 95 de 
+# la distribución del coeficiente
 
 # Otro plot de diagnóstico alternativo puede realizarse con plot
 # esto nos puede ayudar a decidir el tipo de intervalo
