@@ -27,7 +27,7 @@ library(boot)
 
 # PASO 1: crear una función para "bootstrapear"
 REG <- function(datos, indices) {
-  newdata <- datos[indices, ]  #sobre esta línea actuará la función boot	
+  newdata <- datos[indices, ]  # sobre esta línea actuará la función boot	
   fit <- lm(semillas ~ flores + nectar + tamano, data = newdata)
   fit$coeff
 }
@@ -39,7 +39,7 @@ boot.reg <- boot(ulm, REG, 9999)
 boot.reg
 summary(boot.reg)
 	
-#histograma de los resultados
+# histograma de los resultados
 layout(matrix(1:4, 2, 2))
 hist(boot.reg$t[, 1]) 
 abline(v = Bobs[1], col="red") 
@@ -52,14 +52,14 @@ abline(v = Bobs[4], col = "red")
 layout(1)
 
 ## PASO 3: intervalos de confianza
-?boot.ci #examinar la ayuda
+?boot.ci # examinar la ayuda
 
 # prueba, los 5 intervalos distintos que calcula R
 int3.95<-boot.ci(boot.reg, conf = 0.90, type = "all", index = 3)
 int3.95
 
 # Examinamos que el intervalo de confianza NO incluya al 0
-#(nos salteamos la significancia de la ordenada al origen)
+# (nos salteamos la significancia de la ordenada al origen)
 # intervalos para la pendiente de "flores"
 int2.90 <- boot.ci(boot.reg, conf = 0.90, type = "bca", index = 2)
 int2.95 <- boot.ci(boot.reg, conf = 0.95, type = "bca", index = 2)
