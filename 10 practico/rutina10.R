@@ -1,7 +1,7 @@
 ##Caso1
 
-ulm <- read.table("C:/RD/ulmifolia.txt", header = TRUE)
-#  ulm <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+ulm <- read.table(".../ulmifolia.txt", header = TRUE)
 
 reg <- lm(semillas ~ flores + nectar + tamano, data = ulm)
 summary(reg)
@@ -31,7 +31,7 @@ boot.reg <- boot(ulm, REG, 9999)
 boot.reg
 summary(boot.reg)
 
-#histograma de los resultados
+# histograma de los resultados
 layout(matrix(1:4, 2, 2))
 hist(boot.reg$t[, 1]) 
 abline(v = Bobs[1], col="red") 
@@ -51,7 +51,7 @@ int3.95<-boot.ci(boot.reg, conf = 0.90, type = "all", index = 3)
 int3.95
 
 # Examinamos que el intervalo de confianza NO incluya al 0
-#(nos salteamos la significancia de la ordenada al origen)
+# (nos salteamos la significancia de la ordenada al origen)
 # intervalos para la pendiente de "flores"
 int2.90 <- boot.ci(boot.reg, conf = 0.90, type = "bca", index = 2)
 int2.95 <- boot.ci(boot.reg, conf = 0.95, type = "bca", index = 2)
