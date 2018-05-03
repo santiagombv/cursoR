@@ -84,7 +84,9 @@ matriz2
 
 ##Preparación e ingreso de datos: la función read.table
 
-# opción 1 con ruta completa
+# la función read.table
+# opción 1 con ruta completa (notar orientación de las barras /)
+# en este caso asumimos que se encuentra en el directorio RD
 datos <- read.table("C:/RD/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"
@@ -96,13 +98,17 @@ datos <- read.table("peces1.txt", header=TRUE)
 # desventaja: requiere que el humano piense!
 datos <- read.table(file.choose(), header=TRUE)
 
+# opción 4 la función read.csv
+datos <- read.csv("C:/RD/peces1.csv", header=TRUE)
+
 # los datos ya están guardados, pero si queremos verlos...
-datos    #no siempre es buena idea, sobre todo si son muchos
+datos    # no siempre es buena idea, sobre todo si son muchos
 
 # una forma práctica de ver solo las primeras filas es con head 
 head(datos)
 
 # o echar un vistazo a la estructura de los datos
+# str informa sobre la estructura de cualquier objeto
 str(datos)
 
 # Información básica del set de datos
@@ -208,7 +214,6 @@ ldat[["B"]] # indexacion especial
 
 ##Funciones para extraer información de una columna o de un vector
 
-mode(seq1)
 class(xx)
 length(seq1)
 dim(matriz1)
