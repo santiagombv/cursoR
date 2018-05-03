@@ -98,7 +98,7 @@ sudo apt-get upgrade
 -----------------------------------------------------------------------------------------------------------------
 
 > **Nota 1**: en algunas versiones de Windows, el usuario no puede modificar las carpetas contenidas en "Archivos de programas". En ese caso, los paquetes no se guardarán correctamente y se borrarán cada vez que reinicie la computadora. Para evitarlo, localice la carpeta "R" dentro de los Archivos de programa, selecciónela con el botón derecho del mouse, abra la opción Propiedades - Seguridad, y asegúrese de permitir "control total" a todos los usuarios.  
-> **Nota 2**: para este curso, se requieren los siguientes paquetes extra: *glmnet*, *ggplot2*, *lattice*, *rgl*, *sciplot*, *car*, *arm*, *MuMIn*, *devtools* y todas las dependencias necesarias.  
+> **Nota 2**: para este curso, se requieren los siguientes paquetes extra: *glmnet*, *ggplot2*, *lattice*, *rgl*, *sciplot*, *car*, *arm*, *MuMIn*, *devtools*, *leaps* y todas las dependencias necesarias.  
 > **Nota 3**. Se recomienda además utilizar la última versión de R por compatibilidad con algunas rutinas.  
 > **Nota 4**: Para este curso utilizaremos RStudio (descargar desde http://www.rstudio.com/).   
 
