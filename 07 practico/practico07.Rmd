@@ -2,7 +2,7 @@
 title: "Práctico 7. Construyendo Rutinas."
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 El objetivo de este trabajo es practicar la escritura de una rutina, la cual debe incluir el ingreso de datos, la carga de paquetes (en caso de ser necesario), la modificación de variables (en caso de ser necesario), exploración gráfica de los datos, planteo de diferentes modelos, comprobación de supuestos y el modelo final elegido. Utilizaremos R Studio para construir la rutina, la cual guardaremos con la extensión .R.     

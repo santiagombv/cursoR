@@ -2,7 +2,7 @@
 title: 'Práctico 6. Otros paquetes gráficos: *lattice* y *ggplot2*.'
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 ##Gráficos del paquete *lattice*.
@@ -11,10 +11,10 @@ El paquete lattice ofrece flexibilidades especiales para representar interaccion
 ```{r, eval=FALSE}
 library (lattice)
 
-fum <- read.table("C:/RD/fumadores.txt", header=T)
-#  fum <- read.table(file=file.choose(), header=TRUE)
+# complete la ruta al directorio en ...
+fum <- read.table(".../fumadores.txt", header=T)
 
-#gráficos bivariados
+# gráficos bivariados
 # Notar que ingresar los datos como una fórmula es más eficiente
 xyplot(ca.pulm ~ alt, data = fum)
 xyplot(ca.pulm ~ alt | edad, data = fum)
@@ -49,12 +49,11 @@ Un gráfico de *ggplot2* debe contar de al menos estos tres elementos:
 * geoms: objetos geométricos como puntos, barras, líneas, etc. En la práctica indica el tipo de gráfico a realizar.  
 
 ```{r, eval=FALSE}
-fum <- read.table("C:/RD/fumadores.txt", header=T)
-#  fum <- read.table(file=file.choose(), header=TRUE)
-
 library(ggplot2)
 
-#utilizando ggplot
+# complete la ruta al directorio en ...
+fum <- read.table(".../fumadores.txt", header=T)
+
 ggplot(data = fum, aes(x = edad, y = ca.pulm)) + geom_point()
 
 #notar como los gráficos se van acumulando

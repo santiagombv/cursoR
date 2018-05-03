@@ -62,12 +62,21 @@ layout(1)
 vif(fit2)
 
 # Selección de modelos. Best subset selection.
+# Construyendo todos los modelos posibles
+# (pueden utilizarse forward o backward cambiando  el argumento method)
+library(leaps)
+BS.fit <- regsubsets(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat, method = "exhaustive")
+BS.summary <- summary(BS.fit)
+BS.summary
 
-# anova puede usarse para comparar dos modelos anidados
-fit2<-lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data=dat)
-fit3<-lm(azucar ~ largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data=dat) #sin largo.l.tot
+plot(BS.summary$cp, xlab = "número de variables", ylab = "Cp", type ="l")
+plot(BS.summary$bic, xlab = "número de variables", ylab = "BIC", type ="l")
 
-anova(fit3, fit2)
+plot(BS.fit, scale = "Cp")
+plot(BS.fit, scale = "bic")
+
+coef(BS.fit, 3)
+coef(BS.fit, 1)
 
 # stepAIC (MASS) realiza una búsqueda automática del mejor modelo 
 library(MASS) 
@@ -98,7 +107,6 @@ summary(AVG)
 # Lasso
 
 library(glmnet)
-
 x <- model.matrix(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med + labio.sup + labio.inf, data = dat)[,-1]
 y <- dat$azucar
 
@@ -106,7 +114,7 @@ lasso.mod <- glmnet(x, y, alpha = 1)
 plot(lasso.mod)
 coef(lasso.mod, s = 0.1) # ejemplo
 
-# Cross validation. Lambda
+# Cross validation.
 grid <- 10^seq(10, -10, length = 100)
 cv.out <- cv.glmnet(x, y, alpha = 1, nfolds = 10, lambda = grid)
 plot(cv.out)
@@ -117,13 +125,6 @@ plot(cv.out)
 
 cv.out$lambda.min
 coef(cv.out, s = "lambda.min")
-
-# Nested Cross Validation
-
-bestlam <- cv.out$lambda.min
-lasso.pred <- predict (lasso.mod, s = bestlam, newx = x[test,])
-mean((lasso.pred-y.test)^2))
-
 ```
 
 ##Ejercicios.

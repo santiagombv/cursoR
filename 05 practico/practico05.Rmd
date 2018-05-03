@@ -2,7 +2,7 @@
 title: "Práctico 5. Manejo de gráficos y representación gráfica de modelos lineales."
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 ##Comandos gráficos básicos
@@ -12,8 +12,8 @@ output:
 
 ##Uso de la función plot.
 ```{r, eval=FALSE}
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file=file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+datos <- read.table(".../cyclop.txt", header = TRUE)
 
 # UNA VARIABLE
 plot(datos$nectario) #gráfico tipo Cleveland
@@ -144,8 +144,8 @@ par(mfcol=c(1,1)) #deshacer lo anterior
 
 ##Gráficos de cajas.
 ```{r, eval=FALSE}
-peces <- read.table("C:/RD/peces.txt", header = TRUE)
-#  peces <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+peces <- read.table(".../peces.txt", header = TRUE)
 peces$Species <- as.factor(peces$Species)
 
 #dos formas alternativas de hacer box-plots
@@ -155,8 +155,8 @@ boxplot(Weight ~ Species, data = peces, col = "light blue")
 
 ##Interacciones entre variables categóricas.
 ```{r, eval=FALSE}
-bival <- read.table("C:/RD/bivalvos.txt", header = TRUE)
-#  bival <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+bival <- read.table(".../bivalvos.txt", header = TRUE)
 
 # modelo 
 fit <- lm(huevos ~ densidad*estacion, data = bival)
@@ -183,8 +183,8 @@ lineplot.CI(x.factor = densidad, response = huevos, group = estacion,
 
 ##Gráficos a partir de predichos.
 ```{r, eval=FALSE}
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+datos <- read.table(".../cyclop.txt", header = TRUE)
 
 fit.c <- lm(pol.exp ~ flores + I(flores^2), data = datos)
 summary(fit.c)
@@ -213,8 +213,8 @@ points(FLO2, Y3, type = "l")
 ##Interacciones de variables continuas: superficies.
 Se necesitan datos uniformemente espaciados para construir superficies. Existen alternativas no paramétricas que "suavizan" los datos para darnos una idea mejor de la forma "real" de una superficie, en este caso lo haremos "a mano" usando un modelo lineal.   
 ```{r, eval=FALSE}
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+datos <- read.table(".../cyclop.txt", header = TRUE)
 
 fit <- lm(formula = pol.exp ~ flores * nectario + I(flores^2) + I(nectario^2), data = datos)
 
