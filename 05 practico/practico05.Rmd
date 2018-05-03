@@ -261,7 +261,7 @@ persp(x = FLO, y = NEC, z = Z2,
       zlab = "polinarios",
       theta = -45,                 #theta: ángulo de giro horizontal
       phi = 20,                    #phi: ángulo de rotación vertical
-      ticktype = "detailed",       #para que ponga el valor de los ejes
+      ticktype = "detailed"       #para que ponga el valor de los ejes
 ) -> res                      #guardo la "forma" del gráfico 
 
 #agregar de los puntos observados con la funcion trans3d

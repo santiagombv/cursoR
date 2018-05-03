@@ -1,6 +1,6 @@
 ##Uso de la función plot.
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file=file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+datos <- read.table(".../cyclop.txt", header = TRUE)
 
 # UNA VARIABLE
 plot(datos$nectario) #gráfico tipo Cleveland
@@ -128,8 +128,8 @@ par(mfcol=c(1,1)) #deshacer lo anterior
 #############################################################
 
 ##Gráficos de cajas.
-peces <- read.table("C:/RD/peces.txt", header = TRUE)
-#  peces <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+peces <- read.table(".../peces.txt", header = TRUE)
 peces$Species <- as.factor(peces$Species)
 
 #dos formas alternativas de hacer box-plots
@@ -139,8 +139,8 @@ boxplot(Weight ~ Species, data = peces, col = "light blue")
 #############################################################
 
 ##Interacciones entre variables categóricas.
-bival <- read.table("C:/RD/bivalvos.txt", header = TRUE)
-#  bival <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+bival <- read.table(".../bivalvos.txt", header = TRUE)
 
 # modelo 
 fit <- lm(huevos ~ densidad*estacion, data = bival)
@@ -167,8 +167,8 @@ lineplot.CI(x.factor = densidad, response = huevos, group = estacion,
 ############################################################
 
 ##Gráficos a partir de predichos.
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+datos <- read.table(".../cyclop.txt", header = TRUE)
 
 fit.c <- lm(pol.exp ~ flores + I(flores^2), data = datos)
 summary(fit.c)
@@ -195,9 +195,9 @@ points(FLO2, Y3, type = "l")
 
 #############################################################
 
-##Interacciones de variables continuas: superficies.
-datos <- read.table("C:/RD/cyclop.txt", header = TRUE)
-#  datos <- read.table(file = file.choose(), header = TRUE)
+## Interacciones de variables continuas: superficies.
+# complete la ruta al directorio en ...
+datos <- read.table(".../cyclop.txt", header = TRUE)
 
 fit <- lm(formula = pol.exp ~ flores * nectario + I(flores^2) + I(nectario^2), data = datos)
 
@@ -244,7 +244,7 @@ persp(x = FLO, y = NEC, z = Z2,
       zlab = "polinarios",
       theta = -45,                 #theta: ángulo de giro horizontal
       phi = 20,                    #phi: ángulo de rotación vertical
-      ticktype = "detailed",       #para que ponga el valor de los ejes
+      ticktype = "detailed"       #para que ponga el valor de los ejes
 ) -> res                      #guardo la "forma" del gráfico 
 
 #agregar de los puntos observados con la funcion trans3d
