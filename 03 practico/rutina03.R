@@ -1,6 +1,7 @@
 ##Caso 1. 
-dat <- read.table("C:/RD/moscas.txt", header = TRUE)
-#  dat <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+dat <- read.table(".../moscas.txt", header = TRUE)
+
 plot(dat$torax)
 plot(dat$vida)
 plot(dat$trat,dat$vida)
