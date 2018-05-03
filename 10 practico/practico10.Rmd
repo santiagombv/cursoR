@@ -2,14 +2,14 @@
 title: 'Práctico 10: Bootstrap.'
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 ##Caso1
 Se aplicará un bootstrap para establecer los intervalos de confianza de los coeficientes de regresión de un modelo lineal entre el éxito reproductivo de Turnera ulmifolia L. (medido como número de semillas) y características de sus flores (número de flores, producción de néctar y tamaño medio de la corola). 
 ```{r, eval=FALSE}
-ulm <- read.table("C:/RD/ulmifolia.txt", header = TRUE)
-#  ulm <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+ulm <- read.table(".../ulmifolia.txt", header = TRUE)
 
 reg <- lm(semillas ~ flores + nectar + tamano, data = ulm)
 summary(reg)

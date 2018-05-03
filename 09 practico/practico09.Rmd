@@ -2,15 +2,15 @@
 title: 'Práctico 9: Modelos Randomizados y Modelos Nulos.'
 output: 
   html_document:
-    highlight: zenburn
+    highlight: tango
 ---
 
 ##Caso 1. Modelos lineales randomizados.
 Se intenta conocer si la cantidad de grasa en la leche de vaca es influida por su raza (Ayrshire, Canadian, Guernsey, Holstein-Fresian o Jersey). Se plantea en primer lugar un modelo lineal general. Ante la violación de los supuestos del modelo se realizará un modelo randomizado construyendo una tabla ad-hoc de pseudo-F.
 
 ```{r, eval=FALSE}
-vacas <- read.table("C:/RD/vacas.txt", header = TRUE)
-#  vacas <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+vacas <- read.table(".../vacas.txt", header = TRUE)
 
 fit <- lm(fat ~ breed, data = vacas)
 summary(fit)
@@ -55,8 +55,8 @@ P.breed
 ##Caso 2: Un Monte Carlo sencillo.
 Se intenta probar si la distribución espacial de árboles en un área de 4 km2 se aparta de una distribución aleatoria uniforme.
 ```{r, eval=FALSE}
-esp <- read.table("C:/RD/espMC.txt", header = TRUE)
-#  esp <- read.table(file = file.choose(), header = TRUE)
+# complete la ruta al directorio en ...
+esp <- read.table(".../espMC.txt", header = TRUE)
 plot(y ~ x, data=esp)
 
 #calcular las distancias euclídeas entre las filas de la base de datos
