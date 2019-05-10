@@ -239,13 +239,13 @@ persp(x = FLO, y = NEC, z = Z2)
 persp(x = FLO, y = NEC, z = Z2, 
       border = "slateblue4",       #border: color de la rejilla  
       col = "aquamarine2",         #col: color de la superficie
-      xlab = "nectario",           #xlab, ylab, zlab: etiquetas ejes
-      ylab = "número de flores", 
+      xlab = "número de flores",   #xlab, ylab, zlab: etiquetas ejes
+      ylab ="nectario",
       zlab = "polinarios",
       theta = -45,                 #theta: ángulo de giro horizontal
       phi = 20,                    #phi: ángulo de rotación vertical
-      ticktype = "detailed"       #para que ponga el valor de los ejes
-) -> res                      #guardo la "forma" del gráfico 
+      ticktype = "detailed"        #para que ponga el valor de los ejes
+) -> res                           #guardo la "forma" del gráfico 
 
 #agregar de los puntos observados con la funcion trans3d
 pru<-trans3d(x = datos$flores, y = datos$nectario, z = datos$pol.exp, pmat = res)
