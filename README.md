@@ -1,4 +1,4 @@
-![header_R](/images/cactus.png)
+![fig1](/images/cactus.png)
 
 ### [Dr. Santiago Benitez-Vieyra](http://santiagombv.github.io/) 
 #### *Intituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)*
