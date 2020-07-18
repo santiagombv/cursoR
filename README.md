@@ -6,3 +6,6 @@
 
 ### DICTADO ONLINE EN FECHA A CONFIRMAR 
 
+### Clases prácticas   
+
++ [Instalación y presentación del curso](santiagombv.github.io/cursoR/instalacion/instalacion.html)   
