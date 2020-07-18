@@ -8,4 +8,4 @@
 
 ### Clases prácticas   
 
-+ [Instalación y presentación del curso](santiagombv.github.io/cursoR/instalacion/instalacion.html)   
++ [Instalación y presentación del curso](instalacion/instalacion.html)   
