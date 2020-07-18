@@ -36,6 +36,7 @@ Este curso está orientado al análisis de datos biológicos, particularmente en
 El contenido teórico de este curso comprende introducción al aprendizaje estadístico supervisado, modelos lineales generales, selección de modelos y regularización, y métodos de remuestreo: bootstrap y permutaciones.   
 También veremos la construccíon de gráficos a través de los paquetes *graphics*, *lattice* y *ggplot2* y la construcción de funciones.   
 
+--- 
 
 ## Instalación de R y de sus paquetes en Windows
 
@@ -73,6 +74,8 @@ install.packages("installr")
 library(installr)
 updateR() #seguir las instrucciones que aparezcan
 ```
+
+--- 
 
 ## Instalación de R y de sus paquetes en Ubuntu
 
