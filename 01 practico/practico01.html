@@ -431,9 +431,7 @@ di
 
 # crear vectores. La función concatenar c
 vector &lt;- c(1, 2, 3, 4)
-vector &lt;- c(1:4)
-vector &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;)
-vector &lt;- c(&quot;1&quot;, &quot;a&quot;, &quot;2&quot;, &quot;b&quot;) </code></pre>
+vector &lt;- c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;)</code></pre>
 </div>
 <div id="funciones-básicas-creación-de-vectores-secuencias-y-matrices" class="section level2">
 <h2>Funciones básicas: creación de vectores, secuencias y matrices</h2>
@@ -452,20 +450,8 @@ xx
 seq1 &lt;- c(1:50)  # el símbolo : indica desde:hasta
 seq1
 
-seq2 &lt;- seq(50) # estructura: desde uno hasta (...)
+seq2 &lt;- seq(from = 0, to = 0.99, by = 0.01) # argumentos explícitos
 seq2
-
-seq3 &lt;- seq(8,50) # estructura: (desde..., hasta...)
-seq3
-
-seq4 &lt;- seq(from = 0, to = 0.99, by = 0.01) # argumentos explícitos
-seq4
-
-seq5 &lt;- seq(0, 0.99, 0.01) # argumentos implícitos
-seq5
-
-seq6 &lt;- seq(5, 10, length.out=20)
-seq6
 
 # combinando vectores de a pares: cbind y rbind
 az &lt;- cbind(seq1, xx)
@@ -477,11 +463,7 @@ za
 # construyendo una matriz: matrix()
 m &lt;- c(1:20)
 matriz1 &lt;- matrix(m, 4, 5) # (vector a usar, filas, columnas) 
-matriz1
-
-# notar que es exactamente igual a 
-matriz2 &lt;- matrix(c(1:20), 4, 5)
-matriz2</code></pre>
+matriz1</code></pre>
 </div>
 <div id="preparación-e-ingreso-de-datos-las-funciones-read.table-y-read.csv." class="section level2">
 <h2>Preparación e ingreso de datos: las funciones <em>read.table</em> y <em>read.csv</em>.</h2>
@@ -540,8 +522,6 @@ datos[, &quot;grupo&quot;]
 # grupos de columnas
 datos[, 1:3]                         
 datos[, c(&quot;grupo&quot;, &quot;largo.a&quot;)]
-names &lt;- c(&quot;grupo&quot;, &quot;largo.b&quot;)
-datos[, names]
 
 # filas y datos individuales
 datos[2, ]                           
@@ -555,20 +535,8 @@ datos[datos$largo.a &gt; 15 &amp; datos$grupo == &quot;A&quot;, ]
 # Indexación de vectores
 vec &lt;- datos$largo.a                 
 vec[1]
-vec[-1]
 vec[vec &gt; 15]
-
-# omitir todos los NA de una base de datos
-datos2 &lt;- na.omit(datos)
-datos2
-
-# La mayoría de las funciones cuentan con dos modos alternativos de 
-# escribirse. En el modo &quot;fórmula&quot; existe un argumento &quot;data&quot; que evita  
-# indexar los nombres de las columnas usadas.
-
-plot(datos$largo.a, datos$largo.b)      #modo por default: plot(x,y)
-
-plot(largo.b ~ largo.a, data = datos)   #modo fórmula: plot(y~x, data)</code></pre>
+</code></pre>
 </div>
 <div id="modificación-y-creación-de-columnas." class="section level2">
 <h2>Modificación y creación de columnas.</h2>
@@ -612,13 +580,11 @@ dat2
 # Crear una lista de bases de datos
 ldat &lt;- split(datos, f = datos$grupo) 
 ldat
-ldat[[&quot;B&quot;]] # indexacion especial</code></pre>
+ldat[[&quot;B&quot;]] # indexacion d listas</code></pre>
 </div>
-<div id="funciones-para-extraer-información-de-una-columna-o-de-un-vector" class="section level2">
-<h2>Funciones para extraer información de una columna o de un vector</h2>
-<pre class="r"><code>class(xx)
-length(seq1)
-dim(matriz1)
+<div id="funciones-para-extraer-información-de-un-vector" class="section level2">
+<h2>Funciones para extraer información de un vector</h2>
+<pre class="r"><code>length(seq1)
 max(datos$largo.a)
 which.max(datos$largo.a)
 min(datos$largo.a)
@@ -626,7 +592,7 @@ which.min(datos$largo.a)</code></pre>
 </div>
 <div id="funciones-estadísticas-básicas" class="section level2">
 <h2>Funciones estadísticas básicas</h2>
-<p>Se detallan abajo algunas como la media, varianza, desvío estándar, etc. En general si cualquiera de ellas se aplica sobre datos que contienen NA el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función na.omit.</p>
+<p>Se detallan abajo algunas como la media, varianza, desvío estándar, etc. En general si cualquiera de ellas se aplica sobre datos que contienen NA el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función <em>na.omit</em>.</p>
 <pre class="r"><code># media
 M &lt;- mean(datos$largo.a, na.rm = TRUE)
 M
@@ -659,7 +625,7 @@ summary(datos)
 MG&lt;-aggregate(datos$largo.a, by=list(datos$grupo), FUN=mean, na.rm=TRUE)
 MG</code></pre>
 <blockquote>
-<p>En RStudio las dos ventanas principales contienen la rutina (con el archivo sobre el cual estamos trabajando) y la consola de R. <strong>SIEMPRE</strong> trabajar sobre el archivo, no sobre la consola.</p>
+<p>En RStudio las dos ventanas principales contienen la rutina (con el archivo sobre el cual estamos trabajando) y la consola de R. <strong>SIEMPRE</strong> trabajar sobre la rutina, no sobre la consola.</p>
 </blockquote>
 <blockquote>
 <p>El símbolo <strong>&gt;</strong> en la consola indica que R está listo para recibir una orden. En caso de que aparezca <strong>+</strong> en su lugar, indica que no se ha completado una orden (la razón más común es no haber cerrado un paréntesis). Una manera de solucionarlo es colocarse en la consola y presionar Esc.</p>

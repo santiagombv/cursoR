@@ -1,5 +1,5 @@
 ---
-title: "Introducción e instalación de R"
+title: "Presentación del curso e instalación de R"
 output: html_document
 ---
 
