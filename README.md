@@ -8,7 +8,7 @@
 ### Cronograma   
 
 * Módulo 1   
-  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teorico/teor1.html) VIDEO
+  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) VIDEO
   + Meet: Resolución de problemas de instalación, instalación de paquetes, explicación básica de RStudio. [PÁGINA](00 instalacion/instalacion.html) - ENLACE A LA SALA   
   + Práctico guiado: Introducción al lenguaje. Ingreso y manipulación de datos. [PÁGINA](01 practico/practico01.html) VIDEO   
   + Trabajo práctico: preparación de datos, ingreso y manipulación. 
