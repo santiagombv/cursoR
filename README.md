@@ -14,7 +14,7 @@
   + Trabajo práctico: preparación de datos, ingreso y manipulación. 
   
 * Módulo 2   
-  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. PRESENTACION - VIDEO   
+  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO   
   + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
