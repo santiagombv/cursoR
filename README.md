@@ -20,13 +20,13 @@
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
 
 * Módulo 3
-  + Teórico: Regresión lineal múltiple e interacciones. PRESENTACIÓN - VIDEO   
+  + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - VIDEO   
   + Práctico guiado: Modelos lineales múltiples I. [PÁGINA](03 practico/practico03.html) - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
 
 * Módulo 4
-  + Teórico: Colinealidad, selección de modelos y regularización. PRESENTACIÓN - VIDEO   
+  + Teórico: Colinealidad, selección de modelos y regularización. [PRESENTACIÓN](teoricos/teor4.html) - VIDEO   
   + Práctico guiado: Modelos lineales múltiples II. [PÁGINA](04 practico/practico04.html) - VIDEO   
   + Trabajo práctico: Ejercicios  
   + Meet: Resolución de ejercicios. ENLACE A LA SALA   
@@ -52,13 +52,13 @@
   + Meet: Resolución de ejercicios. ENLACE A LAS SALA
 
 * Módulo 9   
-  + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. PRESENTACIÓN - VIDEO   
+  + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - VIDEO   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - VIDEO   
   + Trabajo práctico: Ejercicios.   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA
 
 * Módulo 10   
-  + Teórico: Bootstrap. PRESENTACIÓN - VIDEO   
+  + Teórico: Bootstrap. [PRESENTACIÓN]((teoricos/teor6.html)) - VIDEO   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA
