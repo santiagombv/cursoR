@@ -58,7 +58,7 @@
   + Meet: Resolución de ejercicios. ENLACE A LA SALA
 
 * Módulo 10   
-  + Teórico: Bootstrap. [PRESENTACIÓN]((teoricos/teor6.html)) - VIDEO   
+  + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - VIDEO   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA
