@@ -14,13 +14,13 @@
   + Trabajo práctico: preparación de datos, ingreso y manipulación. 
   
 * Módulo 2   
-  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO   
+  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1NUa53L-mjdWHKwGldTXcYZLZ3owJiZp9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1bCY-tqY-r2FgBkAdQWSx0CjRzGwMWeFr/view?usp=sharing) - parte 3   
   + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
 
 * Módulo 3
-  + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - VIDEO   
+  + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - [VIDEO](https://drive.google.com/file/d/1GcwB-rH6LuN8uOjjdWEw4pfcuOGAt6dl/view?usp=sharing)   
   + Práctico guiado: Modelos lineales múltiples I. [PÁGINA](03 practico/practico03.html) - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
