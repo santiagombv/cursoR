@@ -1,11 +1,15 @@
 ![fig1](/images/cactus.png)
 
+### INTRODUCCIÓN AL LENGUAJE R. MODELOS LINEALES Y FUNDAMENTOS DE PROGRAMACIÓN
 
-### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)
+#### Dr. Santiago Benitez-Vieyra   
+#### Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)
 
-### DICTADO ONLINE EN FECHA A CONFIRMAR 
+**Inicio del curso online: 5 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca** 
 
-### Cronograma   
+#### Video de presentación
+
+#### Cronograma   
 
 * Módulo 1   
   + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) VIDEO
@@ -14,7 +18,7 @@
   + Trabajo práctico: preparación de datos, ingreso y manipulación. 
   
 * Módulo 2   
-  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1NUa53L-mjdWHKwGldTXcYZLZ3owJiZp9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1bCY-tqY-r2FgBkAdQWSx0CjRzGwMWeFr/view?usp=sharing) - parte 3   
+  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1NUa53L-mjdWHKwGldTXcYZLZ3owJiZp9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1bCY-tqY-r2FgBkAdQWSx0CjRzGwMWeFr/view?usp=sharing) - [parte 3](https://drive.google.com/file/d/1e7kjkumq6HYSmRqBb0YY7zG9eQ27MvKR/view?usp=sharing)   
   + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
@@ -26,7 +30,7 @@
   + Meet: Resolución de ejercicios. ENLACE A LA SALA.
 
 * Módulo 4
-  + Teórico: Colinealidad, selección de modelos y regularización. [PRESENTACIÓN](teoricos/teor4.html) - VIDEO   
+  + Teórico: Colinealidad, selección de modelos y regularización. [PRESENTACIÓN](teoricos/teor4.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1fO1OJVMJoOqxESgpkvMQwgtz4m4Nfgz4/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/19YUuSKLFMqaFmmySFpynbAf4vYI2JGSi/view?usp=sharing)   
   + Práctico guiado: Modelos lineales múltiples II. [PÁGINA](04 practico/practico04.html) - VIDEO   
   + Trabajo práctico: Ejercicios  
   + Meet: Resolución de ejercicios. ENLACE A LA SALA   
@@ -52,13 +56,13 @@
   + Meet: Resolución de ejercicios. ENLACE A LAS SALA
 
 * Módulo 9   
-  + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - VIDEO   
+  + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://drive.google.com/file/d/11fQkW_3b3q4qZIHjoGvC11qdgiEx6-mo/view?usp=sharing)   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - VIDEO   
   + Trabajo práctico: Ejercicios.   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA
 
 * Módulo 10   
-  + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - VIDEO   
+  + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://drive.google.com/file/d/1ixkb-cWuZVNIHAQMG_FJ9D_45rzEgMBu/view?usp=sharing)   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - VIDEO   
   + Trabajo práctico: Ejercicios   
   + Meet: Resolución de ejercicios. ENLACE A LA SALA
