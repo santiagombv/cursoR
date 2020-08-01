@@ -1,6 +1,4 @@
 #############################################################
-##Cuatro símbolos básicos: # <- ? c
-
 # El símbolo # desactiva el espacio a su derecha.
 # Es útil para poner aclaraciones en nuestras rutinas.
 
@@ -8,8 +6,8 @@
 n <- 15  
 n   #escribir el nombre de un objeto es "invocarlo"
 
-# al usar de nuevo el mismo nombre el objeto anterior se pierde
-n <- 46 + 12      		 
+# al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisar")
+n <- 46 + 12  				 
 n
 
 # los caracteres categóricos necesitan ser ingresados con comillas
@@ -17,7 +15,7 @@ di <- "A"
 di
 
 # Obtener ayudas, el símbolo ?
-#si tenemos dudas sobre el funcionamiento de una función
+# si tenemos dudas sobre el funcionamiento de una función
 ? mean
 ? lm
 
@@ -25,22 +23,19 @@ di
 # tarea, puede realizarse una búsqueda con ?? (en los paquetes activos)
 ?? "linear models"
 
-#############################################################
-
 # crear vectores. La función concatenar c
 vector <- c(1, 2, 3, 4)
-vector <- c(1:4)
 vector <- c("a", "b", "c", "d")
-vector <- c("1", "a", "2", "b") 
+
+#############################################################
 
 ##Funciones básicas: creación de vectores, secuencias y matrices
 
-### vectores ###
 # Ya vimos c concatenar
 vec <- c(1, 4, 6, 3, 7)
 vec
 
-# vectores de repetición. rep(lo_que_queremos_repetir, cuántas veces)
+# vectores de repetición. rep(lo_que_queremos_repetir, cuantas veces)
 # esta función tiene dos argumentos, separados por una coma
 xx <- rep("A", 50) 
 xx
@@ -49,20 +44,8 @@ xx
 seq1 <- c(1:50)  # el símbolo : indica desde:hasta
 seq1
 
-seq2 <- seq(50) # estructura: desde uno hasta (...)
+seq2 <- seq(from = 0, to = 0.99, by = 0.01) # argumentos explícitos
 seq2
-
-seq3 <- seq(8,50) # estructura: (desde..., hasta...)
-seq3
-
-seq4 <- seq(from = 0, to = 0.99, by = 0.01) # argumentos explícitos
-seq4
-
-seq5 <- seq(0, 0.99, 0.01) # argumentos implícitos
-seq5
-
-seq6 <- seq(5, 10, length.out=20)
-seq6
 
 # combinando vectores de a pares: cbind y rbind
 az <- cbind(seq1, xx)
@@ -73,12 +56,8 @@ za
 
 # construyendo una matriz: matrix()
 m <- c(1:20)
-matriz1 <- matrix(m, 4, 5) #(vector a usar, filas, columnas) 
+matriz1 <- matrix(m, 4, 5) # (vector a usar, filas, columnas) 
 matriz1
-
-# notar que es exactamente igual a 
-matriz2 <- matrix(c(1:20), 4, 5)
-matriz2
 
 #############################################################
 
@@ -87,7 +66,7 @@ matriz2
 # la función read.table
 # opción 1 con ruta completa (notar orientación de las barras /)
 # en este caso asumimos que se encuentra en el directorio RD
-datos <- read.table("C:/RD/peces1.txt", header=TRUE)
+datos <- read.table("C:/RD/datos/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"
 # o con setwd
@@ -118,7 +97,7 @@ names(datos)    #Nombre de las columnas
 
 #############################################################
 
-##Indexación
+## Indexación
 
 # Para seleccionar una columna del marco de datos utilizamos $
 datos$grupo
@@ -133,8 +112,6 @@ datos[, "grupo"]
 # grupos de columnas
 datos[, 1:3]                         
 datos[, c("grupo", "largo.a")]
-names <- c("grupo", "largo.b")
-datos[, names]
 
 # filas y datos individuales
 datos[2, ]                           
@@ -148,24 +125,11 @@ datos[datos$largo.a > 15 & datos$grupo == "A", ]
 # Indexación de vectores
 vec <- datos$largo.a                 
 vec[1]
-vec[-1]
 vec[vec > 15]
-
-# omitir todos los NA de una base de datos
-datos2 <- na.omit(datos)
-datos2
-
-# La mayoría de las funciones cuentan con dos modos alternativos de 
-# escribirse. En el modo "fórmula" existe un argumento "data" que evita  
-# indexar los nombres de las columnas usadas.
-
-plot(datos$largo.a, datos$largo.b)      #modo por default: plot(x,y)
-
-plot(largo.b ~ largo.a, data = datos)   #modo fórmula: plot(y~x, data)
 
 #############################################################
 
-##Modificación y creación de columnas.
+## Modificación y creación de columnas.
 
 # reemplazo (al usar el mismo nombre) una variable numérica por un factor
 datos$trat
@@ -189,7 +153,7 @@ head(datos)
 
 ############################################################
 
-##Subdivisión de conjuntos de datos
+## Subdivisión de conjuntos de datos
 
 # Símbolos lógicos: 
 # == (igual)
@@ -208,15 +172,13 @@ dat2
 # Crear una lista de bases de datos
 ldat <- split(datos, f = datos$grupo) 
 ldat
-ldat[["B"]] # indexacion especial
+ldat[["B"]] # indexacion d listas
 
 ###################################################################
 
-##Funciones para extraer información de una columna o de un vector
+## Funciones para extraer información de una columna o de un vector
 
-class(xx)
 length(seq1)
-dim(matriz1)
 max(datos$largo.a)
 which.max(datos$largo.a)
 min(datos$largo.a)
