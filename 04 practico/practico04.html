@@ -368,7 +368,7 @@ summary {
 
 <div id="caso-1" class="section level2">
 <h2>Caso 1</h2>
-<p>Se intenta realizar un modelo que prediga el contenido de azúcar en el néctar en flores de Salvia polystachia, a partir de 7 variables morfológicas medidas. Los datos se encuentran en el archivo s_poly.txt.</p>
+<p>Se intenta realizar un modelo que prediga el contenido de azúcar en el néctar en flores de <em>Salvia polystachia</em>, a partir de 7 variables morfológicas medidas. Los datos se encuentran en el archivo s_poly.txt.</p>
 <pre class="r"><code># complete la ruta al directorio en ...
 dat &lt;- read.table(&quot;.../s_poly.txt&quot;, header = TRUE)
 
@@ -386,18 +386,16 @@ pairs(dat)
 library(car)
 
 # A) Gráficos SPLOM
-scatterplotMatrix(~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
-   caliz.inf + labio.sup + labio.inf, #variables a graficar
-   reg.line=lm,            #añadir rectas de regresión a los gráficos
-   smooth=TRUE,            #añadir curvas suavizadas a los gráficos
-   diagonal = &#39;density&#39;,   #gráficos de la diagonal
-   data = dat)             #conjunto de datos 
+scatterplotMatrix(dat, smooth = TRUE, regLine = TRUE)
 
 # B) Matrices de correlación
 CORR &lt;- cor(dat[, c(&quot;largo.l.tot&quot;, &quot;largo.tubo&quot;, &quot;caliz.sup&quot;,
    &quot;caliz.med&quot;, &quot;caliz.inf&quot;, &quot;labio.sup&quot;, &quot;labio.inf&quot;)], 
    use = &quot;complete.obs&quot;) 
 CORR
+
+library(GGally)
+ggcorr(dat, method = c(&quot;pairwise&quot;, &quot;pearson&quot;))
 
 # C) Factores de inflación de la varianza
 fit &lt;- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +

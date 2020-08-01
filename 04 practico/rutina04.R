@@ -16,18 +16,16 @@ pairs(dat)
 library(car)
 
 # A) Gráficos SPLOM
-scatterplotMatrix(~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
-                    caliz.inf + labio.sup + labio.inf, #variables a graficar
-                  reg.line=lm,            #añadir rectas de regresión a los gráficos
-                  smooth=TRUE,            #añadir curvas suavizadas a los gráficos
-                  diagonal = 'density',   #gráficos de la diagonal
-                  data = dat)             #conjunto de datos 
+scatterplotMatrix(dat, smooth = TRUE, regLine = TRUE)
 
 # B) Matrices de correlación
 CORR <- cor(dat[, c("largo.l.tot", "largo.tubo", "caliz.sup",
                     "caliz.med", "caliz.inf", "labio.sup", "labio.inf")], 
             use = "complete.obs") 
 CORR
+
+library(GGally)
+ggcorr(dat, method = c("pairwise", "pearson"))
 
 # C) Factores de inflación de la varianza
 fit <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +

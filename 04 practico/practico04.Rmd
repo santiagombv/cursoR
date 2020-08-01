@@ -9,7 +9,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Caso 1
 
-Se intenta realizar un modelo que prediga el contenido de azúcar en el néctar en flores de Salvia polystachia, a partir de 7 variables morfológicas medidas. Los datos se encuentran en el archivo  s_poly.txt.
+Se intenta realizar un modelo que prediga el contenido de azúcar en el néctar en flores de *Salvia polystachia*, a partir de 7 variables morfológicas medidas. Los datos se encuentran en el archivo  s_poly.txt.
 
 ```R
 # complete la ruta al directorio en ...
@@ -29,18 +29,16 @@ pairs(dat)
 library(car)
 
 # A) Gráficos SPLOM
-scatterplotMatrix(~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
-   caliz.inf + labio.sup + labio.inf, #variables a graficar
-   reg.line=lm,            #añadir rectas de regresión a los gráficos
-   smooth=TRUE,            #añadir curvas suavizadas a los gráficos
-   diagonal = 'density',   #gráficos de la diagonal
-   data = dat)             #conjunto de datos 
+scatterplotMatrix(dat, smooth = TRUE, regLine = TRUE)
 
 # B) Matrices de correlación
 CORR <- cor(dat[, c("largo.l.tot", "largo.tubo", "caliz.sup",
    "caliz.med", "caliz.inf", "labio.sup", "labio.inf")], 
    use = "complete.obs") 
 CORR
+
+library(GGally)
+ggcorr(dat, method = c("pairwise", "pearson"))
 
 # C) Factores de inflación de la varianza
 fit <- lm(azucar ~ largo.l.tot + largo.tubo + caliz.sup + caliz.med +
