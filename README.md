@@ -8,7 +8,7 @@
 
 Video de presentación   
 Página de preguntas (acceso restringido)   
-[Sala de chat (acceso restringido)](https://drive.google.com/file/d/1ehOG2VgnCmTu26ZOewCw0yWDA6SiRGtl/view?usp=sharing)      
+[Sala de chat (acceso restringido)](https://docs.google.com/document/d/1T1Sq4h4RRmLGnDdoRRlnuj9ffRcKrSV6pVQ77LQQmu4/edit?usp=sharing)      
 [Sobre este curso - Instalacción de R y RStudio](00 instalacion/instalacion.html)
 
 
