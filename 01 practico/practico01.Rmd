@@ -16,7 +16,7 @@ R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "
 |  objeto      | descripción       |
 |:-------------|:------------------|
 | **data.frame**           | Objeto que contiene datos. Habitualmente se crea al importar datos externos, aunque pueden ser creados dentro del mismo R. Consiste en una serie de variables (**vectors**) de igual longitud y que pueden ser del mismo tipo o no. |
-| **vectors** | Colección de datos del mismo tipo (números, letras, etc.) que puede ser creado dentro de R o importado como una columna de un **data.frame**. Existen muchos tipos de vectores, entre ellos: **numeric** consiste de números reales; **integer** consiste de números enteros; **character** contiene letras, nombres, etc. (notar que cada elemento se encuentra entre comillas, por ej. "A1"); *factor* sirve para representar variables categóricas, porta información sobre los niveles del factor (**levels**) y sobre si estos niveles siguen un orden o no.   |
+| **vectors** | Colección de datos del mismo tipo (números, letras, etc.) que puede ser creado dentro de R o importado como una columna de un **data.frame**. Existen muchos tipos de vectores, entre ellos: **numeric** consiste de números reales; **integer** consiste de números enteros; **character** contiene letras, nombres, etc. (notar que cada elemento se encuentra entre comillas, por ej. "A1"); **factor** sirve para representar variables categóricas, porta información sobre los niveles del factor (*levels*) y sobre si estos niveles siguen un orden o no.   |
 | **matrix**           | Matriz formada por la unión de vectores de un mismo tipo y largo, por un solo vector que es partido en columnas y filas o (más habitualmente) producto de ciertas funciones, por ejemplo **cor**, que construye matrices de correlación.      |
 | **list**           | Objeto que compuesto de objetos de distinto tipo y largo. |
 
@@ -96,13 +96,15 @@ Se recomienda:
 - Utilizar nombres cortos.   
 - Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.    
 
-Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. Si utilizamos R Studio y guardamos los sets de datos en la misma carpeta que la rutina, el programa determinará esa carpeta como el directorio de trabajo de forma automática, por lo que no es necesario escribir la ruta completa al archivo. También puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Session - Set Working Directory, o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.
+Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. Si utilizamos R Studio y guardamos los sets de datos en la misma carpeta que la rutina, el programa determinará esa carpeta como el directorio de trabajo de forma automática, por lo que no es necesario escribir la ruta completa al archivo. También puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Session - Set Working Directory, o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.   
+
+> Desde R 4.0.0 las variables categóricas ya no son reconocidas como factores al importar un set de datos en R. Así que deben ser convertidas con *as.factor()* cuando sea necesario o la opción stringsAsFactors = TRUE dentro de *read.table* o de *read.csv*.   
    
 ```R
 # la función read.table
 # opción 1 con ruta completa (notar orientación de las barras /)
 # en este caso asumimos que se encuentra en el directorio RD
-datos <- read.table("C:/RD/peces1.txt", header=TRUE)
+datos <- read.table("C:/RD/datos/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"
 # o con setwd
@@ -167,7 +169,8 @@ vec[vec > 15]
 
 ```
 
-## Modificación y creación de columnas.
+## Modificación y creación de columnas.   
+
 ```R
 # reemplazo (al usar el mismo nombre) una variable numérica por un factor
 datos$trat
@@ -274,4 +277,16 @@ Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tie
 
 
 > Un excelente lugar para introducirce a *tidyverse* es [**R para ciencia de datos**](https://es.r4ds.hadley.nz/). También, para comparar tres tipos de sintaxis en R (con signo $, el modo fórmula y *tidy*) se puede consultar esta [cheatshet.](https://raw.githubusercontent.com/rstudio/cheatsheets/master/syntax.pdf)   
+
+
+## Ejercicios
+
+1. Construya (o utilice si ya tiene disponible) una base de datos donde se encuentren variables categóricas, variables continuas y valores faltantes. 
+  + Importe la base de datos en R.   
+  + Realice un subset utilizando lo niveles de la variable categórica (factor).   
+  + Calcule la media para una variable continua de su set de datos luego de realizar el subset.   
+  
+  
+   
+
    

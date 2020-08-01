@@ -390,7 +390,7 @@ summary {
 </tr>
 <tr class="even">
 <td align="left"><strong>vectors</strong></td>
-<td align="left">Colección de datos del mismo tipo (números, letras, etc.) que puede ser creado dentro de R o importado como una columna de un <strong>data.frame</strong>. Existen muchos tipos de vectores, entre ellos: <strong>numeric</strong> consiste de números reales; <strong>integer</strong> consiste de números enteros; <strong>character</strong> contiene letras, nombres, etc. (notar que cada elemento se encuentra entre comillas, por ej. “A1”); <em>factor</em> sirve para representar variables categóricas, porta información sobre los niveles del factor (<strong>levels</strong>) y sobre si estos niveles siguen un orden o no.</td>
+<td align="left">Colección de datos del mismo tipo (números, letras, etc.) que puede ser creado dentro de R o importado como una columna de un <strong>data.frame</strong>. Existen muchos tipos de vectores, entre ellos: <strong>numeric</strong> consiste de números reales; <strong>integer</strong> consiste de números enteros; <strong>character</strong> contiene letras, nombres, etc. (notar que cada elemento se encuentra entre comillas, por ej. “A1”); <strong>factor</strong> sirve para representar variables categóricas, porta información sobre los niveles del factor (<em>levels</em>) y sobre si estos niveles siguen un orden o no.</td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>matrix</strong></td>
@@ -473,10 +473,13 @@ matriz1</code></pre>
 - Utilizar nombres cortos.<br />
 - Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.</p>
 <p>Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. Si utilizamos R Studio y guardamos los sets de datos en la misma carpeta que la rutina, el programa determinará esa carpeta como el directorio de trabajo de forma automática, por lo que no es necesario escribir la ruta completa al archivo. También puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Session - Set Working Directory, o usando la función <em>setwd</em> (para examinar cual es la carpeta en uso, utilizar <em>getwd</em>). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción <em>file.choose()</em>.</p>
+<blockquote>
+<p>Desde R 4.0.0 las variables categóricas ya no son reconocidas como factores al importar un set de datos en R. Así que deben ser convertidas con <em>as.factor()</em> cuando sea necesario o la opción stringsAsFactors = TRUE dentro de <em>read.table</em> o de <em>read.csv</em>.</p>
+</blockquote>
 <pre class="r"><code># la función read.table
 # opción 1 con ruta completa (notar orientación de las barras /)
 # en este caso asumimos que se encuentra en el directorio RD
-datos &lt;- read.table(&quot;C:/RD/peces1.txt&quot;, header=TRUE)
+datos &lt;- read.table(&quot;C:/RD/datos/peces1.txt&quot;, header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde &quot;Archivo&quot;
 # o con setwd
@@ -644,6 +647,19 @@ Con la excepción de <em>ggplot2</em>, en este curso no veremos estos paquetes, 
 <blockquote>
 <p>Un excelente lugar para introducirce a <em>tidyverse</em> es <a href="https://es.r4ds.hadley.nz/"><strong>R para ciencia de datos</strong></a>. También, para comparar tres tipos de sintaxis en R (con signo $, el modo fórmula y <em>tidy</em>) se puede consultar esta <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/master/syntax.pdf">cheatshet.</a></p>
 </blockquote>
+</div>
+<div id="ejercicios" class="section level2">
+<h2>Ejercicios</h2>
+<ol style="list-style-type: decimal">
+<li>Construya (o utilice si ya tiene disponible) una base de datos donde se encuentren variables categóricas, variables continuas y valores faltantes.</li>
+</ol>
+<ul>
+<li>Importe la base de datos en R.<br />
+</li>
+<li>Realice un subset utilizando lo niveles de la variable categórica (factor).<br />
+</li>
+<li>Calcule la media para una variable continua de su set de datos luego de realizar el subset.</li>
+</ul>
 </div>
 
 
