@@ -4,7 +4,7 @@
 
 #### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)
 
-*Inicio del curso online: 5 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca* 
+*Inicio del curso online: 5 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca.* 
 
 Video de presentación   
 Página de preguntas (acceso restringido)   

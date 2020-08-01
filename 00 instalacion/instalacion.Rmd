@@ -63,7 +63,7 @@ Alternativamente utilizar:
 install.packages("nombre_del_paquete")
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*,  y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot* y todas las dependencias necesarias.  
 
 
 ### Actualización de R. 
@@ -113,7 +113,7 @@ sudo R
 install.packages("nombre_del_paquete")
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*,  y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot* y todas las dependencias necesarias.  
 
 
 ### Actualización de R

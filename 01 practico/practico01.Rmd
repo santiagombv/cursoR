@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "nombrado" para que permanezca en la memoria utilizando una ```<-```  y su nombre debe ser "invocado" para que aparezca en pantalla. A pesar de ser un lenguaje de programación, R es comparativamente simple e intuitivo.
 
-## Objetos comunes en R.
+## Objetos comunes en R
 
 |  objeto      | descripción       |
 |:-------------|:------------------|
@@ -264,5 +264,14 @@ MG
 
 > Para cálculos muy complejos, la consola puede quedar inutilizada por un tiempo. En ese caso veremos que el símbolo **>** no aparece. Puede detenerse un cálculo con **STOP**.
 
-> **QUÉ SIGUE:** Manipular bases de datos es un campo en desarrollo. El paquete *dplyr* de Hadley Wickham es altamente recomendable (https://cran.r-project.org/web/packages/dplyr/). Para una excelente introducción a *dplyr* consultar http://www.dataschool.io/dplyr-tutorial-part-2/ .   
+## Una nota sobre *tidyverse*   
+
+Los paquetes de *tidyverse* forman una colección de paquetes especialmente dedicados a la ciencia de datos, introducida por Hadley Wickham (jefe científico de RStudio).   
+Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia de uso de R durante 16 años y dictado de cursos durante 11, no he encontrado motivo para promover su uso entre quienes nos dedicamos al análisis estadístico en ciencias biológicas, aunque creo que es útil conocerlo y enseñarlo en cursos de R de nivel intermedio y no introductorio (como este). Coincido parcialmente en esto con la [opinión de Norm Matloff](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt), que en resumen puede resumirse en estos puntos.    
+* *tydiverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
+* Si bien la idea de hacer los paquetes y funciones más consistentes entre sí es interesante, esto se logra al precio de una mayor abstracción.   
+* R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuleven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar en mis cursos.   
+
+
+> Un excelente lugar para introducirce a *tidyverse* es [**R para ciencia de datos**](https://es.r4ds.hadley.nz/). También, para comparar tres tipos de sintaxis en R (con signo $, el modo fórmula y *tidy*) se puede consultar esta [cheatshet.](https://raw.githubusercontent.com/rstudio/cheatsheets/master/syntax.pdf)   
    
