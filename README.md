@@ -18,7 +18,7 @@ Sala de chat (por meet). Solicitar clave por correo electrónico.
 #### Cronograma   
 
 * Módulo 1   
-  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) [VIDEO](https://drive.google.com/file/d/1-lOSxsEfv8_oSRmYNMmRVQ1-8S9JH2QT/view?usp=sharing)
+  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) -  [VIDEO](https://drive.google.com/file/d/1-lOSxsEfv8_oSRmYNMmRVQ1-8S9JH2QT/view?usp=sharing)
   + Práctico guiado: Introducción al lenguaje. Ingreso y manipulación de datos. [PÁGINA](01 practico/practico01.html) - VIDEO: [parte 1](https://drive.google.com/file/d/166vL1lHd0im7Wtcwp8bPtJc3aKrtD6Q9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/14UW4GAIRa21N5okr-1JkJt0F2MqNOsAY/view?usp=sharing)   
   + Trabajo práctico: preparación de datos, ingreso y manipulación.  
   + Meet 05/08/2020: Resolución de ejercicios, problemas de instalación y dudas sobre el lenguaje.   
