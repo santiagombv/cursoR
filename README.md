@@ -57,20 +57,20 @@ Sala de chat (por meet). Solicitar clave por correo electrónico.
   + Meet 13/08/2020: presentaciones de los alumnos. 
   
 * Módulo 8   
-  + Práctico guiado: Introducción a la programación en R. [PÁGINA](08 practico/practico08.html) - VIDEO   
+  + Práctico guiado: Introducción a la programación en R. [PÁGINA](08 practico/practico08.html) - [VIDEO](https://drive.google.com/file/d/1Z4tpimCsvBo3Z_eMOzIsmDQpvbE0UHvu/view?usp=sharing)   
   + Trabajo práctico: Construcción de funciones.   
-  + Meet: Resolución de ejercicios. 
+  + Meet 24/08/2020: Resolución de ejercicios. 
 
 * Módulo 9   
   + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://drive.google.com/file/d/11fQkW_3b3q4qZIHjoGvC11qdgiEx6-mo/view?usp=sharing)   
-  + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - VIDEO   
+  + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://drive.google.com/file/d/1qTI4qa56Oi93MneQ7H_l7puSiJ43etvI/view?usp=sharing)   
   + Trabajo práctico: Ejercicios.   
-  + Meet: Resolución de ejercicios. 
+  + Meet 25/08/2020: Resolución de ejercicios. 
 
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://drive.google.com/file/d/1ixkb-cWuZVNIHAQMG_FJ9D_45rzEgMBu/view?usp=sharing)   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - VIDEO   
   + Trabajo práctico: Ejercicios   
-  + Meet: Resolución de ejercicios. 
+  + Meet 26/08/2020: Resolución de ejercicios. 
 
  
