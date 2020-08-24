@@ -69,7 +69,7 @@ Sala de chat (por meet). Solicitar clave por correo electrónico.
 
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://drive.google.com/file/d/1ixkb-cWuZVNIHAQMG_FJ9D_45rzEgMBu/view?usp=sharing)   
-  + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - VIDEO   
+  + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://drive.google.com/file/d/1f4Tc0E5l4Eqbm6BPz-aTIVLsXtf79Ah2/view?usp=sharing)   
   + Trabajo práctico: Ejercicios   
   + Meet 26/08/2020: Resolución de ejercicios. 
 

@@ -119,8 +119,10 @@ g2
 
 ## Ejercicios
 
-1. Utilizar los datos de turnera.txt para  hacer una regresión con dummy para el polen.tot en función del morfo y del área del pétalo. Representar los resultados utilizando lattice (sin líneas de regresión).  
+1. Utilizar los datos de turnera.txt y realizar una regresión donde el número de granos de polen recibidos en el estigma (polen.tot) se encuentre en respuesta al morfo (variable cualitativa: 0 = brevistilado, 1 = longistilado) y del área del pétalo (area.pet). Representar los resultados utilizando lattice (sin líneas de regresión) y ggplot2 (con líneas de regresión).  
 
 2. Utilizando los mismos datos realice gráficos de densidad para la altura del estambre (alt.estambre) según el morfo, utilizando lattice y ggplot2.  
 
-3. Utilizar los datos de Bahamas2.txt para construir una superficie en la cual el logaritmo de la densidad del pez loro (Parrot) se encuentre en función de la riqueza de especies de coral (CoralRichness) y de la cobertura de coral (CoralTotal).  
+## Viridis  
+
+En este práctico tambien exploramos las opciones gráficas de *viridis*. Para conocer más revisar [acá](https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html).   

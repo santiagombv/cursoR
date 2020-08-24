@@ -285,4 +285,15 @@ points(pru, col = "royalblue4", pch = 20)
 1. Usar los datos de  s_poly.txt para hacer gráficos bivariados, utilizar comandos gráficos de bajo nivel para darle colores y cambiar los símbolos y agregar una recta de regresión.
 Guarde el gráfico obtenido como pdf.   
 
-2. Represente gráficamente el resultado del ejercicio 2 del práctico 2:Determinar si existen diferencias en el peso de pecaríes según el mes de su captura: febrero, mayo, agosto y noviembre, con los datos del archivo pecaries.txt.   
+2. Represente gráficamente el resultado del ejercicio 2 del práctico 2:Determinar si existen diferencias en el peso de pecaríes según el mes de su captura: febrero, mayo, agosto y noviembre, con los datos del archivo pecaries.txt.  
+
+3. Utilizar los datos de Bahamas2.txt para construir una superficie en la cual el logaritmo de la densidad del pez loro (Parrot) se encuentre en función de la riqueza de especies de coral (CoralRichness) y de la cobertura de coral (CoralTotal).  
+
+## Reference cards
+
+Para este práctico mostré diferentes *reference cards* (listados de funciones y opciones útiles en R) y también páginas útiles para realizar gŕaficos. Dejo aća los links.   
+
+- [R reference card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) (Tom Short)   
+- [R color card](https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf) (NCEAS)    
+- [R graph gallery](https://www.r-graph-gallery.com/)   
+- [Paletton](http://paletton.com) (para obtener código hexadecimal de los colores y para probar diferentes combinaciones)    
