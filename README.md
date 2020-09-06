@@ -42,17 +42,17 @@ Sala de chat (por meet). Solicitar clave por correo electrónico.
   + Meet 10/08/2020: Resolución de ejercicios. 
 
 * Módulo 5
-  + Práctico guiado: Manejo de gráficos en R. [PÁGINA](05 practico/practico05.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1RTiJAJ4GFxPLALGqyExppuqVEkKlYxVd/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1jbDCPys0k1p0OdVkQJ3kzLjJ12SniT8b/view?usp=sharing)   
+  + Práctico guiado: Manejo de gráficos en R. [PÁGINA](05 practico/practico05.html) - [VIDEO](https://www.youtube.com/watch?v=r9RBDnzRmvU)
   + Trabajo práctico: Ejercicios   
   + Meet 11/08/2020: Resolución de ejercicios. 
 
 * Módulo 6   
-  + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://drive.google.com/file/d/1iN1GOnqPnIDAR3sEGKFn8Mwb_iJMam-q/view?usp=sharing)       
+  + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://www.youtube.com/watch?v=r-LtpOI6cik)       
   + Trabajo práctico: Ejercicios    
   + Meet 12/08/2020: Resolución de ejercicios. 
 
 * Módulo 7   
-  + Práctico guiado: Introducción a R Markdown. [PÁGINA](07 practico/practico07.html) - [VIDEO](https://drive.google.com/file/d/1qQWpzCqKWCLSsgj_o7RaPjBjkg0fhTLl/view?usp=sharing)   
+  + Práctico guiado: Introducción a R Markdown. [PÁGINA](07 practico/practico07.html) - [VIDEO](https://www.youtube.com/watch?v=IaJMC6hOyFE)   
   + Trabajo práctico: Ejercicios.    
   + Meet 13/08/2020: presentaciones de los alumnos. 
   
@@ -63,13 +63,13 @@ Sala de chat (por meet). Solicitar clave por correo electrónico.
 
 * Módulo 9   
   + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://drive.google.com/file/d/11fQkW_3b3q4qZIHjoGvC11qdgiEx6-mo/view?usp=sharing)   
-  + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://drive.google.com/file/d/1qTI4qa56Oi93MneQ7H_l7puSiJ43etvI/view?usp=sharing)   
+  + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://www.youtube.com/watch?v=99qO4GVGdDM)   
   + Trabajo práctico: Ejercicios.   
   + Meet 25/08/2020: Resolución de ejercicios. 
 
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://drive.google.com/file/d/1ixkb-cWuZVNIHAQMG_FJ9D_45rzEgMBu/view?usp=sharing)   
-  + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://drive.google.com/file/d/1f4Tc0E5l4Eqbm6BPz-aTIVLsXtf79Ah2/view?usp=sharing)   
+  + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://www.youtube.com/watch?v=DleSp9aI2gI&t=65s)   
   + Trabajo práctico: Ejercicios   
   + Meet 26/08/2020: Resolución de ejercicios. 
 
