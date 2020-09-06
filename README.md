@@ -6,7 +6,7 @@
 
 #### Curso online    
 *5-18 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca.*    
-*14 de Septiembre al 2 de Octubre de 2020. Doctorado en Ciencias Biológicas, Univrsidad Nacional de Córdoba.*   
+*14 de Septiembre al 2 de Octubre de 2020. Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba.*   
 
 
 #### Antes de empezar...
