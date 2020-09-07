@@ -285,9 +285,11 @@ points(pru, col = "royalblue4", pch = 20)
 1. Usar los datos de  s_poly.txt para hacer gráficos bivariados, utilizar comandos gráficos de bajo nivel para darle colores y cambiar los símbolos y agregar una recta de regresión.
 Guarde el gráfico obtenido como pdf.   
 
-2. Represente gráficamente el resultado del ejercicio 2 del práctico 2:Determinar si existen diferencias en el peso de pecaríes según el mes de su captura: febrero, mayo, agosto y noviembre, con los datos del archivo pecaries.txt.  
+2. Represente gráficamente el resultado del ejercicio 2 del práctico 2: Determinar si existen diferencias en el peso de pecaríes según el mes de su captura: febrero, mayo, agosto y noviembre, con los datos del archivo pecaries.txt. Utilice gráficos de barras.  
 
 3. Utilizar los datos de Bahamas2.txt para construir una superficie en la cual el logaritmo de la densidad del pez loro (Parrot) se encuentre en función de la riqueza de especies de coral (CoralRichness) y de la cobertura de coral (CoralTotal).  
+
+4. ¿Tiene datos disponibles? Es el momento de usarlos. Construya el gráfico más feo posible, manipulando comandos gráficos básicos de color, tamaño, tipo y grosos de línea, etc.
 
 ## Reference cards
 
