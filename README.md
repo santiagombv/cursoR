@@ -17,59 +17,59 @@
 #### Cronograma   
 
 * Módulo 1   
-  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) -  [VIDEO](https://drive.google.com/file/d/1-lOSxsEfv8_oSRmYNMmRVQ1-8S9JH2QT/view?usp=sharing)
+  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) -  [VIDEO](https://www.youtube.com/watch?v=2i4ce9CGQOs)
   + Práctico guiado: Introducción al lenguaje. Ingreso y manipulación de datos. [PÁGINA](01 practico/practico01.html) - VIDEO: [parte 1](https://drive.google.com/file/d/166vL1lHd0im7Wtcwp8bPtJc3aKrtD6Q9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/14UW4GAIRa21N5okr-1JkJt0F2MqNOsAY/view?usp=sharing)   
   + Trabajo práctico: preparación de datos, ingreso y manipulación.  
-  + Meet 05/08/2020: Resolución de ejercicios, problemas de instalación y dudas sobre el lenguaje.   
+  + Encuentro 14/9/2020.    
   
 * Módulo 2   
   + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1NUa53L-mjdWHKwGldTXcYZLZ3owJiZp9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1bCY-tqY-r2FgBkAdQWSx0CjRzGwMWeFr/view?usp=sharing) - [parte 3](https://drive.google.com/file/d/1e7kjkumq6HYSmRqBb0YY7zG9eQ27MvKR/view?usp=sharing)   
   + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO: [parte 1](https://drive.google.com/file/d/1vmjkdOo019Kxm6SIPmNYqi-maq-wiCYt/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1qpAU1re_bZ-WR7k_AxbNkqHxvqzkjLuI/view?usp=sharing)  
   + Trabajo práctico: Ejercicios.   
-  + Meet 06/08/2020: Resolución de ejercicios. 
+  + Encuentro 14/9/2020.    
 
 * Módulo 3
   + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - [VIDEO](https://drive.google.com/file/d/1GcwB-rH6LuN8uOjjdWEw4pfcuOGAt6dl/view?usp=sharing)   
   + Práctico guiado: Modelos lineales múltiples I. [PÁGINA](03 practico/practico03.html) - [VIDEO](https://drive.google.com/file/d/1vvumIBIPRtP_KPEy2pkoi9siqiy0lR31/view?usp=sharing)   
   + Trabajo práctico: Ejercicios   
-  + Meet 07/08/2020: Resolución de ejercicios.
+  + Encuentro 16/9/2020.   
 
 * Módulo 4
   + Teórico: Colinealidad, selección de modelos y regularización. [PRESENTACIÓN](teoricos/teor4.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1fO1OJVMJoOqxESgpkvMQwgtz4m4Nfgz4/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/19YUuSKLFMqaFmmySFpynbAf4vYI2JGSi/view?usp=sharing)   
   + Práctico guiado: Modelos lineales múltiples II. [PÁGINA](04 practico/practico04.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1ehOG2VgnCmTu26ZOewCw0yWDA6SiRGtl/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/14uJv8L52E0uXXvIxIw4Uy32YCoPvK2Ed/view?usp=sharing)     
   + Trabajo práctico: Ejercicios  
-  + Meet 10/08/2020: Resolución de ejercicios. 
+  + Encuentro 18/9/2020.   
 
 * Módulo 5
   + Práctico guiado: Manejo de gráficos en R. [PÁGINA](05 practico/practico05.html) - [VIDEO](https://www.youtube.com/watch?v=r9RBDnzRmvU)
   + Trabajo práctico: Ejercicios   
-  + Meet 11/08/2020: Resolución de ejercicios. 
+  + Encuentro 21/9/2020.   
 
 * Módulo 6   
   + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://www.youtube.com/watch?v=r-LtpOI6cik)       
   + Trabajo práctico: Ejercicios    
-  + Meet 12/08/2020: Resolución de ejercicios. 
+  + Encuentro 23/9/2020.  
 
 * Módulo 7   
   + Práctico guiado: Introducción a R Markdown. [PÁGINA](07 practico/practico07.html) - [VIDEO](https://www.youtube.com/watch?v=IaJMC6hOyFE)   
   + Trabajo práctico: Ejercicios.    
-  + Meet 13/08/2020: presentaciones de los alumnos. 
+  + Encuentro 25/9/2020.   
   
 * Módulo 8   
   + Práctico guiado: Introducción a la programación en R. [PÁGINA](08 practico/practico08.html) - [VIDEO](https://www.youtube.com/watch?v=99qO4GVGdDM)    
   + Trabajo práctico: Construcción de funciones.   
-  + Meet 24/08/2020: Resolución de ejercicios. 
+  + Encuentro 28/9/2020.   
 
 * Módulo 9   
   + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://drive.google.com/file/d/11fQkW_3b3q4qZIHjoGvC11qdgiEx6-mo/view?usp=sharing)   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://www.youtube.com/watch?v=HRWMWHghLEw)   
   + Trabajo práctico: Ejercicios.   
-  + Meet 25/08/2020: Resolución de ejercicios. 
+  + Encuentro 30/9/2020.   
 
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://drive.google.com/file/d/1ixkb-cWuZVNIHAQMG_FJ9D_45rzEgMBu/view?usp=sharing)   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://www.youtube.com/watch?v=DleSp9aI2gI&t=65s)   
   + Trabajo práctico: Ejercicios   
-  + Meet 26/08/2020: Resolución de ejercicios. 
+  + Encuentro 2/10/2020.    
 
  
