@@ -18,18 +18,18 @@
 
 * Módulo 1   
   + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) -  [VIDEO](https://www.youtube.com/watch?v=2i4ce9CGQOs)
-  + Práctico guiado: Introducción al lenguaje. Ingreso y manipulación de datos. [PÁGINA](01 practico/practico01.html) - VIDEO: [parte 1](https://drive.google.com/file/d/166vL1lHd0im7Wtcwp8bPtJc3aKrtD6Q9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/14UW4GAIRa21N5okr-1JkJt0F2MqNOsAY/view?usp=sharing)   
+  + Práctico guiado: Introducción al lenguaje. Ingreso y manipulación de datos. [PÁGINA](01 practico/practico01.html) - VIDEO: [parte 1](https://www.youtube.com/watch?v=y7JUlQSWPN8) - [parte 2](https://www.youtube.com/watch?v=CJq21IJ6_Tw)   
   + Trabajo práctico: preparación de datos, ingreso y manipulación.  
   + Encuentro 14/9/2020.    
   
 * Módulo 2   
-  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1NUa53L-mjdWHKwGldTXcYZLZ3owJiZp9/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1bCY-tqY-r2FgBkAdQWSx0CjRzGwMWeFr/view?usp=sharing) - [parte 3](https://drive.google.com/file/d/1e7kjkumq6HYSmRqBb0YY7zG9eQ27MvKR/view?usp=sharing)   
+  + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://www.youtube.com/watch?v=st9XRApU9UY) - [parte 2](https://www.youtube.com/watch?v=7TzbWvOqIxA)   
   + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO: [parte 1](https://drive.google.com/file/d/1vmjkdOo019Kxm6SIPmNYqi-maq-wiCYt/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1qpAU1re_bZ-WR7k_AxbNkqHxvqzkjLuI/view?usp=sharing)  
   + Trabajo práctico: Ejercicios.   
   + Encuentro 14/9/2020.    
 
 * Módulo 3
-  + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - [VIDEO](https://drive.google.com/file/d/1GcwB-rH6LuN8uOjjdWEw4pfcuOGAt6dl/view?usp=sharing)   
+  + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - [VIDEO](https://www.youtube.com/watch?v=KeC1N6wY9YU)   
   + Práctico guiado: Modelos lineales múltiples I. [PÁGINA](03 practico/practico03.html) - [VIDEO](https://drive.google.com/file/d/1vvumIBIPRtP_KPEy2pkoi9siqiy0lR31/view?usp=sharing)   
   + Trabajo práctico: Ejercicios   
   + Encuentro 16/9/2020.   
