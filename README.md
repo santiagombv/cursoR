@@ -5,7 +5,7 @@
 #### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)
 
 #### Curso online    
-*5-18 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca.*    
+*5-25 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca.*    
 *14 de Septiembre al 2 de Octubre de 2020. Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba.*   
 
 
@@ -24,19 +24,19 @@
   
 * Módulo 2   
   + Teórico: Introducción a modelos lineales. Predicción: datos de entrenamiento y de prueba. [PRESENTACION](teoricos/teor2.html) - VIDEO: [parte 1](https://www.youtube.com/watch?v=st9XRApU9UY) - [parte 2](https://www.youtube.com/watch?v=7TzbWvOqIxA)   
-  + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO: [parte 1](https://drive.google.com/file/d/1vmjkdOo019Kxm6SIPmNYqi-maq-wiCYt/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/1qpAU1re_bZ-WR7k_AxbNkqHxvqzkjLuI/view?usp=sharing)  
+  + Práctico guiado: Modelos lineales simples. [PÁGINA](02 practico/practico02.html)  - VIDEO: [parte 1](https://www.youtube.com/watch?v=Pzi-rhOACKQ) - [parte 2](https://www.youtube.com/watch?v=-LmFkI_rNCo)  
   + Trabajo práctico: Ejercicios.   
   + Encuentro 14/9/2020.    
 
 * Módulo 3
   + Teórico: Regresión lineal múltiple e interacciones. [PRESENTACIÓN](teoricos/teor3.html) - [VIDEO](https://www.youtube.com/watch?v=KeC1N6wY9YU)   
-  + Práctico guiado: Modelos lineales múltiples I. [PÁGINA](03 practico/practico03.html) - [VIDEO](https://drive.google.com/file/d/1vvumIBIPRtP_KPEy2pkoi9siqiy0lR31/view?usp=sharing)   
+  + Práctico guiado: Modelos lineales múltiples I. [PÁGINA](03 practico/practico03.html) - [VIDEO](https://www.youtube.com/watch?v=BrmYRX5imqY)   
   + Trabajo práctico: Ejercicios   
   + Encuentro 16/9/2020.   
 
 * Módulo 4
-  + Teórico: Colinealidad, selección de modelos y regularización. [PRESENTACIÓN](teoricos/teor4.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1fO1OJVMJoOqxESgpkvMQwgtz4m4Nfgz4/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/19YUuSKLFMqaFmmySFpynbAf4vYI2JGSi/view?usp=sharing)   
-  + Práctico guiado: Modelos lineales múltiples II. [PÁGINA](04 practico/practico04.html) - VIDEO: [parte 1](https://drive.google.com/file/d/1ehOG2VgnCmTu26ZOewCw0yWDA6SiRGtl/view?usp=sharing) - [parte 2](https://drive.google.com/file/d/14uJv8L52E0uXXvIxIw4Uy32YCoPvK2Ed/view?usp=sharing)     
+  + Teórico: Colinealidad, selección de modelos y regularización. [PRESENTACIÓN](teoricos/teor4.html) - VIDEO: [parte 1](https://www.youtube.com/watch?v=MoyEvU7602k&t=22s) - [parte 2](https://www.youtube.com/watch?v=fhZGHaNrdY0)   
+  + Práctico guiado: Modelos lineales múltiples II. [PÁGINA](04 practico/practico04.html) - VIDEO: [parte 1](https://www.youtube.com/watch?v=K7Nh-IJtWNA) - [parte 2](https://www.youtube.com/watch?v=Iksuw-cbj8o&t=685s)     
   + Trabajo práctico: Ejercicios  
   + Encuentro 18/9/2020.   
 
