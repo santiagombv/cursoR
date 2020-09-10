@@ -11,7 +11,13 @@
 
 #### Antes de empezar...
 [Sobre este curso - Instalacción de R y RStudio](00 instalacion/instalacion.html)   
-[Descarga del material práctico](https://github.com/santiagombv/cursoR/archive/master.zip)
+[Descarga del material práctico](https://github.com/santiagombv/cursoR/archive/master.zip)   
+
+Preguntas, dudas y consultas:    
+* Puede hacerlas abiertas al grupo de correos de google.   
+* Puede escribirlas en [este google docs](https://docs.google.com/document/d/1NXXIHUALRlsfK1W3ORnuZsDmQXsCmdyeWSVzHpqFfa4/edit?usp=sharing)   
+
+Cualquiera puede responder, es la intención que aprendamos de forma colaborativa. Sugiero seguir el cronograma de los temas (ver abajo) para que vayamos al mismo paso.   
 
 
 #### Cronograma   
@@ -61,13 +67,13 @@
   + Encuentro 28/9/2020.   
 
 * Módulo 9   
-  + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://drive.google.com/file/d/11fQkW_3b3q4qZIHjoGvC11qdgiEx6-mo/view?usp=sharing)   
+  + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://www.youtube.com/watch?v=WpgXEzCWbY0)   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://www.youtube.com/watch?v=HRWMWHghLEw)   
   + Trabajo práctico: Ejercicios.   
   + Encuentro 30/9/2020.   
 
 * Módulo 10   
-  + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://drive.google.com/file/d/1ixkb-cWuZVNIHAQMG_FJ9D_45rzEgMBu/view?usp=sharing)   
+  + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://www.youtube.com/watch?v=AhjApr_aI5c)   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://www.youtube.com/watch?v=DleSp9aI2gI&t=65s)   
   + Trabajo práctico: Ejercicios   
   + Encuentro 2/10/2020.    
