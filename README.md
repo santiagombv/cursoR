@@ -5,7 +5,7 @@
 #### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)
 
 #### Curso online    
-*5-25 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuiquisaca.*    
+*5-25 de Agosto de 2020. Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuquisaca.*    
 *14 de Septiembre al 2 de Octubre de 2020. Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba.*   
 
 
