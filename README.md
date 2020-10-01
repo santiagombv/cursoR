@@ -70,12 +70,12 @@ Cualquiera puede responder, es la intención que aprendamos de forma colaborativ
   + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://www.youtube.com/watch?v=WpgXEzCWbY0)   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://www.youtube.com/watch?v=HRWMWHghLEw)   
   + Trabajo práctico: Ejercicios.   
-  + Encuentro 30/9/2020. [https://drive.google.com/file/d/1auZensnsu9zO3pKSKUdpjRErsHkgdVAV/view?usp=sharing]   
-
+  + Encuentro 30/9/2020. [CLASE](https://drive.google.com/file/d/1auZensnsu9zO3pKSKUdpjRErsHkgdVAV/view?usp=sharing)    
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://www.youtube.com/watch?v=AhjApr_aI5c)   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://www.youtube.com/watch?v=DleSp9aI2gI&t=65s)   
   + Trabajo práctico: Ejercicios   
   + Encuentro 2/10/2020.    
 
+ 
  
