@@ -15,8 +15,7 @@
 
 Preguntas, dudas y consultas:    
 * Puede hacerlas abiertas al grupo de correos de google.   
-* Puede escribirlas en [este google docs](https://docs.google.com/document/d/1NXXIHUALRlsfK1W3ORnuZsDmQXsCmdyeWSVzHpqFfa4/edit?usp=sharing)   
-
+* Puede escribirlas en este google docs (a activarse en 2021)
 Cualquiera puede responder, es la intención que aprendamos de forma colaborativa. Sugiero seguir el cronograma de los temas (ver abajo) para que vayamos al mismo paso.   
 
 
@@ -49,28 +48,28 @@ Cualquiera puede responder, es la intención que aprendamos de forma colaborativ
 * Módulo 5
   + Práctico guiado: Manejo de gráficos en R. [PÁGINA](05 practico/practico05.html) - [VIDEO](https://www.youtube.com/watch?v=r9RBDnzRmvU)
   + Trabajo práctico: Ejercicios   
-  + Encuentro 21/9/2020. [CLASE](https://drive.google.com/file/d/1RYNOkHiZWgx3Xfftryoev3DFh_DJPSbW/view?usp=sharing)   
+  + Encuentro 21/9/2020.    
 
 * Módulo 6   
   + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://www.youtube.com/watch?v=r-LtpOI6cik)       
   + Trabajo práctico: Ejercicios    
-  + Encuentro 23/9/2020. [CLASE](https://drive.google.com/file/d/1eaLHpOEOD8DSlFaYa6x9UvbnvE8NPgJp/view?usp=sharing)  
+  + Encuentro 23/9/2020.
 
 * Módulo 7   
   + Práctico guiado: Introducción a R Markdown. [PÁGINA](07 practico/practico07.html) - [VIDEO](https://www.youtube.com/watch?v=IaJMC6hOyFE)   
   + Trabajo práctico: Ejercicios.    
-  + Encuentro 25/9/2020. [CLASE](https://drive.google.com/file/d/1gyxNzQmL62B42JmcESAHNst9qqeOehKR/view?usp=sharing)  
+  + Encuentro 25/9/2020.
   
 * Módulo 8   
   + Práctico guiado: Introducción a la programación en R. [PÁGINA](08 practico/practico08.html) - [VIDEO](https://www.youtube.com/watch?v=99qO4GVGdDM)    
   + Trabajo práctico: Construcción de funciones.   
-  + Encuentro 28/9/2020. [CLASE](https://drive.google.com/file/d/1DYD5m800BYxErHPPJf_m9Adc7Jx2i8EZ/view?usp=sharing)   
+  + Encuentro 28/9/2020.  
 
 * Módulo 9   
   + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://www.youtube.com/watch?v=WpgXEzCWbY0)   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://www.youtube.com/watch?v=HRWMWHghLEw)   
   + Trabajo práctico: Ejercicios.   
-  + Encuentro 30/9/2020. [CLASE](https://drive.google.com/file/d/1auZensnsu9zO3pKSKUdpjRErsHkgdVAV/view?usp=sharin)      
+  + Encuentro 30/9/2020.    
 
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://www.youtube.com/watch?v=AhjApr_aI5c)   
