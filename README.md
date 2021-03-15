@@ -77,5 +77,5 @@ Cualquiera puede responder, es la intención que aprendamos de forma colaborativ
   + Trabajo práctico: Ejercicios   
   + Encuentro 2/10/2020.    
 
- 
+## END
  
