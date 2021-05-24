@@ -69,13 +69,8 @@ Encuentros: se enviarán los links por e-mail.
   + Teórico: Introducción a técnicas de remuestreo. Modelos nulos y randomizaciones. [PRESENTACIÓN](teoricos/teor5.html) - [VIDEO](https://www.youtube.com/watch?v=WpgXEzCWbY0)   
   + Práctico guiado: Función sample y construcción de funciones para modelos nulos y randomizados. [PÁGINA](09 practico/practico09.html) - [VIDEO](https://www.youtube.com/watch?v=HRWMWHghLEw)   
   + Trabajo práctico: Ejercicios.   
-<<<<<<< HEAD
-  + Encuentro 30/9/2020. 
-  
-=======
   + Encuentro 16/06/2021.    
 
->>>>>>> master
 * Módulo 10   
   + Teórico: Bootstrap. [PRESENTACIÓN](teoricos/teor6.html) - [VIDEO](https://www.youtube.com/watch?v=AhjApr_aI5c)   
   + Práctico guiado: Construcción de bootstraps. [PÁGINA](10 practico/practico10.html) - [VIDEO](https://www.youtube.com/watch?v=DleSp9aI2gI&t=65s)   
