@@ -43,7 +43,7 @@ También veremos la construccíon de gráficos a través de los paquetes *graphi
 ### Instalación de R
 
 Ingresar a http://cran.r-project.org/   
-En download R for Windows - base, seleccionar la última versión disponible de R (4.0.2 "Taking Off Again" actualmente). Guardar el archivo R-4.0.2-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
+En download R for Windows - base, seleccionar la última versión disponible de R (4.1.0 "Camp Pontanezen" actualmente). Guardar el archivo R-4.1.0-win.exe en cualquier parte de la computadora, ejecutarlo y seguir las instrucciones de instalación. 
 
 ### Instalación de RStudio
 
@@ -63,11 +63,11 @@ Alternativamente utilizar:
 install.packages("nombre_del_paquete")
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
 
 
 ### Actualización de R. 
-En Windows se puede desinstalar y volver a instalar el programa en cada actualización. Alternativamente utilizar el paquete *installr*  
+La manera más práctica es instalando y ejecutando las funciones del paquete *installr*  
 
 ```R
 install.packages("installr")
@@ -87,7 +87,8 @@ deb https://cloud.r-project.org/bin/linux/ubuntu bionic-cran40/
 ```
 En esta línea puede cambiar el espejo CRAN elegido por alguno de los listados en  http://cran.r-project.org/ Por ejemplo http://cran.rstudio.com/bin/linux/ubuntu/  corresponde al espejo propio de RStudio. Puede cambiar también la distribución de Ubuntu empleada (focal, bionic, xenial, etc. indicada antes del -cran40). 
 
-Agregar una clave de seguridad al sistema (en caso de que esta opción "no funcione", ver otras posibilidades en http://cran.r-project.org/). En la terminal ingresar:     
+Agregar una clave de seguridad al sistema (en caso de que esta opción "no funcione", ver otras posibilidades en http://cran.r-project.org/). En la terminal ingresar:   
+
 ```
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
 ```
@@ -108,12 +109,13 @@ Descargar la última version de RStudio Desktop (version gratuita) desde https:/
 Los paquetes de R son colecciones de funciones para un fin determinado, asociadas a su ayuda y, frecuentemente, a bases de datos y demostraciones de uso (*vignettes*).   
 
 La manera más práctica en Ubuntu es desde terminal.
+
 ```
 sudo R
 install.packages("nombre_del_paquete")
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
 
 
 ### Actualización de R

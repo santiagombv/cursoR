@@ -270,8 +270,9 @@ MG
 ## Una nota sobre *tidyverse*   
 
 Los paquetes de *tidyverse* forman una colección de paquetes especialmente dedicados a la ciencia de datos, introducida por Hadley Wickham (jefe científico de RStudio).   
-Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia de uso de R durante 16 años y dictado de cursos durante 11, no he encontrado motivo para promover su uso entre quienes nos dedicamos al análisis estadístico en ciencias biológicas, aunque creo que es útil conocerlo y enseñarlo en cursos de R de nivel intermedio y no introductorio (como este). Coincido parcialmente en esto con la [opinión de Norm Matloff](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt), que en resumen puede resumirse en estos puntos.    
-* *tydiverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
+Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia de uso de R durante 15 años y dictado de cursos durante 12, no he encontrado motivo para promover su uso entre quienes nos dedicamos al análisis estadístico en ciencias biológicas, aunque creo que es útil conocerlo y enseñarlo en cursos de R de nivel intermedio y no introductorio (como este) y que son fundamentales en actividades donde el procesamiento de datos, en general previo al análisis, es indispensable. Coincido parcialmente en esto con la [opinión de Norm Matloff](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt), que en resumen puede resumirse en estos puntos.  
+   
+* *tidyverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
 * Si bien la idea de hacer los paquetes y funciones más consistentes entre sí es interesante, esto se logra al precio de una mayor abstracción.   
 * R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuleven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar en mis cursos.   
 
