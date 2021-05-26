@@ -327,4 +327,3 @@ Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tie
   + Importe la base de datos en R.  
   + Asegúrese de que al menos una variable categórica sea un factor.   
   + Obtenga los valores medios para cada nivel de esa factor de una variable continua con *aggregate*.   
-  

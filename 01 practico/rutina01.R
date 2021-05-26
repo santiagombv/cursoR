@@ -222,6 +222,8 @@ MG
 ###########################################################
 ## Haciendo más eficiente la programación: esto es una pipa
 
+library(magrittr)
+
 # Usando R base, con creación de objetos intermedios
 datos <- read.table("peces1.txt", header=TRUE)
 largo.a_A <- subset(datos$largo.a, datos$grupo == "A")
