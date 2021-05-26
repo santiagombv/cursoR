@@ -219,4 +219,32 @@ summary(datos)
 MG<-aggregate(datos$largo.a, by=list(datos$grupo), FUN=mean, na.rm=TRUE)
 MG
 
+###########################################################
+## Haciendo más eficiente la programación: esto es una pipa
+
+# Usando R base, con creación de objetos intermedios
+datos <- read.table("peces1.txt", header=TRUE)
+largo.a_A <- subset(datos$largo.a, datos$grupo == "A")
+M <- mean(largo.a_A)
+M
+
+# Usando R base, eviatndo los objetos intermedios
+# Notar cómo se debe leer de "adentro" hacia "afuera".
+M <- mean(subset(datos$largo.a, datos$grupo == "A"))
+M
+
+# Usando magrittr %>%
+# Notar como sigue más de cerca la lógica de 
+# un "lenguaje natural"
+datos$largo.a %>%
+  subset(datos$grupo == "A") %>%
+  mean() -> M  # en magrittr paréntesis como estos en mean() son opcionales
+M
+
+# Usando native pipes |>
+datos$largo.a |>
+  subset(datos$grupo == "A") |>
+  mean() -> M
+M
+
 ####### END #######

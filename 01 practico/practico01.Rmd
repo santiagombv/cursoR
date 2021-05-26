@@ -227,6 +227,7 @@ which.min(datos$largo.a)
 
 ## Funciones estadísticas básicas
 Se detallan abajo algunas como la media, varianza, desvío estándar, etc. En general si cualquiera de ellas se aplica sobre datos que contienen NA el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función *na.omit*.
+
 ```R
 # media
 M <- mean(datos$largo.a, na.rm = TRUE)
@@ -267,12 +268,52 @@ MG
 
 > Para cálculos muy complejos, la consola puede quedar inutilizada por un tiempo. En ese caso veremos que el símbolo **>** no aparece. Puede detenerse un cálculo con **STOP**.
 
+## Haciendo más eficiente la programación: esto es una pipa
+
+![](pipa.png)   
+En 2014 Stefan Bache introdujo el operador pipa `%>%` en el paquete [*magrittr*](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) que "canaliza" un objeto hacia una función (*pipe* puede también traducirse como un tubo o cañería). Su uso principal es expresar una secuencia de múltiples operaciones, evitando la creación de objetos intermedios.   
+A partir de R.4.1.0, el lengujae básico incorpora una pipa nativa (*native pipe*) `|>` con funciones similares pero una sintaxis ligeramente diferente a la de la pipa del paquete *magrittr*.    
+Veamos un ejemplo sencillo donde:  
+
+* Leemos un set de dados   
+* Aplicamos un subset   
+* Calculamos la media   
+
+```R
+library(magrittr)
+
+# Usando R base, con creación de objetos intermedios
+datos <- read.table("peces1.txt", header=TRUE)
+largo.a_A <- subset(datos$largo.a, datos$grupo == "A")
+M <- mean(largo.a_A)
+M
+
+# Usando R base, eviatndo los objetos intermedios
+# Notar cómo se debe leer de "adentro" hacia "afuera".
+M <- mean(subset(datos$largo.a, datos$grupo == "A"))
+M
+
+# Usando magrittr %>%
+# Notar como sigue más de cerca la lógica de 
+# un "lenguaje natural"
+datos$largo.a %>%
+subset(datos$grupo == "A") %>%
+mean() -> M  # en magrittr paréntesis como estos en mean() son opcionales
+M
+
+# Usando native pipes |>
+datos$largo.a |>
+subset(datos$grupo == "A") |>
+mean() -> M
+M
+
+``` 
+
 ## Una nota sobre *tidyverse*   
 
 Los paquetes de *tidyverse* forman una colección de paquetes especialmente dedicados a la ciencia de datos, introducida por Hadley Wickham (jefe científico de RStudio).   
-Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia de uso de R durante 15 años y dictado de cursos durante 12, no he encontrado motivo para promover su uso entre quienes nos dedicamos al análisis estadístico en ciencias biológicas, aunque creo que es útil conocerlo y enseñarlo en cursos de R de nivel intermedio y no introductorio (como este) y que son fundamentales en actividades donde el procesamiento de datos, en general previo al análisis, es indispensable. Coincido parcialmente en esto con la [opinión de Norm Matloff](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt), que en resumen puede resumirse en estos puntos.  
-   
-* *tidyverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
+Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia de uso de R durante 16 años y dictado de cursos durante 11, no he encontrado motivo para promover su uso entre quienes nos dedicamos al análisis estadístico en ciencias biológicas, aunque creo que es útil conocerlo y enseñarlo en cursos de R de nivel intermedio y no introductorio (como este). Coincido parcialmente en esto con la [opinión de Norm Matloff](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt), que en resumen puede resumirse en estos puntos.    
+* *tydiverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
 * Si bien la idea de hacer los paquetes y funciones más consistentes entre sí es interesante, esto se logra al precio de una mayor abstracción.   
 * R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuleven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar en mis cursos.   
 
@@ -283,10 +324,10 @@ Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tie
 ## Ejercicios
 
 1. Construya (o utilice si ya tiene disponible) una base de datos donde se encuentren variables categóricas, variables continuas y valores faltantes. 
-  + Importe la base de datos en R.   
-  + Realice un subset utilizando lo niveles de la variable categórica (factor).   
-  + Calcule la media para una variable continua de su set de datos luego de realizar el subset.   
-  
+  + Importe la base de datos en R.  
+  + Asegúrese de que al menos una variable categórica sea un factor.   
+  + Obtenga los valores medios para cada nivel de esa factor de una variable continua con *aggregate*.   
+
   
    
 
