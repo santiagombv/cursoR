@@ -270,7 +270,11 @@ MG
 
 ## Haciendo más eficiente la programación: esto es una pipa
 
+<<<<<<< HEAD
 ![](pipa.png)   
+=======
+![](pipa.png)
+>>>>>>> master
 En 2014 Stefan Bache introdujo el operador pipa `%>%` en el paquete [*magrittr*](https://cran.r-project.org/web/packages/magrittr/vignettes/magrittr.html) que "canaliza" un objeto hacia una función (*pipe* puede también traducirse como un tubo o cañería). Su uso principal es expresar una secuencia de múltiples operaciones, evitando la creación de objetos intermedios.   
 A partir de R.4.1.0, el lengujae básico incorpora una pipa nativa (*native pipe*) `|>` con funciones similares pero una sintaxis ligeramente diferente a la de la pipa del paquete *magrittr*.    
 Veamos un ejemplo sencillo donde:  
@@ -328,7 +332,3 @@ Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tie
   + Asegúrese de que al menos una variable categórica sea un factor.   
   + Obtenga los valores medios para cada nivel de esa factor de una variable continua con *aggregate*.   
 
-  
-   
-
-   
