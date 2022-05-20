@@ -20,7 +20,7 @@ Encuentros: se enviarán los links de meet por e-mail.
 #### Cronograma   
 
 * Módulo 1   
-  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) -  [VIDEO](https://www.youtube.com/watch?v=2i4ce9CGQOs)
+  + Teórico: ¿Por qué R? Contenido del curso. [PRESENTACIÓN](teoricos/teor1.html) -  [VIDEO](https://youtu.be/gHLNuR-eQSc)
   + Práctico guiado: Introducción al lenguaje. Ingreso y manipulación de datos. [PÁGINA](01 practico/practico01.html) - VIDEO: [parte 1](https://www.youtube.com/watch?v=y7JUlQSWPN8) - [parte 2](https://youtu.be/zcmnrBYogwA)   
   + Trabajo práctico: preparación de datos, ingreso y manipulación.  
   + Encuentro 30/05/2022.    
