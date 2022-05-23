@@ -29,7 +29,7 @@ R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "
 
 # El comando más básico: Asignar crea objetos.
 n <- 15  
-n   #escribir el nombre de un objeto es "invocarlo"
+n   # escribir el nombre de un objeto es "invocarlo"
 
 # al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisar")
 n <- 46 + 12  				 
@@ -52,7 +52,6 @@ di
 vector <- c(1, 2, 3, 4)
 vector <- c("a", "b", "c", "d")
 ```
-
 
 ## Funciones básicas: creación de vectores, secuencias y matrices
 Las funciones de esta sección son las más sencillas de R. Como regla general las funciones siempre deben escribirse acompañadas de paréntesis, que contienen los elementos sobre los cuales la función actuará. Si no se colocan los paréntesis el programa mostrará el código mismo de la función.
@@ -288,20 +287,20 @@ largo.a_A <- subset(datos$largo.a, datos$grupo == "A")
 M <- mean(largo.a_A)
 M
 
-# Usando R base, eviatndo los objetos intermedios
+# Usando R base, evitando los objetos intermedios
 # Notar cómo se debe leer de "adentro" hacia "afuera".
 M <- mean(subset(datos$largo.a, datos$grupo == "A"))
 M
 
-# Usando magrittr %>%
+# Usando la pipa de magrittr %>%
 # Notar como sigue más de cerca la lógica de 
 # un "lenguaje natural"
 datos$largo.a %>%
 subset(datos$grupo == "A") %>%
-mean() -> M  # en magrittr paréntesis como estos en mean() son opcionales
+mean() -> M  # en magrittr los paréntesis que acompañan mean son opcionales
 M
 
-# Usando native pipes |>
+# Usando 'pipas nativas' |>
 datos$largo.a |>
 subset(datos$grupo == "A") |>
 mean() -> M
@@ -312,10 +311,13 @@ M
 ## Una nota sobre *tidyverse*   
 
 Los paquetes de *tidyverse* forman una colección de paquetes especialmente dedicados a la ciencia de datos, introducida por Hadley Wickham (jefe científico de RStudio).   
-Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia de uso de R durante 16 años y dictado de cursos durante 11, no he encontrado motivo para promover su uso entre quienes nos dedicamos al análisis estadístico en ciencias biológicas, aunque creo que es útil conocerlo y enseñarlo en cursos de R de nivel intermedio y no introductorio (como este). Coincido parcialmente en esto con la [opinión de Norm Matloff](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt), que en resumen puede resumirse en estos puntos.    
-* *tydiverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
+Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia son muy eficientes para la ciencia de datos, pero el objetivo de este curso es solamente aplicar R al análisis estadístico en ciencias biológicas. Creo que es útil enseñar *tidyverse* en cursos de R de nivel intermedio y no introductorio, o con otras orientaciones. Coincido parcialmente en esto con la opiniones como [ésta](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt) y [ésta](https://towardsdatascience.com/a-thousand-gadgets-my-thoughts-on-the-r-tidyverse-2441d8504433), que pueden resumirse en algunos puntos.    
+* *tidyverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
 * Si bien la idea de hacer los paquetes y funciones más consistentes entre sí es interesante, esto se logra al precio de una mayor abstracción.   
-* R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuleven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar en mis cursos.   
+* R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuelven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar.  
+* *tidyverse* está sujeto a rápidos cambios, mientras que *R Base* es altamente conservado, permitiendo la ejecución de rutinas incluso varios años después de publicadas. Por ese motivo, lo encuentro más util para asegurar una ivnestigación reproducible.   
+* La misma estabilidad de *R Base* lo vuelve una mejor elección para crear funciones, uno de los objetivos de este curso.
+
 
 
 > Un excelente lugar para introducirce a *tidyverse* es [**R para ciencia de datos**](https://es.r4ds.hadley.nz/). También, para comparar tres tipos de sintaxis en R (con signo $, el modo fórmula y *tidy*) se puede consultar esta [cheatshet.](https://raw.githubusercontent.com/rstudio/cheatsheets/master/syntax.pdf)   
