@@ -230,23 +230,29 @@ largo.a_A <- subset(datos$largo.a, datos$grupo == "A")
 M <- mean(largo.a_A)
 M
 
-# Usando R base, eviatndo los objetos intermedios
+# Usando R base, evitando los objetos intermedios
 # Notar cómo se debe leer de "adentro" hacia "afuera".
 M <- mean(subset(datos$largo.a, datos$grupo == "A"))
 M
 
-# Usando magrittr %>%
+# Usando la pipa de magrittr %>%
 # Notar como sigue más de cerca la lógica de 
 # un "lenguaje natural"
 datos$largo.a %>%
   subset(datos$grupo == "A") %>%
-  mean() -> M  # en magrittr paréntesis como estos en mean() son opcionales
+  mean() -> M  # en magrittr los paréntesis que acompañan mean son opcionales
 M
 
-# Usando native pipes |>
+# Usando 'pipas nativas' |>
 datos$largo.a |>
   subset(datos$grupo == "A") |>
   mean() -> M
 M
 
+<<<<<<< HEAD
 ####### END #######
+=======
+
+####### END #######
+
+>>>>>>> master
