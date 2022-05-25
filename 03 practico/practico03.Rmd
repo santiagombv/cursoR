@@ -13,7 +13,7 @@ Se estudió el efecto del número de parejas sexuales sobre la longevidad de mos
 
 ```R
 # complete la ruta al directorio en ...
-dat <- read.table(".../moscas.txt", header = TRUE)
+dat <- read.table(".../moscas.txt", header = TRUE, stringAsFactors = TRUE)
 
 plot(dat$torax)
 plot(dat$vida)
