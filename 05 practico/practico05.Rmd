@@ -185,8 +185,7 @@ lineplot.CI(x.factor = densidad, response = huevos, group = estacion,
             col = c("red", "black"),  # modificación de varios parámetros
             pch = c(1,20),
             xlab = "densidad", 
-            ylab = "número de huevos",
-            trace.label = "estación")
+            ylab = "número de huevos")
 ```
 
 ## Gráficos a partir de predichos
