@@ -68,7 +68,7 @@ Los paquetes mismos deben actualizarse regularmente, particualrmente junto a los
 update.packages()
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *patchwork*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
 
 
 ### Actualización de R. 
@@ -123,7 +123,7 @@ sudo R
 install.packages("nombre_del_paquete")
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *patchwork*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
 
 Los paquetes mismos deben actualizarse regularmente, particualrmente junto a los cambios en las versiones de R. Para esto, ejecute y posteriormente siga las instrucciones.
 

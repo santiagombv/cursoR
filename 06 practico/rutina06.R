@@ -1,6 +1,6 @@
 ### Gráficos del paquete lattice
 
-library (lattice)
+library(lattice)
 
 # complete la ruta al directorio en ...
 fum <- read.table(".../fumadores.txt", header=T)
@@ -33,11 +33,11 @@ densityplot(~ ca.pulm | fuma, data = fum)
 #############################################################
 
 ## Gráficos del paquete ggplot2
+library(ggplot2)
+library(viridis)
 
 # complete la ruta al directorio en ...
 fum <- read.table(".../fumadores.txt", header=T)
-
-library(ggplot2)
 
 #utilizando ggplot
 ggplot(data = fum, aes(x = edad, y = ca.pulm)) + geom_point()    
@@ -48,54 +48,73 @@ g2 <- g1 + geom_point()
 g2    
 
 # modificando algunos detalles comunes
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) 
-g2 <- g1 + geom_point(size=3, aes(shape=sexo)) 
-g3 <- g2 + xlab("Edad")  
-g4 <- g3 + ylab("Capacidad Pulmonar")
-g5 <- g4 + theme_bw()
-g5
+# notar el + al final (equivale a una línea continua)
+g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) +
+  geom_point(size=3, aes(shape=sexo)) +
+  xlab("Edad") +
+  ylab("Capacidad Pulmonar") +
+  theme_bw()
+g1
 
 # modificando los colores 
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) 
-g2 <- g1 + scale_colour_manual(values=c("red", "black"))
-g3 <- g2 + geom_point(size=3) 
-g3  
+c1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) +
+  scale_colour_manual(values=c("red", "black")) + 
+  geom_point(size=3) 
+c1  
 
 # modificando los colores con una escala continua
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = alt)) 
-g2 <- g1 + geom_point(size=3) 
-g2  
+c2 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = alt)) +
+  geom_point(size=3) 
+c2  
+
+# modificando los colores con una escala de viridis
+c3 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = alt)) +
+  geom_point(size=3) + scale_color_viridis_c(option = "magma")
+c3  
 
 # modificando tamaños con una escala continua
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, size = alt, color = fuma)) 
-g2 <- g1 + geom_point() 
-g2  
+t1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, size = alt, color = fuma)) + 
+  geom_point() 
+t1
 
 # Faceting (división del la ventana gráfica como en lattice)
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma))
-g2 <- g1 + geom_point(size=3) + theme_bw()
-g3 <- g2 + facet_grid(. ~ sexo)
-g3
+f1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) +
+  geom_point(size=3) + theme_bw() + facet_grid(. ~ sexo)
+f1
 
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma))
-g2 <- g1 + geom_point(size = 3) + theme_bw()
-g3 <- g2 + facet_grid(fuma ~ .) + scale_color_manual(values = c("red", "blue"))
-g3
+f2 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) + 
+  geom_point(size = 3) + theme_bw() + facet_grid(fuma ~ .) + 
+  scale_color_manual(values = c("red", "blue"))
+f2
+
+f3 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) + 
+  geom_point(size = 3) + theme_bw() + 
+  scale_color_manual(values = c("red", "blue")) +
+  facet_wrap(~fuma*sexo, ncol = 2)
+f3
 
 # agregar líneas de regresión
-g1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma))
-g2 <- g1 + geom_point(size = 3) + theme_bw()
-g3 <- g2 + geom_smooth(method = "lm")
-g3
+m1 <- ggplot(data = fum, aes(x = edad, y = ca.pulm, color = fuma)) +
+  geom_point(size = 3) + theme_bw() +
+  geom_smooth(method = "lm")
+m1
 
 # gráficos de cajas
-g1 <- ggplot(data = fum, aes(x = fuma, y = ca.pulm))
-g2 <- g1 + geom_boxplot()
-g2
+b1 <- ggplot(data = fum, aes(x = fuma, y = ca.pulm, fill = fuma)) + geom_boxplot() +
+  scale_fill_viridis_d()
+b1
 
 # histogramas
-g1 <- ggplot(data = fum, aes(x = ca.pulm))
-g2 <- g1 + geom_histogram(fill="red")
-g2
+h1 <- ggplot(data = fum, aes(x = ca.pulm)) + geom_histogram(fill="red")
+h1
+
+# combinando gráficos
+library(patchwork)
+
+c3 / b1
+
+c3 + b1
+
+c3 / (b1 + h1)
 
 #### END ####
