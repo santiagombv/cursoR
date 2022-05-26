@@ -49,7 +49,7 @@ Encuentros: se enviarán los links de meet por e-mail.
   + Encuentro 06/06/2022.    
 
 * Módulo 6   
-  + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://www.youtube.com/watch?v=r-LtpOI6cik)       
+  + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://youtu.be/u6EDBSoB4y8)       
   + Trabajo práctico: Ejercicios    
   + Encuentro 08/06/2022.
 
