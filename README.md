@@ -5,7 +5,9 @@
 #### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina)
 
 #### Curso online   
-*30 de mayo al 17 de junio de 2022. Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba.*  
+*29 de mayo al 17 de junio de 2022. Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba.*  
+
+### UNDER CONSTRUCTION ###
 
 
 #### Antes de empezar...
@@ -13,7 +15,7 @@
 [Descarga del material práctico en zip](https://github.com/santiagombv/cursoR/archive/master.zip)   
 
 Preguntas, dudas y consultas:    
-Este [google docs](https://docs.google.com/document/d/1S_2thMQ-09F3l5kZ19FrDZVhGsy-eNbymWMj7HVnbZE/edit?usp=sharing) se encuentra habilitado para consultas. Cualquiera puede responder, es la intención que aprendamos de forma colaborativa.  
+Este [google docs] se encuentra habilitado para consultas. Cualquiera puede responder, es la intención que aprendamos de forma colaborativa.  
 
 Encuentros: se enviarán los links de meet por e-mail.  
 
