@@ -7,10 +7,10 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R
+## **R**
 R es un lenguaje utilizado para análisis estadísticos, gráficos y programación. Puede ser copiado y distribuido de forma gratuita y permite que los usuarios estudien como funciona, lo modifiquen de acuerdo a sus necesidades y publiquen sus mejoras y extensiones para ser compartidas con otros usuarios.   
 
-R es actualmente el software que ofrece mayor número de funciones estadísticas y aplicaciones para la creación de gráficos. Colaboradores de todo el mundo producen paquetes destinados a resolver problemas particulares o desarrollan determinadas técnicas estadísticas. Cada usuario puede, además, crear sus propias funciones y rutinas combinando las funciones existentes.  
+R es actualmente el software que ofrece mayor número de funciones estadísticas y aplicaciones para la creación de gráficos. Colaboradores producen paquetes destinados a resolver problemas particulares o desarrollan determinadas técnicas estadísticas. Cada usuario puede, además, crear sus propias funciones y rutinas combinando las funciones existentes.  
 
 Existe una amplia comunidad de usuarios y por lo tanto, una gran oferta de ayudas para aquellos que se inician en el uso del programa, incluyendo foros de discusión en internet, grupos de usuarios y una profusa bibliografía.   
 
@@ -37,7 +37,7 @@ El contenido teórico de este curso comprende introducción al aprendizaje estad
 
 --- 
 
-## Instalación de R y de sus paquetes en Windows
+## **Instalación de R y de sus paquetes en Windows**
 
 ### Instalación de R
 
@@ -48,7 +48,7 @@ En download R for Windows - base, seleccionar la última versión disponible de 
 
 Descargar la última version de RStudio Desktop para el sistema operativo deseado (version gratuita) desde https://posit.co/download/rstudio-desktop/ y seguir las instrucciones de instalación.  
 
-Aquí mostramos cómo se ve RStudio con una rutina abierta.   
+Así se ven los paneles principales de RStudio *con una rutina ya abierta*. Características como el tamaño de fuente y los colores son personalizables.   
 
 ![](images/g35041.png)
 
@@ -73,7 +73,7 @@ Los paquetes mismos deben actualizarse regularmente, particualrmente junto a los
 update.packages()
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *patchwork*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *dplyr*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *patchwork*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
 
 
 ### Actualización de R. 
@@ -88,9 +88,11 @@ updateR() #seguir las instrucciones que aparezcan
 ### Actualización de RStudio. 
 Dirigirse a `Help - check for updates`.   
 
+> Se recomienda fuertemente seguir este curso con una *versión actualizada de R y RStudio*. En caso de tener problemas con la actualización, desinstalar todas las versiones anteriores.
+
 --- 
 
-## Instalación de R y de sus paquetes en Ubuntu
+## **Instalación de R y de sus paquetes en Ubuntu**
 
 ### Instalación de R
 
@@ -117,7 +119,7 @@ sudo apt-get install r-base
 
 Descargar la última version de RStudio Desktop (version gratuita) desde https://posit.co/download/rstudio-desktop/ y seguir las instrucciones de instalación.    
 
-Aquí mostramos cómo se ve RStudio con una rutina abierta.   
+Así se ven los paneles principales de RStudio *con una rutina ya abierta*. Características como el tamaño de fuente y los colores son personalizables.   
 
 ![](images/g35041.png)
 
@@ -133,7 +135,7 @@ sudo R
 install.packages("nombre_del_paquete")
 ```
 
-> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *patchwork*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
+> Para este curso, se requieren los siguientes paquetes que no son descargados de forma automática con la instalación de R, por lo que deberá instalarlos manualmente: *arm*, *car*, *devtools*,*dplyr*, *glmnet*, *GGally*, *ggplot2*, *lattice*, *leaps*, *magrittr*, *MuMIn*, *patchwork*, *rgl*, *rmarkdown*, *sciplot*, *viridis* y todas las dependencias necesarias.  
 
 Los paquetes mismos deben actualizarse regularmente, particualrmente junto a los cambios en las versiones de R. Para esto, ejecute y posteriormente siga las instrucciones.
 

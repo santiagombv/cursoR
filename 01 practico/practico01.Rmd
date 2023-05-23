@@ -19,19 +19,26 @@ R es un lenguaje orientado a objetos: cada comando crea un objeto que debe ser "
 | **vectors** | Colección de datos del mismo tipo (números, letras, etc.) que puede ser creado dentro de R o importado como una columna de un **data.frame**. Existen muchos tipos de vectores, entre ellos: **numeric** consiste de números reales; **integer** consiste de números enteros; **character** contiene letras, nombres, etc. (notar que cada elemento se encuentra entre comillas, por ej. "A1"); **factor** sirve para representar variables categóricas, porta información sobre los niveles del factor (*levels*) y sobre si estos niveles siguen un orden o no.   |
 | **matrix**           | Matriz formada por la unión de vectores de un mismo tipo y largo, por un solo vector que es partido en columnas y filas o (más habitualmente) producto de ciertas funciones, por ejemplo **cor**, que construye matrices de correlación.      |
 | **list**           | Objeto que compuesto de objetos de distinto tipo y largo. |
+| **tibble**         | Objeto propio de los paquetes de tidyverse, similar en sus funciones a un **data.frame** pero con menores capacidades (por ejemplo, no admite nombres de columnas), destinadas a simplificar su uso y evitar errores comunes.Más información en https://tibble.tidyverse.org/articles/tibble.html |
 
+## Algunas ayudas básicas
+- El símbolo **>** o *prompt* que aparece en la consola indica que esta se encuentra lista para recibir una orden. No está incluído en las rutinas para facilirat el copiar y pegar. Cuando **>** cambia a **+** indica que se encuentra esperando a finalización de una orden (por ejemplo si se ha abierto un paréntesis pero no se ha cerrado). Si no se sabe a qué orden se refiere, se puede salir del error con la tecla ESC (seleccionando la consola).   
+- En RStudio las dos ventanas principales contienen la rutina (con el archivo sobre el cual estamos trabajando) y la consola de R. **SIEMPRE** trabajar sobre la rutina, no sobre la consola.   
+- Para cálculos muy complejos, la consola puede quedar inutilizada por un tiempo. En ese caso veremos que el símbolo **>** no aparece. Puede detenerse un cálculo con **STOP**.
 
-## Cuatro símbolos básicos: # <- ? c
+## Cuatro símbolos básicos: # <- ? c  
 
 ```R
 # El símbolo # desactiva el espacio a su derecha.
 # Es útil para poner aclaraciones en nuestras rutinas.
 
 # El comando más básico: Asignar crea objetos.
+# Puede usarse = en su reemplazo o -> para asignar el nombre al final.
+# Para unificar el estilo de todas las rutinas sólo usaré <-
 n <- 15  
 n   # escribir el nombre de un objeto es "invocarlo"
 
-# al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisar")
+# al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisarlo")
 n <- 46 + 12  				 
 n
 
@@ -41,11 +48,10 @@ di
 
 # Obtener ayudas, el símbolo ?
 # si tenemos dudas sobre el funcionamiento de una función
-? mean
 ? lm
 
 # Si desconocemos el nombre de una función para realizar determinada
-# tarea, puede realizarse una búsqueda con ?? (en los paquetes activos)
+# tarea, puede realizarse una búsqueda con ?? (sólo en los paquetes intalados)
 ?? "linear models"
 
 # crear vectores. La función concatenar c
@@ -54,20 +60,16 @@ vector <- c("a", "b", "c", "d")
 ```
 
 ## Funciones básicas: creación de vectores, secuencias y matrices
-Las funciones de esta sección son las más sencillas de R. Como regla general las funciones siempre deben escribirse acompañadas de paréntesis, que contienen los elementos sobre los cuales la función actuará. Si no se colocan los paréntesis el programa mostrará el código mismo de la función.
+Las funciones de esta sección son las más sencillas de R. Como regla general las funciones siempre deben escribirse acompañadas de paréntesis, que contienen los elementos sobre los cuales la función actuará. Un ejemplo de función es c, que simplemente concatena objetos. funciones más complejas apelan a diferentes *argumentos* a los cuales hay que asignarles un valor y se encuentran separados por comas.   
 
 ```R
-### vectores ###
-# Ya vimos c concatenar
-vec <- c(1, 4, 6, 3, 7)
-vec
-
-# vectores de repetición. rep(lo_que_queremos_repetir, cuantas veces)
+# vectores de repetición. 
 # esta función tiene dos argumentos, separados por una coma
+# rep(lo_que_queremos_repetir, cuantas veces)
 xx <- rep("A", 50) 
 xx
 
-# secuencias seq()
+# secuencias 
 seq1 <- c(1:50)  # el símbolo : indica desde:hasta
 seq1
 
@@ -76,9 +78,10 @@ seq2
 
 # combinando vectores de a pares: cbind y rbind
 az <- cbind(seq1, xx)
-az
-
 za <- rbind(c(1:25), rnorm(25))	
+
+# comparar
+az
 za
 
 # construyendo una matriz: matrix()
@@ -94,10 +97,11 @@ Se recomienda:
 - Evitar los símbolos extraños como %, &, ^, ~, ñ, etc.  
 - Utilizar nombres cortos.   
 - Los datos faltantes no deben dejarse en blanco, sino señalarse con NA.    
+- Utilizar un formato ***tidy*** es decir donde *cada columna es una variable y cada fila es una observación.   
 
 Una vez lista la planilla se recomienda guardarla en formato .txt o .csv (si bien R admite otros formatos). Pueden guardarse en cualquier carpeta del equipo. Si utilizamos R Studio y guardamos los sets de datos en la misma carpeta que la rutina, el programa determinará esa carpeta como el directorio de trabajo de forma automática, por lo que no es necesario escribir la ruta completa al archivo. También puede evitarse escribir la ruta si al abrir R seleccionamos la carpeta que donde los archivos están guardados con la opción Session - Set Working Directory, o usando la función *setwd* (para examinar cual es la carpeta en uso, utilizar *getwd*). Esta opción es muy útil si vamos a abrir varios archivos de datos guardados en el mismo directorio. Finalmente, puede abrirse una ventana de búsqueda para seleccionar el archivo con la opción *file.choose()*.   
 
-> Desde R 4.0.0 las variables categóricas ya no son reconocidas como factores al importar un set de datos en R. Así que deben ser convertidas con *as.factor()* cuando sea necesario o la opción stringsAsFactors = TRUE dentro de *read.table* o de *read.csv*.   
+> Desde R 4.0.0 las variables categóricas ya no son reconocidas como factores al importar un set de datos en R. Así que deben ser convertidas una por una con *as.factor()* cuando sea necesario o con la opción stringsAsFactors = TRUE dentro de *read.table* o de *read.csv*.   
    
 ```R
 # la función read.table
@@ -107,11 +111,11 @@ datos <- read.table("C:/RD/datos/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"
 # o con setwd
-setwd("C:/RD/")
+setwd("C:/RD/") ## "C:/RD/" es un ejemplo...
 datos <- read.table("peces1.txt", header=TRUE)
 
 # opción 3 Abre una ventana de búsqueda 
-# desventaja: requiere que el humano piense!
+# desventaja: requiere que el humano trabaje!
 datos <- read.table(file.choose(), header=TRUE)
 
 # opción 4 la función read.csv
@@ -128,14 +132,14 @@ head(datos)
 str(datos)
 
 # Información básica del set de datos
-nrow(datos)     #Número de filas
-ncol(datos)     #Número de columnas
-names(datos)    #Nombre de las columnas
+nrow(datos)     # número de filas
+ncol(datos)     # número de columnas
+names(datos)    # nombre de las columnas
 ```
 
 ## Indexación
 Estas operaciones se realizan para extraer de un objeto la parte que nos interesa, por ejemplo una columna con una variable de un marco de datos.   
-**No usar attach(),** esta función aumenta las probabilidades de confundirse e introducir errores.
+Sugiero **no usar attach(),** esta función aumenta las probabilidades de confundirse e introducir errores.
 
 ```R
 # Para seleccionar una columna del marco de datos utilizamos $
@@ -168,41 +172,21 @@ vec[vec > 15]
 
 ```
 
-## Modificación y creación de columnas.   
+## Subdivisión de conjuntos de datos.   
+Para esta sección es clave conocer los **símbolos lógicos**:
+- == (igual)   
+- != (distinto)   
+- > (mayor)   
+- < (menor)   
+- >= (mayor o igual)   
+- <= (menor o igual)   
+- & y   
+- | o   
+- %in% en c(lista de posibles valores...)   
 
-```R
-# reemplazo (al usar el mismo nombre) una variable numérica por un factor
-datos$trat
-datos$trat <- as.factor(datos$trat) 
-datos$trat    # notar la lista de niveles del factor
 
-# crear una nueva columna en una base de datos ya existentes
-datos$pob <- c(rep("pob1", 15), rep("pob2", 15))
-datos$pob <- as.factor(datos$pob) 
-datos$log.largo.a <- log(datos$largo.a)
-head(datos)
-
-# crear una nueva columna uniendo clasificadores
-datos$clave <- paste(datos$pob, datos$trat, sep = ".")
-head(datos)
-
-# Usando factor para arreglos más complicados
-datos$pais <- factor(datos$pob, levels = c("pob2", "pob1"), 
-                     labels = c("Bolivia", "Chile"))
-head(datos)
-```
-
-## Subdivisión de conjuntos de datos
 ```R
 # Subdivisión de un conjunto de datos
-# Símbolos lógicos: 
-# == (igual)
-# != (distinto), 
-# > (mayor), 
-# < (menor)
-# >= (mayor o igual), 
-# <= (menor o igual).
-
 dat1 <- subset(datos, datos$grupo == "A")
 dat1
 
@@ -215,17 +199,37 @@ ldat
 ldat[["B"]] # indexacion d listas
 ```
 
-## Funciones para extraer información de  un vector
+## Modificación.      
+La indexación y la subdivisión permite seleccionar una parte de un objeto (por ejemplo una columna). Esto es útil para aplicar transformaciones y también para resumir información de partes de un objeto.
+
 ```R
-length(seq1)
-max(datos$largo.a)
-which.max(datos$largo.a)
-min(datos$largo.a)
-which.min(datos$largo.a)
+# reemplazar (al usar el mismo nombre) una variable numérica por un factor
+datos$trat
+datos$trat <- as.factor(datos$trat) 
+datos$trat    # notar la lista de niveles del factor
+
+# crear una nueva columna en una base de datos ya existentes
+# (utilizo un nombre nuevo)
+datos$pob <- c(rep("pob1", 15), rep("pob2", 15))
+each column is a variable, and each row is an observation
+
+datos$log.largo.a <- log(datos$largo.a)
+
+head(datos)
+
+# crear una nueva columna uniendo clasificadores
+datos$clave <- paste(datos$pob, datos$trat, sep = ".")
+head(datos)
+
+# Usando factor para arreglos más complicados
+datos$pais <- factor(datos$pob, levels = c("pob2", "pob1"), 
+                     labels = c("Bolivia", "Chile"))
+head(datos)
 ```
 
-## Funciones estadísticas básicas
-Se detallan abajo algunas como la media, varianza, desvío estándar, etc. En general si cualquiera de ellas se aplica sobre datos que contienen NA el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función *na.omit*.
+
+## Funciones estadísticas básicas y de resumen.  
+En general si cualquiera de ellas se aplica sobre datos que contienen NA (dato ausente) el resultado será NA también, por lo cual hay indicarle a la función que los elimine. Una alternativa es eliminar previamente todas las filas con datos faltantes usando la función *na.omit*.
 
 ```R
 # media
@@ -261,11 +265,29 @@ MG<-aggregate(datos$largo.a, by=list(datos$grupo), FUN=mean, na.rm=TRUE)
 MG
 ```
 
-> En RStudio las dos ventanas principales contienen la rutina (con el archivo sobre el cual estamos trabajando) y la consola de R. **SIEMPRE** trabajar sobre la rutina, no sobre la consola.
+## Indexación, subdivisión y modificación en *tidyverse.*   
+Es cada vez más frecuente encontrar operaciones básicas re R realizadas a través del paquete *dplyr*. Si bien mi objetivo es enseñar a utilizar *r-base* incorporo esta sección y la siguiente para mostrar compartivamente estos diferentes dialectos de un mismo lenguaje.   
 
-> El símbolo **>** en la consola indica que R está listo para recibir una orden. En caso de que aparezca **+** en su lugar, indica que no se ha completado una orden (la razón más común es no haber cerrado un paréntesis). Una manera de solucionarlo es colocarse en la consola y presionar Esc.
+```R
+library(dplyr)
+# Subdivisión o *filtrado*
+dat1 <- filter(datos, grupo == "A")
+dat2 <- filter(datos, grupo == "A", largo.b > 100)
 
-> Para cálculos muy complejos, la consola puede quedar inutilizada por un tiempo. En ese caso veremos que el símbolo **>** no aparece. Puede detenerse un cálculo con **STOP**.
+# Selección por colunmas
+dat3 <- select(datos, grupo, largo.a)
+
+# select tiene funciones de ayuda. Por ejemplo, seleccionar todas las 
+# columnas que comiencen con "larg". Ver ?select para más ejemplos.
+dat4 <- select(datos, starts_with("larg"))
+
+# Modificación de columnas
+# puede crearse un nuevo set de datos como aquí o modificarse el original
+dat5 <- mutate(datos,
+  prop = largo.b / largo.a, # columna nueva
+  log.largo = log(largo.a)) # columna nueva
+  
+```
 
 ## Haciendo más eficiente la programación: esto es una pipa
 
@@ -277,9 +299,11 @@ Veamos un ejemplo sencillo donde:
 * Leemos un set de dados   
 * Aplicamos un subset   
 * Calculamos la media   
+* Repitamos esas operaciones en *dplyr*
 
 ```R
 library(magrittr)
+library(dplyr)
 
 # Usando R base, con creación de objetos intermedios
 datos <- read.table("peces1.txt", header=TRUE)
@@ -306,21 +330,19 @@ subset(datos$grupo == "A") |>
 mean() -> M
 M
 
-``` 
+# Usando dplyr y pipa de magrittr
+# (mismo resultado usando |>)
+filter(datos, grupo == "A") %>%
+select(largo.a) %>%
+summarize(mean(largo.a)) -> M
+M
+  ``` 
 
 ## Una nota sobre *tidyverse*   
 
-Los paquetes de *tidyverse* forman una colección de paquetes especialmente dedicados a la ciencia de datos, introducida por Hadley Wickham (jefe científico de RStudio).   
-Con la excepción de *ggplot2*, en este curso no veremos estos paquetes, que tienen una popularidad creciente. En mi experiencia son muy eficientes para la ciencia de datos, pero el objetivo de este curso es solamente aplicar R al análisis estadístico en ciencias biológicas. Creo que es útil enseñar *tidyverse* en cursos de R de nivel intermedio y no introductorio, o con otras orientaciones. Coincido parcialmente en esto con la opiniones como [ésta](https://github.com/matloff/TidyverseSkeptic/blob/master/READMEFull.md#dpt) y [ésta](https://towardsdatascience.com/a-thousand-gadgets-my-thoughts-on-the-r-tidyverse-2441d8504433), que pueden resumirse en algunos puntos.    
-* *tidyverse* vuelve más complejo el aprendizaje de **R** para quienes no poseen una base en programación.   
-* Si bien la idea de hacer los paquetes y funciones más consistentes entre sí es interesante, esto se logra al precio de una mayor abstracción.   
-* R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuelven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar.  
-* *tidyverse* está sujeto a rápidos cambios, mientras que *R Base* es altamente conservado, permitiendo la ejecución de rutinas incluso varios años después de publicadas. Por ese motivo, lo encuentro más util para asegurar una ivnestigación reproducible.   
-* La misma estabilidad de *R Base* lo vuelve una mejor elección para crear funciones, uno de los objetivos de este curso.
+Los paquetes de *tidyverse* forman una colección de paquetes especialmente dedicados a la ciencia de datos, introducida por Hadley Wickham. Con la excepción de *ggplot2*, en este curso no profundiaremos en estos paquetes, que tienen una popularidad creciente. En mi experiencia son muy eficientes para la ciencia de datos, pero el objetivo de este curso es solamente aplicar R al análisis estadístico en ciencias biológicas. Creo que es más útil enseñar *tidyverse* en cursos de R de nivel intermedio y no introductorio, o con otras orientaciones. R base ofrece pocas herramientas que deben combinarse para resolver un problema. Por el contrario, las funciones de *tidyverse* se cuentan por cientos, son sumamente eficaces (y en muchos casos resuelven problemas que requieren bastante programación en R), pero limitan la creatividad, uno de los puntos que quiero enfatizar. Finalmente, *tidyverse* está sujeto a rápidos cambios, mientras que *R Base* es altamente conservado, permitiendo la ejecución de rutinas incluso varios años después de publicadas. Por ese motivo, lo encuentro más util para asegurar una ivnestigación reproducible.   
 
-
-
-> Un excelente lugar para introducirce a *tidyverse* es [**R para ciencia de datos**](https://es.r4ds.hadley.nz/). También, para comparar tres tipos de sintaxis en R (con signo $, el modo fórmula y *tidy*) se puede consultar esta [cheatshet.](https://raw.githubusercontent.com/rstudio/cheatsheets/master/syntax.pdf)   
+> Un excelente lugar para introducirce a *tidyverse* es [**R para ciencia de datos**](https://r4ds.had.co.nz/). También, para comparar tres tipos de sintaxis en R (con signo $, el modo fórmula y *tidy*) se puede consultar esta [cheatshet.](https://raw.githubusercontent.com/rstudio/cheatsheets/master/syntax.pdf)   
 
 
 ## Ejercicios
