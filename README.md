@@ -2,7 +2,7 @@
 
 ### INTRODUCCIÓN AL LENGUAJE R. MODELOS LINEALES Y FUNDAMENTOS DE PROGRAMACIÓN
 
-#### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina). *Este curso es dictado por una sola persona, no por una empresa. Sepa disculpar los poibles errores.*
+#### Dr. Santiago Benitez-Vieyra. Instituto Multidisciplinario de Biología Vegetal (Universidad Nacional de Córdoba - CONICET, Argentina). *Este curso es dictado por una sola persona, no por una empresa. Sepa disculpar los posibles errores.*
 
 #### Curso online   
 *29 de mayo al 17 de junio de 2023. Doctorado en Ciencias Biológicas, Universidad Nacional de Córdoba.*  
