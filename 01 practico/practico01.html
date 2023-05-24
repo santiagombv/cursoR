@@ -297,17 +297,23 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+content: "";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "\e258";
-font-family: 'Glyphicons Halflings';
+content: "";
 border: none;
+}
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "";
+font-family: 'Glyphicons Halflings';
+display: inline-block;
+padding: 10px;
+border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -644,7 +650,6 @@ datos$trat    # notar la lista de niveles del factor
 # crear una nueva columna en una base de datos ya existentes
 # (utilizo un nombre nuevo)
 datos$pob &lt;- c(rep(&quot;pob1&quot;, 15), rep(&quot;pob2&quot;, 15))
-each column is a variable, and each row is an observation
 
 datos$log.largo.a &lt;- log(datos$largo.a)
 

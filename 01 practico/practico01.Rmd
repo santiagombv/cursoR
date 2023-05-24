@@ -211,7 +211,6 @@ datos$trat    # notar la lista de niveles del factor
 # crear una nueva columna en una base de datos ya existentes
 # (utilizo un nombre nuevo)
 datos$pob <- c(rep("pob1", 15), rep("pob2", 15))
-each column is a variable, and each row is an observation
 
 datos$log.largo.a <- log(datos$largo.a)
 
