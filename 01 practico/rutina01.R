@@ -1,12 +1,14 @@
-#############################################################
+################################################################################
 # El símbolo # desactiva el espacio a su derecha.
 # Es útil para poner aclaraciones en nuestras rutinas.
 
 # El comando más básico: Asignar crea objetos.
+# Puede usarse = en su reemplazo o -> para asignar el nombre al final.
+# Para unificar el estilo de todas las rutinas sólo usaré <-
 n <- 15  
-n   #escribir el nombre de un objeto es "invocarlo"
+n   # escribir el nombre de un objeto es "invocarlo"
 
-# al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisar")
+# al usar de nuevo el mismo nombre el objeto anterior se pierde ("pisarlo")
 n <- 46 + 12  				 
 n
 
@@ -16,31 +18,25 @@ di
 
 # Obtener ayudas, el símbolo ?
 # si tenemos dudas sobre el funcionamiento de una función
-? mean
 ? lm
 
 # Si desconocemos el nombre de una función para realizar determinada
-# tarea, puede realizarse una búsqueda con ?? (en los paquetes activos)
+# tarea, puede realizarse una búsqueda con ?? (sólo en los paquetes intalados)
 ?? "linear models"
 
 # crear vectores. La función concatenar c
 vector <- c(1, 2, 3, 4)
 vector <- c("a", "b", "c", "d")
 
-#############################################################
+################################################################################
 
-##Funciones básicas: creación de vectores, secuencias y matrices
-
-# Ya vimos c concatenar
-vec <- c(1, 4, 6, 3, 7)
-vec
-
-# vectores de repetición. rep(lo_que_queremos_repetir, cuantas veces)
+# vectores de repetición. 
 # esta función tiene dos argumentos, separados por una coma
+# rep(lo_que_queremos_repetir, cuantas veces)
 xx <- rep("A", 50) 
 xx
 
-# secuencias seq()
+# secuencias 
 seq1 <- c(1:50)  # el símbolo : indica desde:hasta
 seq1
 
@@ -49,9 +45,10 @@ seq2
 
 # combinando vectores de a pares: cbind y rbind
 az <- cbind(seq1, xx)
-az
-
 za <- rbind(c(1:25), rnorm(25))	
+
+# comparar
+az
 za
 
 # construyendo una matriz: matrix()
@@ -59,9 +56,9 @@ m <- c(1:20)
 matriz1 <- matrix(m, 4, 5) # (vector a usar, filas, columnas) 
 matriz1
 
-#############################################################
+################################################################################
 
-##Preparación e ingreso de datos: la función read.table
+## Preparación e ingreso de datos: la función read.table
 
 # la función read.table
 # opción 1 con ruta completa (notar orientación de las barras /)
@@ -70,11 +67,11 @@ datos <- read.table("C:/RD/datos/peces1.txt", header=TRUE)
 
 # opción 2 seleccionando el directorio en uso previamente desde "Archivo"
 # o con setwd
-setwd("C:/RD/")
+setwd("C:/RD/") ## "C:/RD/" es un ejemplo...
 datos <- read.table("peces1.txt", header=TRUE)
 
 # opción 3 Abre una ventana de búsqueda 
-# desventaja: requiere que el humano piense!
+# desventaja: requiere que el humano trabaje!
 datos <- read.table(file.choose(), header=TRUE)
 
 # opción 4 la función read.csv
@@ -91,11 +88,11 @@ head(datos)
 str(datos)
 
 # Información básica del set de datos
-nrow(datos)     #Número de filas
-ncol(datos)     #Número de columnas
-names(datos)    #Nombre de las columnas
+nrow(datos)     # número de filas
+ncol(datos)     # número de columnas
+names(datos)    # nombre de las columnas
 
-#############################################################
+################################################################################
 
 ## Indexación
 
@@ -127,41 +124,9 @@ vec <- datos$largo.a
 vec[1]
 vec[vec > 15]
 
-#############################################################
-
-## Modificación y creación de columnas.
-
-# reemplazo (al usar el mismo nombre) una variable numérica por un factor
-datos$trat
-datos$trat <- as.factor(datos$trat) 
-datos$trat    # notar la lista de niveles del factor
-
-# crear una nueva columna en una base de datos ya existentes
-datos$pob <- c(rep("pob1", 15), rep("pob2", 15))
-datos$pob <- as.factor(datos$pob) 
-datos$log.largo.a <- log(datos$largo.a)
-head(datos)
-
-# crear una nueva columna uniendo clasificadores
-datos$clave <- paste(datos$pob, datos$trat, sep = ".")
-head(datos)
-
-# Usando factor para arreglos más complicados
-datos$pais <- factor(datos$pob, levels = c("pob2", "pob1"), 
-                     labels = c("Bolivia", "Chile"))
-head(datos)
-
-############################################################
+################################################################################
 
 ## Subdivisión de conjuntos de datos
-
-# Símbolos lógicos: 
-# == (igual)
-# != (distinto), 
-# > (mayor), 
-# < (menor)
-# >= (mayor o igual), 
-# <= (menor o igual).
 
 dat1 <- subset(datos, datos$grupo == "A")
 dat1
@@ -174,19 +139,35 @@ ldat <- split(datos, f = datos$grupo)
 ldat
 ldat[["B"]] # indexacion d listas
 
-###################################################################
+################################################################################
 
-## Funciones para extraer información de una columna o de un vector
+## Modificación y creación de columnas.
 
-length(seq1)
-max(datos$largo.a)
-which.max(datos$largo.a)
-min(datos$largo.a)
-which.min(datos$largo.a)
+# reemplazar (al usar el mismo nombre) una variable numérica por un factor
+datos$trat
+datos$trat <- as.factor(datos$trat) 
+datos$trat    # notar la lista de niveles del factor
 
-###################################################################
-##Funciones estadísticas básicas
+# crear una nueva columna en una base de datos ya existentes
+# (utilizo un nombre nuevo)
+datos$pob <- c(rep("pob1", 15), rep("pob2", 15))
 
+datos$log.largo.a <- log(datos$largo.a)
+
+head(datos)
+
+# crear una nueva columna uniendo clasificadores
+datos$clave <- paste(datos$pob, datos$trat, sep = ".")
+head(datos)
+
+# Usando factor para arreglos más complicados
+datos$pais <- factor(datos$pob, levels = c("pob2", "pob1"), 
+                     labels = c("Bolivia", "Chile"))
+head(datos)
+
+################################################################################
+
+## Funciones estadísticas básicas y de resumen
 # media
 M <- mean(datos$largo.a, na.rm = TRUE)
 M
@@ -205,7 +186,7 @@ VC
 
 # de forma parecida, puede obtenerse una matriz de correlación
 CO <- cor(datos[, c(3, 4)], use="complete.obs")  #complete.obs elimina NA
-CO 
+CO
 
 # en cambio, para realizar un test de correlación
 cor.test(datos$largo.a, datos$largo.b, method = "pearson")
@@ -219,10 +200,33 @@ summary(datos)
 MG<-aggregate(datos$largo.a, by=list(datos$grupo), FUN=mean, na.rm=TRUE)
 MG
 
-###########################################################
+################################################################################
+
+## Indexación, subdivisión y modificación en tidyverse.
+library(dplyr)
+# Subdivisión o *filtrado*
+dat1 <- filter(datos, grupo == "A")
+dat2 <- filter(datos, grupo == "A", largo.b > 100)
+
+# Selección por colunmas
+dat3 <- select(datos, grupo, largo.a)
+
+# select tiene funciones de ayuda. Por ejemplo, seleccionar todas las 
+# columnas que comiencen con "larg". Ver ?select para más ejemplos.
+dat4 <- select(datos, starts_with("larg"))
+
+# Modificación de columnas
+# puede crearse un nuevo set de datos como aquí o modificarse el original
+dat5 <- mutate(datos,
+               prop = largo.b / largo.a, # columna nueva
+               log.largo = log(largo.a)) # columna nueva ...
+
+################################################################################
+
 ## Haciendo más eficiente la programación: esto es una pipa
 
 library(magrittr)
+library(dplyr)
 
 # Usando R base, con creación de objetos intermedios
 datos <- read.table("peces1.txt", header=TRUE)
@@ -250,8 +254,17 @@ datos$largo.a |>
 M
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ####### END #######
 =======
+=======
+# Usando dplyr y pipa de magrittr
+# (mismo resultado usando |>)
+filter(datos, grupo == "A") %>%
+  select(largo.a) %>%
+  summarize(mean(largo.a)) -> M
+M
+>>>>>>> master
 
 ####### END #######
 
