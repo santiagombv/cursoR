@@ -102,7 +102,7 @@ vec <- numeric(length=50)
 vec					       # vector vacío antes del loop
 for(i in 1:50) {vec[i] <- mean(sample(Dat, 20))} 
 vec					       # vector luego de aplicar el loop
-plot(density(vec))		               #teorema central del límite
+plot(density(vec))		              
 ```
 
 **if** agrega una condición: si (condición) entonces hacer X, en caso contrario hacer Y.   
@@ -113,6 +113,17 @@ X2 <- numeric(1000)
 for (i in 1:1000) if (X1[i] < 0) X2[i] <- NA else X2[i] <- X1[i]
 hist(X2)
 ```
+
+**while** crea un bucle que se detiene al alcanzar cierta condición
+```R
+i <- 0
+while(i < 10) {
+  i <- i + 1
+}
+i
+
+```
+
 
 **apply** aplica una función a las columnas o filas de una matriz. Por ejemplo, para obtener la media de cada columna de una matriz de 5 columnas y 40 filas, con números generados al azar desde una distribución normal. Existen funciones similares como *lapply*, *tapply*, *sapply* (ver ayuda de la función *apply* para conocer la utilizadad de cada una).  
 
@@ -172,6 +183,8 @@ Construir una función para calcular el índice de Sørensen para datos de prese
 
 $$Q_{s} = \frac{2C} {A + B}$$   
 
-Donde A y B es el número de especies de los sitios 1 y 2, respectivamente, y C es el número de especies compartidas por los sitios 1 y 2. Probar la eficacia de la función con otro set de datos.
+Donde A y B es el número de especies de los sitios 1 y 2, respectivamente, y C es el número de especies compartidas por los sitios 1 y 2. Probar la eficacia de la función con otro set de datos.   
+
+* Fulanite solicitó un crédito a 30 años para comprar una vivienda, con una tasa fija nominal anual del 5%. Pidió `$`50000000 al banco y acordó un pago mensual fijo de $43840. Calcular cuánto pagará Fulanite a lo largo de los años. (Ejercicio tomado del curso programación en Python UNSAM).    
 
 * Simule una población de 1000 observaciones donde dos variables (X e Y) se encuentren relacionadas de forma que $Y = 0.2 - 1.5 X + 0.85 X^2 + \epsilon$ donde X es una variable de distribución normal con media = 2 y varianza = 0.6 y $\epsilon$ es un error de distribución normal y varianza = 0.7. Luego genere un gráfico, divida la población al azar en dos grupos (*training* y *test*), ajuste un modelo a los datos de *training* y use el modelo para predecir los valores de Y en los datos de *test*. Calcule la suma de cuadrados de los residuos de la predicción.

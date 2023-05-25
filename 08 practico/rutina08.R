@@ -61,20 +61,32 @@ sample(AA, size = 10, replace = TRUE)
 
 #############################################################
 
-##Programación con R
+## Programación con R
+
+# for
+
 Dat <- runif(1000)
 vec <- numeric(length=50)
 vec					       # vector vacío antes del loop
 for(i in 1:50) {vec[i] <- mean(sample(Dat, 20))} 
 vec					       # vector luego de aplicar el loop
-plot(density(vec))		       #teorema central del límite
+plot(density(vec))		      
 
+# for + if
 # construir una distribución normal truncada
 X1 <- rnorm(1000, mean= 3, sd=5)
 X2 <- numeric(1000)
 for (i in 1:1000) if (X1[i] < 0) X2[i] <- NA else X2[i] <- X1[i]
 hist(X2)
 
+# while
+i <- 0
+while(i < 10) {
+  i <- i + 1
+}
+i
+
+# apply
 m <- rnorm(200)
 X <- matrix(m, 40, 5)
 
@@ -82,6 +94,7 @@ apply(X, 2, mean)
 apply(X, 1, mean)
 
 
+# apply vs. for vs. vectorización
 # ejemplo 1
 A <- c(8, 23, 11, 10)
 B <- c(15, 3, 2, 1)

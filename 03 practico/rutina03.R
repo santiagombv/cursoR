@@ -30,3 +30,4 @@ Anova(fit3, type = "II")
 layout(matrix(1:4, 2, 2))
 plot(fit3)
 layout(1)
+
