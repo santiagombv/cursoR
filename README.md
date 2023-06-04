@@ -48,7 +48,7 @@ Encuentros: se enviarán los links de meet por e-mail.
   + Encuentro 05/06/2023.    
 
 * Módulo 6   
-  + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://youtu.be/u6EDBSoB4y8)       
+  + Práctico guiado: manejo de *lattice* y *ggplot2*. [PÁGINA](06 practico/practico06.html) - [VIDEO](https://youtu.be/ww1x-WgGVzo)       
   + Trabajo práctico: Ejercicios    
   + Encuentro 07/06/2023.
 
